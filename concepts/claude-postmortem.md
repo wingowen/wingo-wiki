@@ -2,7 +2,7 @@
 title: "三个近期问题的故障复盘 | A postmortem of three recent issues"
 created: 2025-09-17
 updated: 2025-09-17
-type: translation
+type: concept
 tags: [anthropic]
 sources: []
 notion_id: 34267b21-8207-819b-b24d-e80f17fa0201

@@ -2,7 +2,7 @@
 title: "介绍上下文检索 | Introducing Contextual Retrieval"
 created: 2024-09-19
 updated: 2024-09-19
-type: translation
+type: concept
 tags: [anthropic, rag]
 sources: []
 notion_id: 34267b21-8207-813f-b0e2-cae2d942f74c

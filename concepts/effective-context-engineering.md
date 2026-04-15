@@ -2,7 +2,7 @@
 title: "AI Agent 的有效上下文工程 | Effective context engineering for AI agents"
 created: 2025-09-29
 updated: 2025-09-29
-type: translation
+type: concept
 tags: [agent, anthropic]
 sources: []
 notion_id: 34267b21-8207-8199-9743-c072860e6ac1

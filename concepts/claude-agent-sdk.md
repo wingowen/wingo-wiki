@@ -2,7 +2,7 @@
 title: "使用 Claude Agent SDK 构建 Agent | Building agents with the Claude Agent SDK"
 created: 2025-09-29
 updated: 2025-09-29
-type: translation
+type: concept
 tags: [agent, anthropic]
 sources: []
 notion_id: 34267b21-8207-8141-8638-c436b190d370

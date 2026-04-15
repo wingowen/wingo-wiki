@@ -2,7 +2,7 @@
 title: "用 Agent Skills 装备 Agent 应对真实世界 | Equipping agents with Agent Skills"
 created: 2025-10-16
 updated: 2025-10-16
-type: translation
+type: concept
 tags: [agent, anthropic]
 sources: []
 notion_id: 34267b21-8207-8154-b45a-d542679a17a0

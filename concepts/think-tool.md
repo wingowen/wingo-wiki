@@ -2,7 +2,7 @@
 title: ""Think" 工具：让 Claude 在复杂工具使用场景中停下来思考 | The think tool"
 created: 2025-03-20
 updated: 2025-03-20
-type: translation
+type: concept
 tags: [agent, anthropic, reasoning]
 sources: []
 notion_id: 34267b21-8207-813d-bba1-e5e25ef455a2

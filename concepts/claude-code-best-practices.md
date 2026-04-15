@@ -2,7 +2,7 @@
 title: "Claude Code：Agent 编程最佳实践 | Claude Code best practices"
 created: 2025-04-18
 updated: 2025-04-18
-type: translation
+type: concept
 tags: [agent, anthropic]
 sources: []
 notion_id: 34267b21-8207-8192-a0d4-cff1c99ff3d2

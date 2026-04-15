@@ -2,7 +2,7 @@
 title: "系统提示词注入分析"
 created: 2026-04-15
 updated: 2026-04-15
-type: analysis
+type: concept
 tags: [agent]
 sources: []
 notion_id: 34367b21-8207-8140-9199-e7fefb5ffb3c

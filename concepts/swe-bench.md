@@ -2,7 +2,7 @@
 title: "用 Claude 3.5 Sonnet 提升 SWE-bench 成绩 | Raising the bar on SWE-bench Verified"
 created: 2025-01-06
 updated: 2025-01-06
-type: translation
+type: concept
 tags: [anthropic, benchmark, evaluation]
 sources: []
 notion_id: 34267b21-8207-812d-8ba2-e62bfbdca0aa

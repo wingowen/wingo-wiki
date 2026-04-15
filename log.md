@@ -65,3 +65,10 @@
 - 修复指向已归档页面的wikilinks
 - 当前：44页 | 161条wikilinks | 0 broken | 0 orphan | Tag体系规范
 
+## [2026-04-15] lint | Wiki 审查 + 自动修复
+- 审查项目：broken links, orphans, frontmatter, page size, tag taxonomy
+- 实际状态：0 broken links | 0 orphans | Tag体系规范 | log.md 健康
+- 发现问题：18 个 frontmatter type 污染（translation/analysis/framework → concept）
+- 自动修复：18 个文件 type 已全部修正为 `concept`
+- 剩余问题：18 个超大页面（>200行），建议手动拆分或接受现状（翻译/分析文章内聚）
+

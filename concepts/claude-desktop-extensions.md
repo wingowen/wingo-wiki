@@ -2,7 +2,7 @@
 title: "桌面扩展：Claude Desktop 一键安装 MCP 服务器 | Desktop Extensions"
 created: 2025-06-26
 updated: 2025-06-26
-type: translation
+type: concept
 tags: [anthropic]
 sources: []
 notion_id: 34267b21-8207-8197-b8ca-d8f11d3ca649

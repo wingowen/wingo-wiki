@@ -2,7 +2,7 @@
 title: "双层记忆系统与 Dream 管理知识文件的具体实现分析"
 created: 2026-04-13
 updated: 2026-04-13
-type: analysis
+type: concept
 tags: [memory]
 sources: []
 notion_id: 34267b21-8207-81a2-b887-ec73bb83404c

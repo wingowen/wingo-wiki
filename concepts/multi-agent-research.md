@@ -2,7 +2,7 @@
 title: "我们如何构建多 Agent 研究系统 | How we built our multi-agent research system"
 created: 2025-06-13
 updated: 2025-06-13
-type: translation
+type: concept
 tags: [agent, anthropic]
 sources: []
 notion_id: 34267b21-8207-81a8-9d00-fff6df2ade12

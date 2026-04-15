@@ -2,7 +2,7 @@
 title: "超越权限提示：让 Claude Code 更安全更自主 | Beyond permission prompts"
 created: 2025-10-20
 updated: 2025-10-20
-type: translation
+type: concept
 tags: [anthropic]
 sources: []
 notion_id: 34267b21-8207-81cb-b299-d66221d93419

@@ -2,7 +2,7 @@
 title: "用 Agent 为 Agent 编写高效工具 | Writing effective tools for agents — with agents"
 created: 2025-09-11
 updated: 2025-09-11
-type: translation
+type: concept
 tags: [agent, anthropic]
 sources: []
 notion_id: 34267b21-8207-813f-9e2a-fe299323ddce

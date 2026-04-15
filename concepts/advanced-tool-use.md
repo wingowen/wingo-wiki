@@ -2,7 +2,7 @@
 title: "在 Claude 开发者平台引入高级工具使用 | Introducing advanced tool use on the Claude Developer Platform"
 created: 2025-11-24
 updated: 2025-11-24
-type: translation
+type: concept
 tags: [agent, anthropic]
 sources: []
 notion_id: 34267b21-8207-81a2-b94a-f7ba3a444a5f

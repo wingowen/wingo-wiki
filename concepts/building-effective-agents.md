@@ -2,7 +2,7 @@
 title: "构建高效 Agent | Building effective agents"
 created: 2024-12-19
 updated: 2024-12-19
-type: translation
+type: concept
 tags: [agent, anthropic, architecture]
 sources: []
 notion_id: 34267b21-8207-81b1-a412-df36f5a33826

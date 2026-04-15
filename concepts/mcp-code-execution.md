@@ -2,7 +2,7 @@
 title: "通过 MCP 实现代码执行：构建更高效的 Agent | Code execution with MCP"
 created: 2025-06-26
 updated: 2025-06-26
-type: translation
+type: concept
 tags: [agent, anthropic]
 sources: []
 notion_id: 34267b21-8207-8138-b312-c3d319f17b5a

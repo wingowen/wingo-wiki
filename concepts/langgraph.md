@@ -2,7 +2,7 @@
 title: "LangGraph"
 created: 2026-04-15
 updated: 2026-04-15
-type: framework
+type: concept
 tags: [agent, architecture, langgraph]
 sources: []
 ---
