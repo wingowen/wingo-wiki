@@ -1,5 +1,5 @@
 ---
-title: ""Think" 工具：让 Claude 在复杂工具使用场景中停下来思考 | The think tool"
+title: '"Think" 工具：让 Claude 在复杂工具使用场景中停下来思考 | The think tool'
 created: 2025-03-20
 updated: 2025-03-20
 type: concept
