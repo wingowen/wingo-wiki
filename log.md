@@ -72,3 +72,25 @@
 - 自动修复：18 个文件 type 已全部修正为 `concept`
 - 剩余问题：18 个超大页面（>200行），建议手动拆分或接受现状（翻译/分析文章内聚）
 
+## [2026-04-15] restructure | Layer 1/2 重构 - 补全 raw/ + 精简 Layer 2
+### 背景
+根据 LLM Wiki 正确架构：Layer 1 (raw/) 存放原始素材，Layer 2 (concepts/) 存放精简知识点。原 wiki 将完整翻译文章塞入 concepts/，raw/ 完全为空。
+
+### 执行操作
+- **Layer 1 补全**：30 篇原始翻译/分析文章迁移到 `raw/articles/`
+- **Layer 2 精简**：30 个 concepts/ 页面从 100-581 行压缩至 27-70 行
+- **删除重复页面**：`interview-rag.md`（与 `rag.md` 内容重叠）已删除
+- **删除重复文件**：`comparisons/interview-langgraph-react.md`（与 `langgraph-vs-react.md` 重复）
+- **修复损坏 frontmatter**：`queries/interview-overview.md`、`queries/interview-qa-overview.md` 损坏 frontmatter 已修复
+- **修复残留引用**：替换 `interview-langgraph-react` → `langgraph-vs-react` 引用
+- **清理临时目录**：`temp_raw/` 已删除
+
+### 当前状态
+- **raw/articles/**: 30 个文件（原始不可变素材）
+- **concepts/**: 36 个精简知识点页（27-147 行）
+- **entities/**: 3 个实体页（AI Agent, Anthropic, Claude Code）
+- **comparisons/**: 1 个对比页（LangGraph vs ReAct）
+- **queries/**: 3 个查询/复盘页
+- **Total wiki pages**: 43 页
+- **0 broken wikilinks | 0 orphan pages | Tag 体系规范**
+

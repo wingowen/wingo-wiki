@@ -6,7 +6,6 @@ type: concept
 tags: [agent, hyde, interview, rag]
 sources: []
 notion_id: 34367b21-8207-81e2-bc9c-f119f7ae87f6
----207-81e2-bc9c-f119f7ae87f6
 ---
 
 ## AI Agent 面试复盘总览
@@ -93,4 +92,4 @@ notion_id: 34367b21-8207-81e2-bc9c-f119f7ae87f6
 
 ## 相关链接
 
-[[ai-agent]] | [[interview-agent-arch]] | [[interview-context-mgmt]] | [[interview-langgraph-react]] | [[interview-overview]]
+[[ai-agent]] | [[interview-agent-arch]] | [[interview-context-mgmt]] | [[langgraph-vs-react]] | [[interview-overview]]
