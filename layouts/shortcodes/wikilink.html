@@ -5,5 +5,9 @@
 {{- if not $display -}}
   {{- $display = $raw -}}
 {{- end -}}
-{{- $href := $link | urlize -}}
-<a href="{{ $href }}">{{ $display }}</a>
+{{- $href := relref .Page $link -}}
+{{- if $href -}}
+  <a href="{{ $href }}">{{ $display }}</a>
+{{- else -}}
+  {{ $display }}
+{{- end -}}
