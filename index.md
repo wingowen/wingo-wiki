@@ -2,7 +2,7 @@
 
 > Content catalog. Every wiki page listed under its type with a one-line summary.
 > Read this first to find relevant pages for any query.
-> Last updated: 2026-04-16 | Total pages: 49
+> Last updated: 2026-04-16 | Total pages: 73
 
 ## Entities
 
@@ -43,6 +43,20 @@
 - [[mcp]] — MCP 协议核心：标准化 AI 与外部工具/数据的连接
 - [[mcp-code-execution]] — 通过 MCP 实现代码执行：构建更高效的 Agent
 - [[mcp-deep-dive]] — MCP 核心原理：Client/Server 架构、三大优势
+- [[mcp-deep-dive-modular]] — MCP 深度解析（模块化版本）
+- [[mcp-deep-dive-section-advantages]] — MCP 核心优势
+- [[mcp-deep-dive-section-advantages-detail]] — 通过 MCP 实现代码执行的优势
+- [[mcp-deep-dive-section-architecture]] — MCP 架构
+- [[mcp-deep-dive-section-architecture-overview]] — Desktop Extensions 架构概览
+- [[mcp-deep-dive-section-code-execution]] — 通过 MCP 实现代码执行
+- [[mcp-deep-dive-section-code-execution-detail]] — 通过 MCP 实现代码执行：构建更高效的 Agent
+- [[mcp-deep-dive-section-context-efficiency]] — 通过 MCP 实现代码执行提升上下文效率
+- [[mcp-deep-dive-section-desktop-extensions]] — Desktop Extensions（桌面扩展）
+- [[mcp-deep-dive-section-desktop-extensions-detail]] — 桌面扩展：Claude Desktop 一键安装 MCP 服务器
+- [[mcp-deep-dive-section-overview]] — MCP Overview
+- [[mcp-deep-dive-section-related-links]] — MCP 核心原理 - 相关链接
+- [[mcp-deep-dive-section-summary]] — MCP 核心原理 - 总结
+- [[mcp-deep-dive-section-token-issue]] — 工具消耗过多 token 导致 Agent 效率降低
 - [[multi-agent]] — Multi-Agent 系统：多 Agent 协作完成复杂任务
 - [[multi-agent-research]] — Anthropic 多 Agent 研究系统架构设计
 - [[prompt-injection]] — nanobot 提示词注入机制分析：混合注入方式
@@ -50,6 +64,16 @@
 - [[react]] — ReAct = Reasoning + Acting：推理与行动交替的提示词框架
 - [[slash-commands]] — nanobot 自定义 Slash 命令 Hook 扩展机制设计
 - [[swe-bench]] — SWE-bench：AI 模型真实软件工程任务能力基准测试
+- [[swe-bench-modular]] — 用 Claude 3.5 Sonnet 提升 SWE-bench 成绩（模块化版本）
+- [[swe-bench-section-acknowledgements]] — 用 Claude 3.5 Sonnet 提升 SWE-bench 成绩 - 致谢
+- [[swe-bench-section-challenges]] — 用 Claude 3.5 Sonnet 提升 SWE-bench 成绩 - 挑战
+- [[swe-bench-section-example]] — 用 Claude 3.5 Sonnet 提升 SWE-bench 成绩 - Agent 行为示例
+- [[swe-bench-section-intro]] — 用 Claude 3.5 Sonnet 提升 SWE-bench 成绩 - 介绍
+- [[swe-bench-section-related-links]] — 用 Claude 3.5 Sonnet 提升 SWE-bench 成绩 - 相关链接
+- [[swe-bench-section-results]] — 用 Claude 3.5 Sonnet 提升 SWE-bench 成绩 - 结果
+- [[swe-bench-section-sota]] — 用 Claude 3.5 Sonnet 提升 SWE-bench 成绩 - 达到 SOTA
+- [[swe-bench-section-tools]] — 用 Claude 3.5 Sonnet 提升 SWE-bench 成绩 - 工具型 Agent
+- [[swe-bench-section-translator-note]] — 用 Claude 3.5 Sonnet 提升 SWE-bench 成绩 - 译者注
 - [[think-tool]] — Think 工具：为复杂问题创建结构化思考空间
 - [[tool-use]] — Tool Use：Agent 与外部世界交互的核心能力
 - [[writing-effective-tools]] — 为 Agent 编写高效工具的最佳实践

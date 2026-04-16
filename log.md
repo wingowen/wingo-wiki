@@ -107,3 +107,42 @@
 - 原文文件保持不变，确保现有维护工作流不受影响
 - **Total wiki pages**: 49 页
 
+## [2026-04-16] create | 长文章模块化 - MCP 深度解析
+- 为 `mcp-deep-dive.md` 创建模块化版本
+- 创建模块化主文件：`mcp-deep-dive-modular.md`
+- 创建章节文件：
+  - `mcp-deep-dive-section-overview.md`
+  - `mcp-deep-dive-section-architecture.md`
+  - `mcp-deep-dive-section-advantages.md`
+  - `mcp-deep-dive-section-desktop-extensions.md`
+  - `mcp-deep-dive-section-desktop-extensions-detail.md`
+  - `mcp-deep-dive-section-architecture-overview.md`
+  - `mcp-deep-dive-section-code-execution.md`
+  - `mcp-deep-dive-section-code-execution-detail.md`
+  - `mcp-deep-dive-section-token-issue.md`
+  - `mcp-deep-dive-section-context-efficiency.md`
+  - `mcp-deep-dive-section-advantages-detail.md`
+  - `mcp-deep-dive-section-summary.md`
+  - `mcp-deep-dive-section-related-links.md`
+- 原文文件保持不变，确保现有维护工作流不受影响
+
+## [2026-04-16] create | 长文章模块化 - SWE-bench
+- 为 `swe-bench.md` 创建模块化版本
+- 创建模块化主文件：`swe-bench-modular.md`
+- 创建章节文件：
+  - `swe-bench-section-intro.md`
+  - `swe-bench-section-sota.md`
+  - `swe-bench-section-tools.md`
+  - `swe-bench-section-results.md`
+  - `swe-bench-section-example.md`
+  - `swe-bench-section-challenges.md`
+  - `swe-bench-section-acknowledgements.md`
+  - `swe-bench-section-translator-note.md`
+  - `swe-bench-section-related-links.md`
+- 原文文件保持不变，确保现有维护工作流不受影响
+
+## [2026-04-16] update | 索引更新
+- 更新 index.md，添加所有新创建的模块化文件
+- 将总页面数从 49 更新为 73
+- 确保所有新文件都正确分类并添加到相应部分
+
