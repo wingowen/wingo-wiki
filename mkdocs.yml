@@ -1,0 +1,51 @@
+site_name: Wingo Wiki
+site_url: https://wingo-wiki.netlify.app
+site_description: Wingo's personal wiki
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: indigo
+
+plugins:
+  - search
+  - roamlinks
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tabbed
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - footnotes
+
+nav:
+  - Home: index.md
+  - Concepts:
+    - Agent Architecture: concepts/agent-architecture.md
+    - Context Engineering: concepts/context-engineering.md
+    - RAG: concepts/rag.md
+    - Tool Use: concepts/tool-use.md
+    - Multi-Agent: concepts/multi-agent.md
+    - MCP: concepts/mcp.md
+    - Claude: concepts/claude.md
+  - Comparisons:
+    - LangGraph vs React: comparisons/langgraph-vs-react.md
+  - Entities:
+    - AI Agent: entities/ai-agent.md
+    - Anthropic: entities/anthropic.md
+    - Claude Code: entities/claude-code.md
+  - Queries:
+    - Interview Overview: queries/interview-overview.md
+    - Interview QA Overview: queries/interview-qa-overview.md
+    - Session Context: queries/session-context.md
