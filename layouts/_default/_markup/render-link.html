@@ -1,0 +1,33 @@
+{{/* Render hook for wikilinks */}}
+{{- $destination := .Destination -}}
+{{- $text := .Text -}}
+{{- $title := .Title -}}
+
+{{- /* Check if this is a wikilink */ -}}
+{{- if eq $destination "wikilink" -}}
+  {{- /* Parse the link target and display text */ -}}
+  {{- $target := $title -}}
+  {{- $display := $text -}}
+  
+  {{- /* Find the page */ -}}
+  {{- $page := site.RegularPages.GetMatch $target -}}
+  {{- if not $page -}}
+    {{- $page = site.RegularPages.GetMatch (print $target ".md") -}}
+  {{- end -}}
+  {{- if not $page -}}
+    {{- $page = site.RegularPages.GetMatch (print "**/" $target) -}}
+  {{- end -}}
+  {{- if not $page -}}
+    {{- $page = site.RegularPages.GetMatch (print "**/" $target ".md") -}}
+  {{- end -}}
+  
+  {{- /* Render the link */ -}}
+  {{- if $page -}}
+    <a href="{{ $page.RelPermalink }}">{{ $display }}</a>
+  {{- else -}}
+    {{ $display }}
+  {{- end -}}
+{{- else -}}
+  {{- /* Render regular links */ -}}
+  <a href="{{ $destination }}"{{ with $title }} title="{{ . }}"{{ end }}>{{ $text }}</a>
+{{- end -}}
