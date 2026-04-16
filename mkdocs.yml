@@ -100,6 +100,10 @@ nav:
         - 长期运行 Agent: concepts/other/practice/long-running-agents.md
         - 斜杠命令: concepts/other/practice/slash-commands.md
         - SWE Bench: concepts/other/practice/swe-bench.md
+  - Skills:
+    - 技能目录: skills/index.md
+    - 示例技能: skills/example-skill/SKILL.md
+    - 维护规范: llm-wiki-skill-maintenance.md
   - Comparisons:
     - LangGraph vs React: comparisons/langgraph-vs-react.md
   - Entities:

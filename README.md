@@ -7,7 +7,8 @@ Wingo's personal wiki built with MkDocs and Material for MkDocs, supporting Obsi
 - **Obsidian-style wikilinks**: Use `[[link]]` syntax to link between pages
 - **Material for MkDocs**: Modern, responsive theme with dark mode support
 - **Netlify deployment**: Automatic deployment to Netlify
-- **Easy navigation**: Organized by categories (Concepts, Comparisons, Entities, Queries)
+- **Easy navigation**: Organized by categories (Concepts, Comparisons, Entities, Queries, Skills)
+- **LLM Wiki Skill system**: Structured skills following Anthropic's Agent Skills best practices
 
 ## Setup
 
@@ -43,6 +44,8 @@ workspace/
 │   ├── comparisons/   # Comparisons between technologies
 │   ├── entities/      # Key entities
 │   ├── queries/       # Interview questions and answers
+│   ├── skills/        # LLM Wiki Skills
+│   ├── llm-wiki-skill-maintenance.md  # LLM Wiki Skill maintenance guidelines
 │   └── index.md       # Site homepage
 ├── mkdocs.yml         # MkDocs configuration
 ├── netlify.toml       # Netlify deployment configuration
