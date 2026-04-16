@@ -105,13 +105,28 @@
 
     myChart = echarts.init(document.getElementById('graph'));
 
+    // Get current page path
+    var currentPath = window.location.pathname;
+    if (currentPath.endsWith('/')) {
+      currentPath = currentPath.slice(0, -1);
+    }
+
     var nodes = graphData.nodes.map(function(node, index) {
+      var isCurrentPage = currentPath === '/' + node.url.slice(0, -1);
+      
       return {
         name: node.name,
-        symbolSize: 30,
+        symbolSize: isCurrentPage ? 60 : 30,
         category: node.category,
         itemStyle: {
-          color: categoryColors[node.category % categoryColors.length]
+          color: isCurrentPage ? categoryColors[node.category % categoryColors.length] : 'rgba(100, 100, 100, 0.6)',
+          opacity: isCurrentPage ? 1 : 0.6
+        },
+        emphasis: {
+          itemStyle: {
+            color: categoryColors[node.category % categoryColors.length],
+            opacity: 1
+          }
         },
         url: node.url
       };
