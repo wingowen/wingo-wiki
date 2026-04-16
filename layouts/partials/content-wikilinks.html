@@ -1,41 +1,5 @@
-{{/* Simple wikilinks support */}}
+{{/* Very simple wikilinks support */}}
 {{ $content := .Content }}
 
-{{/* Find all wikilinks [[link]] or [[link|text]] */}}
-{{ $wikilinks := findRE "\\[\\[([^\]]+?)\\]\\]" $content }}
-
-{{ range $wikilinks }}
-    {{ $raw := . }}
-    {{ $inner := replace $raw "[[" "" }}
-    {{ $inner := replace $inner "]]" "" }}
-    
-    {{/* Parse link and text */}}
-    {{ $link := $inner }}
-    {{ $text := $inner }}
-    {{ if strings.Contains $inner "|" }}
-        {{ $parts := split $inner "|" }}
-        {{ $link = index $parts 0 | strings.TrimSpace }}
-        {{ $text = index $parts 1 | strings.TrimSpace }}
-    {{ end }}
-    
-    {{/* Find matching page */}}
-    {{ $foundPage := false }}
-    {{ range site.RegularPages }}
-        {{ if not $foundPage }}
-            {{ if eq .File.BaseFileName $link }}
-                {{ $foundPage = . }}
-            {{ end }}
-        {{ end }}
-    {{ end }}
-    
-    {{/* Replace wikilink with HTML link */}}
-    {{ if $foundPage }}
-        {{ $htmlLink := printf "<a href=\"%s\">%s</a>" $foundPage.RelPermalink $text }}
-        {{ $content = replace $content $raw $htmlLink }}
-    {{ else }}
-        {{/* If page not found, just remove the brackets */}}
-        {{ $content = replace $content $raw $text }}
-    {{ end }}
-{{ end }}
-
+{{/* First just make sure content displays */}}
 {{ $content | markdownify }}
