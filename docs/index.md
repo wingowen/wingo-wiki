@@ -4,7 +4,7 @@ Welcome to Wingo's personal wiki! This wiki contains notes and documentation on 
 
 ## Navigation
 
-- [Concepts](concepts/) - Core concepts and theories
+- [Concepts](concepts/index.md) - Core concepts and theories
 - [Comparisons](comparisons/langgraph-vs-react.md) - Comparisons between different technologies
 - [Entities](entities/ai-agent.md) - Key entities and their descriptions
 - [Queries](queries/interview-overview.md) - Interview questions and answers

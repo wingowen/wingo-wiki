@@ -6,7 +6,6 @@ theme:
   name: material
   features:
     - navigation.tabs
-    - navigation.sections
     - search.suggest
     - search.highlight
   palette:
@@ -40,8 +39,9 @@ extra_css:
 nav:
   - Home: index.md
   - Concepts:
-    - 概念索引: concepts/_index.md
+    - 概念索引: concepts/index.md
     - Agent Architecture:
+      - 代理架构: concepts/agent-architecture/_index.md
       - 核心概念:
         - Agent 架构设计: concepts/agent-architecture/core/agent-architecture.md
         - Agent 框架理论: concepts/agent-architecture/core/agent-framework-theory.md
@@ -51,6 +51,7 @@ nav:
       - 面试相关:
         - 面试 - Agent 架构: concepts/agent-architecture/interview/interview-agent-arch.md
     - Context Engineering:
+      - 上下文工程: concepts/context-engineering/_index.md
       - 核心概念:
         - 上下文工程: concepts/context-engineering/core/context-engineering.md
         - 上下文管理: concepts/context-engineering/core/context-management.md
@@ -59,6 +60,7 @@ nav:
       - 面试相关:
         - 面试 - 上下文管理: concepts/context-engineering/interview/interview-context-mgmt.md
     - RAG:
+      - RAG: concepts/rag/_index.md
       - 核心概念:
         - 上下文检索: concepts/rag/core/contextual-retrieval.md
         - HYDE: concepts/rag/core/hyde.md
@@ -66,6 +68,7 @@ nav:
       - 面试相关:
         - 面试 - HYDE: concepts/rag/interview/interview-hyde.md
     - Tool Use:
+      - 工具使用: concepts/tool-use/_index.md
       - 核心概念:
         - 高级工具使用: concepts/tool-use/core/advanced-tool-use.md
         - 工具使用: concepts/tool-use/core/tool-use.md
@@ -73,23 +76,27 @@ nav:
         - Think Tool: concepts/tool-use/practice/think-tool.md
         - 编写有效工具: concepts/tool-use/practice/writing-effective-tools.md
     - Multi-Agent:
+      - 多智能体: concepts/multi-agent/_index.md
       - 核心概念:
         - 多智能体: concepts/multi-agent/core/multi-agent.md
       - 实践应用:
         - 多智能体研究: concepts/multi-agent/practice/multi-agent-research.md
     - MCP:
+      - MCP: concepts/mcp/_index.md
       - 核心概念:
         - MCP: concepts/mcp/core/mcp.md
       - 实践应用:
         - MCP 代码执行: concepts/mcp/practice/mcp-code-execution.md
         - MCP 深度解析: concepts/mcp/practice/mcp-deep-dive.md
     - Claude:
+      - Claude: concepts/claude/_index.md
       - 实践应用:
         - Claude Agent SDK: concepts/claude/practice/claude-agent-sdk.md
         - Claude 代码最佳实践: concepts/claude/practice/claude-code-best-practices.md
         - Claude 桌面扩展: concepts/claude/practice/claude-desktop-extensions.md
         - Claude 事后分析: concepts/claude/practice/claude-postmortem.md
     - 其他:
+      - 其他: concepts/other/_index.md
       - 核心概念:
         - LangGraph: concepts/other/core/langgraph.md
         - 提示注入: concepts/other/core/prompt-injection.md
