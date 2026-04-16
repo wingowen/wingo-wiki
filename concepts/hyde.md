@@ -8,7 +8,7 @@ sources: ["raw/articles/hyde.md"]
 notion_id: "34367b21-8207-818d-9eb8-fb9c821dbd20"
 ---
 
-> **难度**：⭐⭐⭐⭐ | **面试频率**：高 | **关联**：[[interview-rag]] [[context-management]]
+> **难度**：⭐⭐⭐⭐ | **面试频率**：高 | **关联**：[[rag]] [[context-management]]
 
 ---
 

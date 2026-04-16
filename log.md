@@ -38,6 +38,14 @@
   - 重命名 29 个超长中文文件名为规范短名称（如 rag.md, mcp.md, langgraph.md）
   - 修正 frontmatter type 污染（6个页面）
   - 全文替换 71 条 wikilinks，全部指向正确文件名
+
+## [2026-04-16] lint | Wiki 审核（第 2 轮）
+- 审核范围：broken links、orphans、index 完整性、frontmatter、标签体系、页面大小
+- 发现问题：2 条 broken wikilinks（指向已删除的 interview-rag）、index header 页数错误（43→42）
+- 执行修复：
+  - hyde.md：`[[interview-rag]]` → `[[rag]]`
+  - interview-overview.md：`[[interview-rag]]` → `[[rag]]`
+  - index.md：Total pages 43 → 42，Last updated 修正
   - 移除 3 条无目标页的失效链接（Planning/Reasoning/Security）
   - 补充交叉引用：39 个页面新增 wikilinks outbound
   - 归档 1 个重复文件（我们如何构建多agent研究系统）至 _archive/
