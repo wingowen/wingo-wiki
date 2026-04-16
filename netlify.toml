@@ -1,5 +1,5 @@
 [build]
-  command = "pip install -r requirements.txt && mkdocs build"
+  command = "pip install -r requirements.txt && python generate_graph.py && mkdocs build"
   publish = "site"
 
 [build.environment]
