@@ -1,72 +1,57 @@
-# Wingo Wiki
+# React + TypeScript + Vite
 
-Wingo's personal wiki built with MkDocs and Material for MkDocs, supporting Obsidian-style wikilinks.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
-- **Obsidian-style wikilinks**: Use `[[link]]` syntax to link between pages
-- **Material for MkDocs**: Modern, responsive theme with dark mode support
-- **Netlify deployment**: Automatic deployment to Netlify
-- **Easy navigation**: Organized by categories (Concepts, Comparisons, Entities, Queries, Skills)
-- **LLM Wiki Skill system**: Structured skills following Anthropic's Agent Skills best practices
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Setup
+## Expanding the ESLint configuration
 
-### Prerequisites
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-- Python 3.8+
-- Pip
-
-### Installation
-
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   pip install mkdocs mkdocs-material mkdocs-roamlinks-plugin
-   ```
-
-3. Run the development server:
-   ```bash
-   mkdocs serve
-   ```
-
-4. Build for production:
-   ```bash
-   mkdocs build
-   ```
-
-## Directory Structure
-
-```
-workspace/
-├── docs/              # MkDocs content directory
-│   ├── concepts/      # Core concepts and theories
-│   ├── comparisons/   # Comparisons between technologies
-│   ├── entities/      # Key entities
-│   ├── queries/       # Interview questions and answers
-│   ├── skills/        # LLM Wiki Skills
-│   ├── llm-wiki-skill-maintenance.md  # LLM Wiki Skill maintenance guidelines
-│   └── index.md       # Site homepage
-├── mkdocs.yml         # MkDocs configuration
-├── netlify.toml       # Netlify deployment configuration
-└── README.md          # This file
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
 
-## Writing Content
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-- Write in Markdown format
-- Use Obsidian-style wikilinks: `[[page-name]]`
-- Organize content in the appropriate subdirectory under `docs/`
-- Update the `nav` section in `mkdocs.yml` to include new pages
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-## Deployment
-
-The site is automatically deployed to Netlify when changes are pushed to the repository. The deployment configuration is in `netlify.toml`.
-
-## Contributing
-
-To contribute to this wiki:
-1. Fork the repository
-2. Make your changes
-3. Push to your fork
-4. Create a pull request
+export default tseslint.config({
+  extends: [
+    // other configs...
+    // Enable lint rules for React
+    reactX.configs['recommended-typescript'],
+    // Enable lint rules for React DOM
+    reactDom.configs.recommended,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
