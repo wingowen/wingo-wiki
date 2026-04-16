@@ -14,11 +14,11 @@ MCP (Model Context Protocol) 是一种用于管理和传递模型上下文的协
 ## 内容列表
 
 - **核心概念**
-  - [MCP 基础](core/mcp.md)
+  - [MCP 基础](mcp.md)
 
 - **实践指南**
-  - [MCP 代码执行](practice/mcp-code-execution.md)
-  - [MCP 深度解析](practice/mcp-deep-dive.md)
+  - [MCP 代码执行](mcp-code-execution.md)
+  - [MCP 深度解析](mcp-deep-dive.md)
 
 ## 返回链接
 

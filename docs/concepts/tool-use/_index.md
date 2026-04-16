@@ -14,12 +14,12 @@ tags: [tool-use]
 ## 内容列表
 
 - **核心概念**
-  - [高级工具使用](core/advanced-tool-use.md)
-  - [工具使用基础](core/tool-use.md)
+  - [工具使用基础](tool-use.md)
+  - [高级工具使用](advanced-tool-use.md)
 
 - **实践指南**
-  - [思考工具](practice/think-tool.md)
-  - [编写有效工具](practice/writing-effective-tools.md)
+  - [思考工具](think-tool.md)
+  - [有效工具编写](writing-effective-tools.md)
 
 ## 返回链接
 

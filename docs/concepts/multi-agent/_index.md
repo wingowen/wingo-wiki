@@ -14,10 +14,10 @@ tags: [multi-agent]
 ## 内容列表
 
 - **核心概念**
-  - [多代理系统](core/multi-agent.md)
+  - [多代理系统](multi-agent.md)
 
 - **实践指南**
-  - [多代理研究](practice/multi-agent-research.md)
+  - [多代理研究](multi-agent-research.md)
 
 ## 返回链接
 

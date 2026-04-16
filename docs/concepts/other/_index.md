@@ -14,17 +14,17 @@ tags: [other]
 ## 内容列表
 
 - **核心概念**
-  - [LangGraph](core/langgraph.md)
-  - [提示注入](core/prompt-injection.md)
-  - [React](core/react.md)
+  - [LangGraph](langgraph.md)
+  - [提示注入](prompt-injection.md)
+  - [React](react.md)
 
 - **实践指南**
-  - [代理技能](practice/agent-skills.md)
-  - [超越权限提示](practice/beyond-permission-prompts.md)
-  - [双重记忆系统](practice/dual-memory-system.md)
-  - [长期运行代理](practice/long-running-agents.md)
-  - [斜杠命令](practice/slash-commands.md)
-  - [SWE-bench](practice/swe-bench.md)
+  - [代理技能](agent-skills.md)
+  - [超越权限提示](beyond-permission-prompts.md)
+  - [双记忆系统](dual-memory-system.md)
+  - [长期运行代理](long-running-agents.md)
+  - [斜杠命令](slash-commands.md)
+  - [SWE-bench](swe-bench.md)
 
 ## 返回链接
 
