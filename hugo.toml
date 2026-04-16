@@ -1,0 +1,18 @@
+baseURL = 'https://wingo-wiki.netlify.app/'
+languageCode = 'zh-cn'
+title = 'Wingo Wiki'
+canonifyURLs = true
+disablePathToLower = true
+useUTF8 = true
+ignoreLogs = ['warning-home-page-is-leaf-bundle']
+
+[frontmatter]
+  date = ["date", "created", "updated", "publishDate"]
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"

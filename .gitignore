@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 temp_raw/
 .DS_Store
+public/
+.hugo_build.lock
