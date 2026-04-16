@@ -1,11 +1,6 @@
 {
   "nodes": [
     {
-      "name": "Index",
-      "url": "index/",
-      "category": 4
-    },
-    {
       "name": "Context Management",
       "url": "concepts/context-management/",
       "category": 0

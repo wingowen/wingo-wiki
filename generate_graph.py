@@ -18,7 +18,7 @@ def main():
             continue
         
         for file in files:
-            if file.endswith('.md'):
+            if file.endswith('.md') and file != 'index.md':
                 file_path = os.path.join(root, file)
                 rel_path = os.path.relpath(file_path, docs_dir)
                 
