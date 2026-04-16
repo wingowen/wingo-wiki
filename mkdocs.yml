@@ -6,6 +6,9 @@ theme:
   name: material
   features:
     - navigation.tabs
+    - navigation.path
+    - navigation.indexes
+    - toc.integrate
     - search.suggest
     - search.highlight
   palette:
