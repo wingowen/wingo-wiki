@@ -2,7 +2,7 @@
 
 > Content catalog. Every wiki page listed under its type with a one-line summary.
 > Read this first to find relevant pages for any query.
-> Last updated: 2026-04-15 | Total pages: 43
+> Last updated: 2026-04-16 | Total pages: 49
 
 ## Entities
 
@@ -15,6 +15,12 @@
 - [[advanced-tool-use]] — Anthropic 发布了三个 Beta 功能让 Claude 能够动态发现、学习和执行工具
 - [[agent-architecture]] — Agent 架构设计核心：感知-规划-行动-观察-反思闭环
 - [[agent-framework-practice]] — AI Agent 框架实践：Agent Loop 中如何管理上下文
+- [[agent-framework-practice-modular]] — AI Agent 框架实践（模块化版本）
+- [[agent-framework-practice-section-architecture]] — 2.1 Agent 框架架构图一览
+- [[agent-framework-practice-section-elements]] — 2.2 Agent 框架三大要素设计
+- [[agent-framework-practice-section-implementation]] — 2.3 Agent 框架代码实现
+- [[agent-framework-practice-section-application]] — 2.4 基于极简 Agent 框架的极简 Agent 应用
+- [[agent-framework-practice-section-conclusion]] — 三、写在后面的话
 - [[agent-framework-theory]] — AI Agent 框架理论：LLM Call、Tool Call、Context 三大要素
 - [[agent-skills]] — Agent Skills 核心理念：Progressive Disclosure 渐进式披露
 - [[beyond-permission-prompts]] — Claude Code 沙箱化安全机制：文件系统隔离 + 网络隔离

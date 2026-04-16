@@ -94,3 +94,16 @@
 - **Total wiki pages**: 43 页
 - **0 broken wikilinks | 0 orphan pages | Tag 体系规范**
 
+## [2026-04-16] create | 长文章模块化
+- 为 `agent-framework-practice.md` 创建模块化版本
+- 创建模块化主文件：`agent-framework-practice-modular.md`
+- 创建章节文件：
+  - `agent-framework-practice-section-architecture.md`
+  - `agent-framework-practice-section-elements.md`
+  - `agent-framework-practice-section-implementation.md`
+  - `agent-framework-practice-section-application.md`
+  - `agent-framework-practice-section-conclusion.md`
+- 更新 index.md，添加新创建的模块化文件
+- 原文文件保持不变，确保现有维护工作流不受影响
+- **Total wiki pages**: 49 页
+
