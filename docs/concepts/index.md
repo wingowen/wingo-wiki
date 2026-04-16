@@ -11,28 +11,28 @@ tags: [concepts]
 
 ## 概念分类
 
-### Agent Architecture
+### [Agent Architecture](agent-architecture/)
 **代理架构** - 包含代理设计的核心概念、框架理论、实践应用和面试相关内容。
 
-### Context Engineering
+### [Context Engineering](context-engineering/)
 **上下文工程** - 专注于代理上下文管理的核心概念、实践应用和面试相关内容。
 
-### RAG
+### [RAG](rag/)
 **检索增强生成** - 涵盖上下文检索、HYDE 技术和 RAG 核心概念，以及相关面试内容。
 
-### Tool Use
+### [Tool Use](tool-use/)
 **工具使用** - 包括高级工具使用、工具使用基础概念和实践应用。
 
-### Multi-Agent
+### [Multi-Agent](multi-agent/)
 **多智能体** - 探索多智能体系统的核心概念和实践应用。
 
-### MCP
+### [MCP](mcp/)
 **模型上下文协议** - 详细介绍 MCP 的核心概念、代码执行和深度解析。
 
-### Claude
+### [Claude](claude/)
 **Claude 相关** - 包含 Claude Agent SDK、代码最佳实践、桌面扩展和事后分析。
 
-### 其他
+### [其他](other/)
 **其他概念** - 涵盖 LangGraph、提示注入、React 等核心概念，以及各种实践应用。
 
 ## 如何使用
