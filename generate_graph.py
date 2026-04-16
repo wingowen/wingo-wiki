@@ -33,7 +33,9 @@ def main():
                     
                     for link in wikilinks:
                         link_parts = link.split('|')
-                        target_name = link_parts[0].strip()
+                        target_raw = link_parts[0].strip()
+                        # 转换目标名称为与页面名称相同的格式
+                        target_name = target_raw.replace('-', ' ').title()
                         
                         link_exists = any(
                             l['source'] == page_name and l['target'] == target_name
