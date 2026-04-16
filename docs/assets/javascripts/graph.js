@@ -40,6 +40,45 @@
     document.getElementById('graph-container').style.display = 'none';
   };
 
+  // Map node names to URLs
+  var nodeUrlMap = {
+    'AI Agent': 'entities/ai-agent/',
+    'Agent Architecture': 'concepts/agent-architecture/',
+    'Agent Skills': 'concepts/agent-skills/',
+    'Agent Framework Theory': 'concepts/agent-framework-theory/',
+    'Agent Framework Practice': 'concepts/agent-framework-practice/',
+    'Building Effective Agents': 'concepts/building-effective-agents/',
+    'LangGraph': 'concepts/langgraph/',
+    'ReAct': 'concepts/react/',
+    'Context Engineering': 'concepts/context-engineering/',
+    'Context Management': 'concepts/context-management/',
+    'Effective Context Engineering': 'concepts/effective-context-engineering/',
+    'Dual Memory System': 'concepts/dual-memory-system/',
+    'RAG': 'concepts/rag/',
+    'HyDE': 'concepts/hyde/',
+    'Contextual Retrieval': 'concepts/contextual-retrieval/',
+    'MCP': 'concepts/mcp/',
+    'MCP Deep Dive': 'concepts/mcp-deep-dive/',
+    'MCP Code Execution': 'concepts/mcp-code-execution/',
+    'Multi-Agent': 'concepts/multi-agent/',
+    'Multi-Agent Research': 'concepts/multi-agent-research/',
+    'Claude Code': 'entities/claude-code/',
+    'Claude Agent SDK': 'concepts/claude-agent-sdk/',
+    'Claude Code Best Practices': 'concepts/claude-code-best-practices/',
+    'Claude Desktop Extensions': 'concepts/claude-desktop-extensions/',
+    'Claude Postmortem': 'concepts/claude-postmortem/',
+    'Anthropic': 'entities/anthropic/',
+    'Tool Use': 'concepts/tool-use/',
+    'Advanced Tool Use': 'concepts/advanced-tool-use/',
+    'Writing Effective Tools': 'concepts/writing-effective-tools/',
+    'Think Tool': 'concepts/think-tool/',
+    'Slash Commands': 'concepts/slash-commands/',
+    'Beyond Permission Prompts': 'concepts/beyond-permission-prompts/',
+    'Long Running Agents': 'concepts/long-running-agents/',
+    'Prompt Injection': 'concepts/prompt-injection/',
+    'SWE Bench': 'concepts/swe-bench/'
+  };
+
   // Initialize graph function
   function initGraph() {
     if (typeof echarts !== 'undefined') {
@@ -59,93 +98,96 @@
         tooltip: {
           trigger: 'item',
           formatter: function(params) {
+            if (params.dataType === 'node') {
+              return '<div style="font-weight: bold;">' + params.data.name + '</div><div style="font-size: 12px; color: #aaa;">Click to open</div>';
+            }
             return params.data.name;
           },
           backgroundColor: 'rgba(0, 0, 0, 0.8)',
           borderColor: '#4f46e5',
           borderWidth: 1
         },
-        legend: [{
-          data: ['AI Agent', 'Architecture', 'RAG', 'MCP', 'Context', 'Multi-Agent', 'Claude', 'Anthropic', 'Tools', 'Other'],
-          textStyle: {
-            color: '#fff'
-          },
-          bottom: 20
-        }],
-        categories: [
-          {name: 'AI Agent'},
-          {name: 'Architecture'},
-          {name: 'RAG'},
-          {name: 'MCP'},
-          {name: 'Context'},
-          {name: 'Multi-Agent'},
-          {name: 'Claude'},
-          {name: 'Anthropic'},
-          {name: 'Tools'},
-          {name: 'Other'}
-        ],
         series: [
           {
             type: 'graph',
             layout: 'force',
             data: [
-              {name: 'AI Agent', symbolSize: 50, category: 0},
-              {name: 'LangGraph', symbolSize: 40, category: 1},
-              {name: 'ReAct', symbolSize: 35, category: 1},
-              {name: 'Agent Architecture', symbolSize: 45, category: 0},
-              {name: 'Agent Skills', symbolSize: 30, category: 0},
-              {name: 'Context Engineering', symbolSize: 40, category: 4},
-              {name: 'Context Management', symbolSize: 35, category: 4},
-              {name: 'Dual Memory System', symbolSize: 30, category: 4},
-              {name: 'RAG', symbolSize: 40, category: 2},
-              {name: 'HyDE', symbolSize: 30, category: 2},
-              {name: 'Contextual Retrieval', symbolSize: 25, category: 2},
-              {name: 'MCP', symbolSize: 45, category: 3},
-              {name: 'MCP Deep Dive', symbolSize: 35, category: 3},
-              {name: 'MCP Code Execution', symbolSize: 30, category: 3},
-              {name: 'Multi-Agent', symbolSize: 35, category: 5},
-              {name: 'Multi-Agent Research', symbolSize: 30, category: 5},
-              {name: 'Claude Code', symbolSize: 35, category: 6},
-              {name: 'Claude Agent SDK', symbolSize: 30, category: 6},
-              {name: 'Anthropic', symbolSize: 40, category: 7},
-              {name: 'Tool Use', symbolSize: 35, category: 8},
-              {name: 'Advanced Tool Use', symbolSize: 25, category: 8},
-              {name: 'Writing Effective Tools', symbolSize: 25, category: 8},
-              {name: 'Think Tool', symbolSize: 20, category: 8},
-              {name: 'Long Running Agents', symbolSize: 25, category: 0},
-              {name: 'Prompt Injection', symbolSize: 20, category: 9},
-              {name: 'SWE Bench', symbolSize: 20, category: 9}
+              {name: 'AI Agent', symbolSize: 50, category: 0, itemStyle: {color: '#ef4444'}},
+              {name: 'Agent Architecture', symbolSize: 45, category: 0, itemStyle: {color: '#ef4444'}},
+              {name: 'Agent Skills', symbolSize: 30, category: 0, itemStyle: {color: '#ef4444'}},
+              {name: 'Building Effective Agents', symbolSize: 25, category: 0, itemStyle: {color: '#ef4444'}},
+              {name: 'Long Running Agents', symbolSize: 25, category: 0, itemStyle: {color: '#ef4444'}},
+              {name: 'LangGraph', symbolSize: 40, category: 1, itemStyle: {color: '#f97316'}},
+              {name: 'ReAct', symbolSize: 35, category: 1, itemStyle: {color: '#f97316'}},
+              {name: 'Context Engineering', symbolSize: 40, category: 2, itemStyle: {color: '#eab308'}},
+              {name: 'Context Management', symbolSize: 35, category: 2, itemStyle: {color: '#eab308'}},
+              {name: 'Effective Context Engineering', symbolSize: 25, category: 2, itemStyle: {color: '#eab308'}},
+              {name: 'Dual Memory System', symbolSize: 30, category: 2, itemStyle: {color: '#eab308'}},
+              {name: 'RAG', symbolSize: 40, category: 3, itemStyle: {color: '#22c55e'}},
+              {name: 'HyDE', symbolSize: 30, category: 3, itemStyle: {color: '#22c55e'}},
+              {name: 'Contextual Retrieval', symbolSize: 25, category: 3, itemStyle: {color: '#22c55e'}},
+              {name: 'MCP', symbolSize: 45, category: 4, itemStyle: {color: '#06b6d4'}},
+              {name: 'MCP Deep Dive', symbolSize: 35, category: 4, itemStyle: {color: '#06b6d4'}},
+              {name: 'MCP Code Execution', symbolSize: 30, category: 4, itemStyle: {color: '#06b6d4'}},
+              {name: 'Multi-Agent', symbolSize: 35, category: 5, itemStyle: {color: '#3b82f6'}},
+              {name: 'Multi-Agent Research', symbolSize: 30, category: 5, itemStyle: {color: '#3b82f6'}},
+              {name: 'Claude Code', symbolSize: 35, category: 6, itemStyle: {color: '#8b5cf6'}},
+              {name: 'Claude Agent SDK', symbolSize: 30, category: 6, itemStyle: {color: '#8b5cf6'}},
+              {name: 'Claude Code Best Practices', symbolSize: 25, category: 6, itemStyle: {color: '#8b5cf6'}},
+              {name: 'Claude Desktop Extensions', symbolSize: 25, category: 6, itemStyle: {color: '#8b5cf6'}},
+              {name: 'Claude Postmortem', symbolSize: 25, category: 6, itemStyle: {color: '#8b5cf6'}},
+              {name: 'Anthropic', symbolSize: 40, category: 7, itemStyle: {color: '#ec4899'}},
+              {name: 'Tool Use', symbolSize: 35, category: 8, itemStyle: {color: '#64748b'}},
+              {name: 'Advanced Tool Use', symbolSize: 25, category: 8, itemStyle: {color: '#64748b'}},
+              {name: 'Writing Effective Tools', symbolSize: 25, category: 8, itemStyle: {color: '#64748b'}},
+              {name: 'Think Tool', symbolSize: 20, category: 8, itemStyle: {color: '#64748b'}},
+              {name: 'Slash Commands', symbolSize: 20, category: 8, itemStyle: {color: '#64748b'}},
+              {name: 'Beyond Permission Prompts', symbolSize: 20, category: 8, itemStyle: {color: '#64748b'}},
+              {name: 'Prompt Injection', symbolSize: 20, category: 9, itemStyle: {color: '#94a3b8'}},
+              {name: 'SWE Bench', symbolSize: 20, category: 9, itemStyle: {color: '#94a3b8'}}
             ],
             links: [
+              {source: 'AI Agent', target: 'Agent Architecture'},
+              {source: 'AI Agent', target: 'Agent Skills'},
+              {source: 'AI Agent', target: 'Building Effective Agents'},
+              {source: 'AI Agent', target: 'Long Running Agents'},
               {source: 'AI Agent', target: 'LangGraph'},
               {source: 'AI Agent', target: 'ReAct'},
               {source: 'AI Agent', target: 'RAG'},
               {source: 'AI Agent', target: 'MCP'},
-              {source: 'AI Agent', target: 'Agent Architecture'},
-              {source: 'AI Agent', target: 'Agent Skills'},
               {source: 'AI Agent', target: 'Multi-Agent'},
-              {source: 'AI Agent', target: 'Long Running Agents'},
+              {source: 'AI Agent', target: 'Tool Use'},
               {source: 'Agent Architecture', target: 'LangGraph'},
               {source: 'Agent Architecture', target: 'ReAct'},
               {source: 'Agent Skills', target: 'Tool Use'},
+              {source: 'Agent Skills', target: 'Writing Effective Tools'},
+              {source: 'Building Effective Agents', target: 'Agent Architecture'},
+              {source: 'Building Effective Agents', target: 'Agent Skills'},
+              {source: 'Long Running Agents', target: 'Context Management'},
               {source: 'Context Engineering', target: 'Context Management'},
+              {source: 'Context Engineering', target: 'Effective Context Engineering'},
               {source: 'Context Engineering', target: 'Dual Memory System'},
               {source: 'Context Engineering', target: 'RAG'},
+              {source: 'Context Management', target: 'Dual Memory System'},
               {source: 'RAG', target: 'HyDE'},
               {source: 'RAG', target: 'Contextual Retrieval'},
               {source: 'MCP', target: 'MCP Deep Dive'},
               {source: 'MCP', target: 'MCP Code Execution'},
+              {source: 'MCP', target: 'Tool Use'},
               {source: 'Multi-Agent', target: 'Multi-Agent Research'},
               {source: 'Anthropic', target: 'Claude Code'},
               {source: 'Anthropic', target: 'Claude Agent SDK'},
+              {source: 'Anthropic', target: 'Claude Code Best Practices'},
+              {source: 'Anthropic', target: 'Claude Desktop Extensions'},
+              {source: 'Anthropic', target: 'Claude Postmortem'},
               {source: 'Anthropic', target: 'AI Agent'},
+              {source: 'Claude Code', target: 'Claude Code Best Practices'},
+              {source: 'Claude Code', target: 'Claude Desktop Extensions'},
               {source: 'Tool Use', target: 'Advanced Tool Use'},
               {source: 'Tool Use', target: 'Writing Effective Tools'},
               {source: 'Tool Use', target: 'Think Tool'},
-              {source: 'Tool Use', target: 'MCP'},
-              {source: 'Context Management', target: 'Dual Memory System'},
-              {source: 'Agent Skills', target: 'Writing Effective Tools'},
-              {source: 'Long Running Agents', target: 'Context Management'},
+              {source: 'Tool Use', target: 'Slash Commands'},
+              {source: 'Tool Use', target: 'Beyond Permission Prompts'},
               {source: 'Prompt Injection', target: 'Tool Use'},
               {source: 'SWE Bench', target: 'AI Agent'}
             ],
@@ -153,22 +195,23 @@
             label: {
               show: true,
               color: '#fff',
-              fontSize: 12
+              fontSize: 11
             },
             lineStyle: {
-              color: 'source',
+              color: 'rgba(255, 255, 255, 0.3)',
               curveness: 0.3,
               width: 2
             },
             emphasis: {
               focus: 'adjacency',
               lineStyle: {
-                width: 4
+                width: 4,
+                color: 'rgba(255, 255, 255, 0.6)'
               }
             },
             force: {
-              repulsion: 800,
-              edgeLength: 100,
+              repulsion: 600,
+              edgeLength: 80,
               gravity: 0.1
             }
           }
@@ -176,6 +219,17 @@
       };
 
       myChart.setOption(option);
+
+      // Handle node clicks
+      myChart.on('click', function(params) {
+        if (params.dataType === 'node') {
+          var nodeName = params.data.name;
+          var url = nodeUrlMap[nodeName];
+          if (url) {
+            window.location.href = '/' + url;
+          }
+        }
+      });
 
       window.addEventListener('resize', function() {
         myChart.resize();
