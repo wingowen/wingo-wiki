@@ -39,7 +39,7 @@ extra_css:
 nav:
   - Home: index.md
   - Concepts:
-    - 概念索引: concepts/_index.md
+    - 概念索引: concepts/index.md
     - Agent Architecture:
       - 核心概念:
         - Agent 架构设计: concepts/agent-architecture/core/agent-architecture.md
