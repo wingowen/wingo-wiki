@@ -10,6 +10,9 @@ ignoreLogs = ['warning-home-page-is-leaf-bundle']
   date = ["date", "created", "updated", "publishDate"]
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
   [markup.highlight]
     codeFences = true
 
