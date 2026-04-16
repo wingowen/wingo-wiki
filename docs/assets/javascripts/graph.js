@@ -65,6 +65,25 @@
           borderColor: '#4f46e5',
           borderWidth: 1
         },
+        legend: [{
+          data: ['AI Agent', 'Architecture', 'RAG', 'MCP', 'Context', 'Multi-Agent', 'Claude', 'Anthropic', 'Tools', 'Other'],
+          textStyle: {
+            color: '#fff'
+          },
+          bottom: 20
+        }],
+        categories: [
+          {name: 'AI Agent'},
+          {name: 'Architecture'},
+          {name: 'RAG'},
+          {name: 'MCP'},
+          {name: 'Context'},
+          {name: 'Multi-Agent'},
+          {name: 'Claude'},
+          {name: 'Anthropic'},
+          {name: 'Tools'},
+          {name: 'Other'}
+        ],
         series: [
           {
             type: 'graph',
