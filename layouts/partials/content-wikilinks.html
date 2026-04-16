@@ -1,8 +1,0 @@
-{{/* Wikilinks support for Hugo */}}
-{{ $content := .Content }}
-
-{{/* Process wikilinks [[link]] or [[link|text]] */}}
-{{ $content = replaceRE "\\[\\[([^|\\]]+)(\\|([^\\]]+))?\\]\\]" (print "{{< wikilink " "$1" " "$3" " >}}") $content }}
-
-{{/* Render the content */}}
-{{ $content | markdownify }}
