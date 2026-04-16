@@ -33,24 +33,31 @@
 
 ### 2. 目录结构优化
 
+遵循 llm-wiki 的标准结构：
+
 ```
-concepts/
-├── agent-architecture/              # 领域分类
-│   ├── core/                        # 主题分类
-│   │   ├── agent-architecture.md    # 核心概念
-│   │   └── agent-framework-theory.md
-│   ├── practice/                    # 主题分类
-│   │   └── agent-framework-practice.md
-│   └── interview/                   # 主题分类
-│       └── interview-agent-arch.md
-├── tool-use/
-│   ├── core/
-│   │   ├── tool-use.md
-│   │   └── advanced-tool-use.md
-│   └── practice/
-│       ├── writing-effective-tools.md
-│       └── think-tool.md
-└── ...
+wiki/
+├── index.md               # 自动生成的 wiki 索引
+├── log.md                 # 操作历史记录
+├── concepts/              # 概念页面目录
+│   ├── agent-architecture/      # 领域分类
+│   │   ├── core/                # 主题分类
+│   │   │   ├── agent-architecture.md    # 核心概念
+│   │   │   └── agent-framework-theory.md
+│   │   ├── practice/            # 主题分类
+│   │   │   └── agent-framework-practice.md
+│   │   └── interview/           # 主题分类
+│   │       └── interview-agent-arch.md
+│   ├── tool-use/
+│   │   ├── core/
+│   │   │   ├── tool-use.md
+│   │   │   └── advanced-tool-use.md
+│   │   └── practice/
+│   │       ├── writing-effective-tools.md
+│   │       └── think-tool.md
+│   └── ...
+├── sources/              # 来源页面
+└── answers/              # 保存的查询答案
 ```
 
 ### 3. 内容整合策略
@@ -80,14 +87,16 @@ concepts/
 
 ### 5. 实施步骤
 
-1. **内容审计**：识别重复内容和分类不当的概念
-2. **分类映射**：将现有概念映射到新的分类体系
-3. **内容合并**：合并重复内容，保留核心信息
-4. **目录重构**：创建新的目录结构
-5. **标题统一**：更新所有概念标题为双语格式
-6. **链接更新**：更新内部链接和引用
-7. **索引重建**：重新生成概念索引页面
-8. **测试验证**：验证所有链接和导航功能
+1. **初始化 llm-wiki**：在 wingo-wiki 目录中初始化 llm-wiki 结构
+2. **内容审计**：识别重复内容和分类不当的概念
+3. **分类映射**：将现有概念映射到新的分类体系
+4. **内容合并**：合并重复内容，保留核心信息
+5. **目录重构**：创建符合 llm-wiki 标准的目录结构
+6. **标题统一**：更新所有概念标题为双语格式
+7. **链接更新**：更新内部链接和引用为 Obsidian 风格
+8. **配置设置**：配置 `.wikirc.yaml` 文件
+9. **索引生成**：使用 llm-wiki 工具生成索引页面
+10. **测试验证**：验证所有链接和导航功能
 
 ## 预期效果
 
@@ -99,11 +108,12 @@ concepts/
 
 ## 技术实现
 
-- **静态站点生成**：使用 Hugo 或类似工具生成静态站点
-- **目录结构**：按领域和主题组织文件
+- **基于 llm-wiki**：使用 Node.js 版 llm-wiki CLI 工具
+- **目录结构**：遵循 llm-wiki 标准结构，按领域和主题组织文件
 - **元数据管理**：使用 YAML frontmatter 管理概念元数据
-- **链接处理**：使用 Obsidian 风格的内部链接
-- **索引生成**：自动生成概念索引页面
+- **链接处理**：使用 Obsidian 风格的内部链接 `[[概念名称]]`
+- **索引生成**：利用 llm-wiki 的自动索引生成功能
+- **配置管理**：使用 `.wikirc.yaml` 配置文件管理 LLM 设置
 
 ## 后续维护
 
