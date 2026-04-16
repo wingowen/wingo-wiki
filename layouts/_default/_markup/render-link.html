@@ -1,33 +1,42 @@
-{{/* Render hook for wikilinks */}}
+{{/* Render hook for links and wikilinks */}}
 {{- $destination := .Destination -}}
 {{- $text := .Text -}}
 {{- $title := .Title -}}
 
-{{- /* Check if this is a wikilink */ -}}
-{{- if eq $destination "wikilink" -}}
-  {{- /* Parse the link target and display text */ -}}
-  {{- $target := $title -}}
-  {{- $display := $text -}}
-  
-  {{- /* Find the page */ -}}
-  {{- $page := site.RegularPages.GetMatch $target -}}
-  {{- if not $page -}}
-    {{- $page = site.RegularPages.GetMatch (print $target ".md") -}}
+{{- /* Try to find the page for internal links */ -}}
+{{- $page := "" -}}
+{{- $isInternal := not (or (hasPrefix $destination "http://") (hasPrefix $destination "https://") (hasPrefix $destination "#")) -}}
+
+{{- if $isInternal -}}
+  {{- /* Clean the destination - remove .md extension if present */ -}}
+  {{- $cleanDest := $destination -}}
+  {{- if strings.HasSuffix $cleanDest ".md" -}}
+    {{- $cleanDest = strings.TrimSuffix ".md" $cleanDest -}}
   {{- end -}}
-  {{- if not $page -}}
-    {{- $page = site.RegularPages.GetMatch (print "**/" $target) -}}
-  {{- end -}}
-  {{- if not $page -}}
-    {{- $page = site.RegularPages.GetMatch (print "**/" $target ".md") -}}
+  {{- if strings.HasSuffix $cleanDest "/" -}}
+    {{- $cleanDest = strings.TrimSuffix "/" $cleanDest -}}
   {{- end -}}
   
-  {{- /* Render the link */ -}}
+  {{- /* Try multiple patterns to find the page */ -}}
+  {{- $page = site.RegularPages.GetMatch (print $cleanDest ".md") -}}
+  {{- if not $page -}}
+    {{- $page = site.RegularPages.GetMatch (print "**/" $cleanDest ".md") -}}
+  {{- end -}}
+  {{- if not $page -}}
+    {{- $page = site.RegularPages.GetMatch $cleanDest -}}
+  {{- end -}}
+  {{- if not $page -}}
+    {{- $page = site.RegularPages.GetMatch (print "**/" $cleanDest) -}}
+  {{- end -}}
+  
+  {{- /* If found, use the page's RelPermalink */ -}}
   {{- if $page -}}
-    <a href="{{ $page.RelPermalink }}">{{ $display }}</a>
+    <a href="{{ $page.RelPermalink }}">{{ $text }}</a>
   {{- else -}}
-    {{ $display }}
+    {{- /* If not found, render as plain text to avoid 404 */ -}}
+    <span style="color:#999;">{{ $text }}</span>
   {{- end -}}
 {{- else -}}
-  {{- /* Render regular links */ -}}
-  <a href="{{ $destination }}"{{ with $title }} title="{{ . }}"{{ end }}>{{ $text }}</a>
+  {{- /* Render regular external or anchor links */ -}}
+  <a href="{{ $destination }}"{{ with $title }} title="{{ . }}"{{ end }}{{ if not (hasPrefix $destination "#") }} target="_blank" rel="noopener"{{ end }}>{{ $text }}</a>
 {{- end -}}

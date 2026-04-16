@@ -6,11 +6,78 @@
       {{ if .Date }}{{ .Date.Format "2006-01-02" }}{{ end }}
     </div>
     {{ $content := .Content }}
-    {{/* First handle wikilinks with text [[link|text]] */}}
-    {{ $content = replaceRE "\\[\\[([^|\\]]+)\\|([^\\]]+)\\]\\]" "<a href=\"/concepts/$1/\">$2</a>" $content }}
-    {{/* Then handle simple wikilinks [[link]] */}}
-    {{ $content = replaceRE "\\[\\[([^\\]]+)\\]\\]" "<a href=\"/concepts/$1/\">$1</a>" $content }}
-    {{ $content | markdownify }}
+    
+    {{/* Process wikilinks with display text [[target|display]] */}}
+    {{ $wikilinkWithTextPattern := `\[\[([^|\]]+)\|([^\]]+)\]\]` }}
+    {{ $matches := findRE $wikilinkWithTextPattern $content }}
+    {{ range $matches }}
+      {{ $parts := split . "|" }}
+      {{ $target := index $parts 0 | replaceRE `^\[\[` "" }}
+      {{ $display := index $parts 1 | replaceRE `\]\]$` "" }}
+      
+      {{ $page := "" }}
+      {{ $cleanTarget := $target }}
+      {{ if strings.HasSuffix $cleanTarget ".md" }}
+        {{ $cleanTarget = strings.TrimSuffix ".md" $cleanTarget }}
+      {{ end }}
+      
+      {{/* Try multiple patterns to find the page */}}
+      {{ $page = site.RegularPages.GetMatch (print $cleanTarget ".md") }}
+      {{ if not $page }}
+        {{ $page = site.RegularPages.GetMatch (print "**/" $cleanTarget ".md") }}
+      {{ end }}
+      {{ if not $page }}
+        {{ $page = site.RegularPages.GetMatch $cleanTarget }}
+      {{ end }}
+      {{ if not $page }}
+        {{ $page = site.RegularPages.GetMatch (print "**/" $cleanTarget) }}
+      {{ end }}
+      
+      {{ $replacement := $display }}
+      {{ if $page }}
+        {{ $replacement = printf `<a href="%s">%s</a>` $page.RelPermalink $display }}
+      {{ else }}
+        {{ $replacement = printf `<span style="color:#999;">%s</span>` $display }}
+      {{ end }}
+      
+      {{ $content = replace $content . $replacement }}
+    {{ end }}
+    
+    {{/* Process simple wikilinks [[target]] */}}
+    {{ $simpleWikilinkPattern := `\[\[([^\]]+)\]\]` }}
+    {{ $simpleMatches := findRE $simpleWikilinkPattern $content }}
+    {{ range $simpleMatches }}
+      {{ $target := . | replaceRE `^\[\[` "" | replaceRE `\]\]$` "" }}
+      
+      {{ $page := "" }}
+      {{ $cleanTarget := $target }}
+      {{ if strings.HasSuffix $cleanTarget ".md" }}
+        {{ $cleanTarget = strings.TrimSuffix ".md" $cleanTarget }}
+      {{ end }}
+      
+      {{/* Try multiple patterns to find the page */}}
+      {{ $page = site.RegularPages.GetMatch (print $cleanTarget ".md") }}
+      {{ if not $page }}
+        {{ $page = site.RegularPages.GetMatch (print "**/" $cleanTarget ".md") }}
+      {{ end }}
+      {{ if not $page }}
+        {{ $page = site.RegularPages.GetMatch $cleanTarget }}
+      {{ end }}
+      {{ if not $page }}
+        {{ $page = site.RegularPages.GetMatch (print "**/" $cleanTarget) }}
+      {{ end }}
+      
+      {{ $replacement := $target }}
+      {{ if $page }}
+        {{ $replacement = printf `<a href="%s">%s</a>` $page.RelPermalink $target }}
+      {{ else }}
+        {{ $replacement = printf `<span style="color:#999;">%s</span>` $target }}
+      {{ end }}
+      
+      {{ $content = replace $content . $replacement }}
+    {{ end }}
+    
+    {{ $content | safeHTML }}
   </article>
 </main>
 {{ end }}
