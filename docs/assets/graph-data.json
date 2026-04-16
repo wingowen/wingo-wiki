@@ -1,0 +1,986 @@
+{
+  "nodes": [
+    {
+      "name": "Index",
+      "url": "index/",
+      "category": 4
+    },
+    {
+      "name": "Context Management",
+      "url": "concepts/context-management/",
+      "category": 0
+    },
+    {
+      "name": "Agent Framework Theory",
+      "url": "concepts/agent-framework-theory/",
+      "category": 0
+    },
+    {
+      "name": "Agent Skills",
+      "url": "concepts/agent-skills/",
+      "category": 0
+    },
+    {
+      "name": "Multi Agent Research",
+      "url": "concepts/multi-agent-research/",
+      "category": 0
+    },
+    {
+      "name": "Mcp Deep Dive",
+      "url": "concepts/mcp-deep-dive/",
+      "category": 0
+    },
+    {
+      "name": "React",
+      "url": "concepts/react/",
+      "category": 0
+    },
+    {
+      "name": "Long Running Agents",
+      "url": "concepts/long-running-agents/",
+      "category": 0
+    },
+    {
+      "name": "Agent Framework Practice",
+      "url": "concepts/agent-framework-practice/",
+      "category": 0
+    },
+    {
+      "name": "Mcp",
+      "url": "concepts/mcp/",
+      "category": 0
+    },
+    {
+      "name": "Claude Desktop Extensions",
+      "url": "concepts/claude-desktop-extensions/",
+      "category": 0
+    },
+    {
+      "name": "Writing Effective Tools",
+      "url": "concepts/writing-effective-tools/",
+      "category": 0
+    },
+    {
+      "name": "Building Effective Agents",
+      "url": "concepts/building-effective-agents/",
+      "category": 0
+    },
+    {
+      "name": "Advanced Tool Use",
+      "url": "concepts/advanced-tool-use/",
+      "category": 0
+    },
+    {
+      "name": "Interview Hyde",
+      "url": "concepts/interview-hyde/",
+      "category": 0
+    },
+    {
+      "name": "Rag",
+      "url": "concepts/rag/",
+      "category": 0
+    },
+    {
+      "name": "Tool Use",
+      "url": "concepts/tool-use/",
+      "category": 0
+    },
+    {
+      "name": "Contextual Retrieval",
+      "url": "concepts/contextual-retrieval/",
+      "category": 0
+    },
+    {
+      "name": "Effective Context Engineering",
+      "url": "concepts/effective-context-engineering/",
+      "category": 0
+    },
+    {
+      "name": "Multi Agent",
+      "url": "concepts/multi-agent/",
+      "category": 0
+    },
+    {
+      "name": "Hyde",
+      "url": "concepts/hyde/",
+      "category": 0
+    },
+    {
+      "name": "Mcp Code Execution",
+      "url": "concepts/mcp-code-execution/",
+      "category": 0
+    },
+    {
+      "name": "Dual Memory System",
+      "url": "concepts/dual-memory-system/",
+      "category": 0
+    },
+    {
+      "name": "Prompt Injection",
+      "url": "concepts/prompt-injection/",
+      "category": 0
+    },
+    {
+      "name": "Slash Commands",
+      "url": "concepts/slash-commands/",
+      "category": 0
+    },
+    {
+      "name": "Agent Architecture",
+      "url": "concepts/agent-architecture/",
+      "category": 0
+    },
+    {
+      "name": "Swe Bench",
+      "url": "concepts/swe-bench/",
+      "category": 0
+    },
+    {
+      "name": "Claude Postmortem",
+      "url": "concepts/claude-postmortem/",
+      "category": 0
+    },
+    {
+      "name": "Interview Context Mgmt",
+      "url": "concepts/interview-context-mgmt/",
+      "category": 0
+    },
+    {
+      "name": "Langgraph",
+      "url": "concepts/langgraph/",
+      "category": 0
+    },
+    {
+      "name": "Beyond Permission Prompts",
+      "url": "concepts/beyond-permission-prompts/",
+      "category": 0
+    },
+    {
+      "name": "Think Tool",
+      "url": "concepts/think-tool/",
+      "category": 0
+    },
+    {
+      "name": "Context Engineering",
+      "url": "concepts/context-engineering/",
+      "category": 0
+    },
+    {
+      "name": "Claude Agent Sdk",
+      "url": "concepts/claude-agent-sdk/",
+      "category": 0
+    },
+    {
+      "name": "Interview Agent Arch",
+      "url": "concepts/interview-agent-arch/",
+      "category": 0
+    },
+    {
+      "name": "Claude Code Best Practices",
+      "url": "concepts/claude-code-best-practices/",
+      "category": 0
+    },
+    {
+      "name": "Langgraph Vs React",
+      "url": "comparisons/langgraph-vs-react/",
+      "category": 2
+    },
+    {
+      "name": "2026 04 16 Wiki Concepts Organization Plan",
+      "url": "superpowers/plans/2026-04-16-wiki-concepts-organization-plan/",
+      "category": 0
+    },
+    {
+      "name": "2026 04 16 Modular Reading Design",
+      "url": "superpowers/specs/2026-04-16-modular-reading-design/",
+      "category": 4
+    },
+    {
+      "name": "2026 04 16 Modular Reading Design Revised",
+      "url": "superpowers/specs/2026-04-16-modular-reading-design-revised/",
+      "category": 4
+    },
+    {
+      "name": "2026 04 16 Modular Reading Design Final",
+      "url": "superpowers/specs/2026-04-16-modular-reading-design-final/",
+      "category": 4
+    },
+    {
+      "name": "2026 04 16 Wiki Concepts Organization Design",
+      "url": "superpowers/specs/2026-04-16-wiki-concepts-organization-design/",
+      "category": 0
+    },
+    {
+      "name": "Claude Code",
+      "url": "entities/claude-code/",
+      "category": 1
+    },
+    {
+      "name": "Anthropic",
+      "url": "entities/anthropic/",
+      "category": 1
+    },
+    {
+      "name": "Ai Agent",
+      "url": "entities/ai-agent/",
+      "category": 1
+    },
+    {
+      "name": "Session Context",
+      "url": "queries/session-context/",
+      "category": 3
+    },
+    {
+      "name": "Interview Overview",
+      "url": "queries/interview-overview/",
+      "category": 3
+    },
+    {
+      "name": "Interview Qa Overview",
+      "url": "queries/interview-qa-overview/",
+      "category": 3
+    }
+  ],
+  "links": [
+    {
+      "source": "Context Management",
+      "target": "Langgraph"
+    },
+    {
+      "source": "Context Management",
+      "target": "Rag"
+    },
+    {
+      "source": "Agent Framework Theory",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Agent Framework Theory",
+      "target": "React"
+    },
+    {
+      "source": "Agent Framework Theory",
+      "target": "Agent Architecture"
+    },
+    {
+      "source": "Agent Skills",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Agent Skills",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Multi Agent Research",
+      "target": "Multi Agent"
+    },
+    {
+      "source": "Multi Agent Research",
+      "target": "Anthropic"
+    },
+    {
+      "source": "Mcp Deep Dive",
+      "target": "Claude Desktop Extensions"
+    },
+    {
+      "source": "Mcp Deep Dive",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Mcp Deep Dive",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Mcp Deep Dive",
+      "target": "Anthropic"
+    },
+    {
+      "source": "React",
+      "target": "Langgraph"
+    },
+    {
+      "source": "React",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Long Running Agents",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Long Running Agents",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Agent Framework Practice",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Agent Framework Practice",
+      "target": "Agent Architecture"
+    },
+    {
+      "source": "Agent Framework Practice",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Mcp",
+      "target": "Anthropic"
+    },
+    {
+      "source": "Mcp",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Mcp",
+      "target": "Claude Desktop Extensions"
+    },
+    {
+      "source": "Mcp",
+      "target": "Mcp Code Execution"
+    },
+    {
+      "source": "Mcp",
+      "target": "Mcp Deep Dive"
+    },
+    {
+      "source": "Mcp",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Claude Desktop Extensions",
+      "target": "Mcp"
+    },
+    {
+      "source": "Claude Desktop Extensions",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Writing Effective Tools",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Writing Effective Tools",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Building Effective Agents",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Building Effective Agents",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Advanced Tool Use",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Advanced Tool Use",
+      "target": "Mcp"
+    },
+    {
+      "source": "Interview Hyde",
+      "target": "Hyde"
+    },
+    {
+      "source": "Interview Hyde",
+      "target": "Interview Qa Overview"
+    },
+    {
+      "source": "Rag",
+      "target": "Interview Hyde"
+    },
+    {
+      "source": "Rag",
+      "target": "Context Management"
+    },
+    {
+      "source": "Rag",
+      "target": "Contextual Retrieval"
+    },
+    {
+      "source": "Rag",
+      "target": "Hyde"
+    },
+    {
+      "source": "Tool Use",
+      "target": "Advanced Tool Use"
+    },
+    {
+      "source": "Tool Use",
+      "target": "Agent Skills"
+    },
+    {
+      "source": "Tool Use",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Tool Use",
+      "target": "Anthropic"
+    },
+    {
+      "source": "Tool Use",
+      "target": "Beyond Permission Prompts"
+    },
+    {
+      "source": "Tool Use",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Tool Use",
+      "target": "Mcp"
+    },
+    {
+      "source": "Tool Use",
+      "target": "Prompt Injection"
+    },
+    {
+      "source": "Tool Use",
+      "target": "Think Tool"
+    },
+    {
+      "source": "Tool Use",
+      "target": "Writing Effective Tools"
+    },
+    {
+      "source": "Contextual Retrieval",
+      "target": "Rag"
+    },
+    {
+      "source": "Contextual Retrieval",
+      "target": "Hyde"
+    },
+    {
+      "source": "Effective Context Engineering",
+      "target": "Context Engineering"
+    },
+    {
+      "source": "Effective Context Engineering",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Multi Agent",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Multi Agent",
+      "target": "Anthropic"
+    },
+    {
+      "source": "Multi Agent",
+      "target": "Langgraph"
+    },
+    {
+      "source": "Multi Agent",
+      "target": "Multi Agent Research"
+    },
+    {
+      "source": "Hyde",
+      "target": "Rag"
+    },
+    {
+      "source": "Hyde",
+      "target": "Context Management"
+    },
+    {
+      "source": "Hyde",
+      "target": "Contextual Retrieval"
+    },
+    {
+      "source": "Mcp Code Execution",
+      "target": "Mcp"
+    },
+    {
+      "source": "Mcp Code Execution",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Dual Memory System",
+      "target": "Context Engineering"
+    },
+    {
+      "source": "Dual Memory System",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Prompt Injection",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Slash Commands",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Slash Commands",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Agent Architecture",
+      "target": "Langgraph Vs React"
+    },
+    {
+      "source": "Agent Architecture",
+      "target": "Context Management"
+    },
+    {
+      "source": "Agent Architecture",
+      "target": "Agent Framework Practice"
+    },
+    {
+      "source": "Swe Bench",
+      "target": "Anthropic"
+    },
+    {
+      "source": "Swe Bench",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Claude Postmortem",
+      "target": "Anthropic"
+    },
+    {
+      "source": "Claude Postmortem",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Interview Context Mgmt",
+      "target": "Context Management"
+    },
+    {
+      "source": "Interview Context Mgmt",
+      "target": "Interview Qa Overview"
+    },
+    {
+      "source": "Langgraph",
+      "target": "Agent Architecture"
+    },
+    {
+      "source": "Langgraph",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Langgraph",
+      "target": "Long Running Agents"
+    },
+    {
+      "source": "Langgraph",
+      "target": "Mcp Deep Dive"
+    },
+    {
+      "source": "Langgraph",
+      "target": "Multi Agent"
+    },
+    {
+      "source": "Langgraph",
+      "target": "React"
+    },
+    {
+      "source": "Beyond Permission Prompts",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Beyond Permission Prompts",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Think Tool",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Think Tool",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Context Engineering",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Context Engineering",
+      "target": "Dual Memory System"
+    },
+    {
+      "source": "Context Engineering",
+      "target": "Effective Context Engineering"
+    },
+    {
+      "source": "Context Engineering",
+      "target": "Rag"
+    },
+    {
+      "source": "Context Engineering",
+      "target": "Session Context"
+    },
+    {
+      "source": "Claude Agent Sdk",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Claude Agent Sdk",
+      "target": "Anthropic"
+    },
+    {
+      "source": "Interview Agent Arch",
+      "target": "Agent Architecture"
+    },
+    {
+      "source": "Interview Agent Arch",
+      "target": "Interview Qa Overview"
+    },
+    {
+      "source": "Claude Code Best Practices",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Claude Code Best Practices",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Langgraph Vs React",
+      "target": "Context Management"
+    },
+    {
+      "source": "Langgraph Vs React",
+      "target": "Agent Architecture"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design",
+      "target": "Wikilinks"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design",
+      "target": "Link"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design",
+      "target": "Agent Framework Theory"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design",
+      "target": "Agent Framework Practice Architecture"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design",
+      "target": "Agent Framework Practice Elements"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design",
+      "target": "Agent Framework Practice Implementation"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design",
+      "target": "Agent Framework Practice Application"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design",
+      "target": "Agent Framework Practice Conclusion"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design",
+      "target": "Agent Architecture"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design",
+      "target": "Tool Use"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design",
+      "target": "Agent Framework Practice"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Revised",
+      "target": "Wikilinks"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Revised",
+      "target": "Link"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Revised",
+      "target": "Agent Framework Theory"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Revised",
+      "target": "Agent Framework Practice Architecture"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Revised",
+      "target": "Agent Framework Practice Elements"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Revised",
+      "target": "Agent Framework Practice Implementation"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Revised",
+      "target": "Agent Framework Practice Application"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Revised",
+      "target": "Agent Framework Practice Conclusion"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Revised",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Revised",
+      "target": "Agent Architecture"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Revised",
+      "target": "Tool Use"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Revised",
+      "target": "Agent Framework Practice"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Final",
+      "target": "Wikilinks"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Final",
+      "target": "Link"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Final",
+      "target": "Agent Framework Theory"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Final",
+      "target": "Agent Framework Practice Section Architecture"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Final",
+      "target": "Agent Framework Practice Section Elements"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Final",
+      "target": "Agent Framework Practice Section Implementation"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Final",
+      "target": "Agent Framework Practice Section Application"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Final",
+      "target": "Agent Framework Practice Section Conclusion"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Final",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Final",
+      "target": "Agent Architecture"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Final",
+      "target": "Tool Use"
+    },
+    {
+      "source": "2026 04 16 Modular Reading Design Final",
+      "target": "Agent Framework Practice Modular"
+    },
+    {
+      "source": "2026 04 16 Wiki Concepts Organization Design",
+      "target": "概念名称"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Agent Skills"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Anthropic"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Beyond Permission Prompts"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Claude Code Best Practices"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Claude Desktop Extensions"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Claude Postmortem"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Mcp"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Mcp Code Execution"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Slash Commands"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Think Tool"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Anthropic",
+      "target": "Building Effective Agents"
+    },
+    {
+      "source": "Anthropic",
+      "target": "Claude Agent Sdk"
+    },
+    {
+      "source": "Anthropic",
+      "target": "Mcp"
+    },
+    {
+      "source": "Anthropic",
+      "target": "Claude Code Best Practices"
+    },
+    {
+      "source": "Anthropic",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Anthropic",
+      "target": "Claude Postmortem"
+    },
+    {
+      "source": "Anthropic",
+      "target": "Multi Agent Research"
+    },
+    {
+      "source": "Anthropic",
+      "target": "Swe Bench"
+    },
+    {
+      "source": "Anthropic",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Ai Agent",
+      "target": "Advanced Tool Use"
+    },
+    {
+      "source": "Ai Agent",
+      "target": "Agent Framework Practice"
+    },
+    {
+      "source": "Ai Agent",
+      "target": "Agent Framework Theory"
+    },
+    {
+      "source": "Ai Agent",
+      "target": "Agent Skills"
+    },
+    {
+      "source": "Ai Agent",
+      "target": "Building Effective Agents"
+    },
+    {
+      "source": "Ai Agent",
+      "target": "Context Engineering"
+    },
+    {
+      "source": "Ai Agent",
+      "target": "Effective Context Engineering"
+    },
+    {
+      "source": "Ai Agent",
+      "target": "Langgraph"
+    },
+    {
+      "source": "Ai Agent",
+      "target": "Mcp"
+    },
+    {
+      "source": "Ai Agent",
+      "target": "Multi Agent"
+    },
+    {
+      "source": "Ai Agent",
+      "target": "React"
+    },
+    {
+      "source": "Ai Agent",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Session Context",
+      "target": "Context Engineering"
+    },
+    {
+      "source": "Session Context",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Interview Overview",
+      "target": "Langgraph Vs React"
+    },
+    {
+      "source": "Interview Overview",
+      "target": "Context Management"
+    },
+    {
+      "source": "Interview Overview",
+      "target": "Rag"
+    },
+    {
+      "source": "Interview Overview",
+      "target": "Interview Hyde"
+    },
+    {
+      "source": "Interview Overview",
+      "target": "Agent Architecture"
+    },
+    {
+      "source": "Interview Overview",
+      "target": "Langgraph"
+    },
+    {
+      "source": "Interview Overview",
+      "target": "Hyde"
+    },
+    {
+      "source": "Interview Overview",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Interview Overview",
+      "target": "Interview Qa Overview"
+    },
+    {
+      "source": "Interview Qa Overview",
+      "target": "Ai Agent"
+    },
+    {
+      "source": "Interview Qa Overview",
+      "target": "Interview Agent Arch"
+    },
+    {
+      "source": "Interview Qa Overview",
+      "target": "Interview Context Mgmt"
+    },
+    {
+      "source": "Interview Qa Overview",
+      "target": "Langgraph Vs React"
+    },
+    {
+      "source": "Interview Qa Overview",
+      "target": "Interview Overview"
+    }
+  ]
+}

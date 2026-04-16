@@ -60,7 +60,7 @@ def main():
             'category': category
         })
     
-    output_dir = os.path.join(site_dir, 'assets')
+    output_dir = os.path.join('docs', 'assets')
     os.makedirs(output_dir, exist_ok=True)
     
     output_path = os.path.join(output_dir, 'graph-data.json')
