@@ -21,19 +21,7 @@
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
          <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/_index/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/core/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/core/_index/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
@@ -45,23 +33,7 @@
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/interview/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/interview/_index/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
          <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/interview/interview-agent-arch/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/practice/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/practice/_index/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
@@ -73,19 +45,7 @@
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/claude/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
          <loc>https://wingo-wiki.netlify.app/concepts/claude/_index/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/claude/practice/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/claude/practice/_index/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
@@ -105,19 +65,7 @@
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
          <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/_index/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/core/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/core/_index/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
@@ -129,23 +77,7 @@
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/interview/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/interview/_index/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
          <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/interview/interview-context-mgmt/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/practice/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/practice/_index/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
@@ -153,31 +85,11 @@
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/mcp/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
          <loc>https://wingo-wiki.netlify.app/concepts/mcp/_index/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/mcp/core/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/mcp/core/_index/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
          <loc>https://wingo-wiki.netlify.app/concepts/mcp/core/mcp/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/mcp/practice/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/mcp/practice/_index/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
@@ -189,19 +101,7 @@
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/multi-agent/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
          <loc>https://wingo-wiki.netlify.app/concepts/multi-agent/_index/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/multi-agent/core/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/multi-agent/core/_index/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
@@ -209,31 +109,11 @@
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/multi-agent/practice/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/multi-agent/practice/_index/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
          <loc>https://wingo-wiki.netlify.app/concepts/multi-agent/practice/multi-agent-research/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/other/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
          <loc>https://wingo-wiki.netlify.app/concepts/other/_index/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/other/core/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/other/core/_index/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
@@ -246,14 +126,6 @@
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/other/core/react/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/other/practice/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/other/practice/_index/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
@@ -281,19 +153,7 @@
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/rag/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
          <loc>https://wingo-wiki.netlify.app/concepts/rag/_index/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/rag/core/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/rag/core/_index/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
@@ -309,31 +169,11 @@
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/rag/interview/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/rag/interview/_index/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
          <loc>https://wingo-wiki.netlify.app/concepts/rag/interview/interview-hyde/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/tool-use/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
          <loc>https://wingo-wiki.netlify.app/concepts/tool-use/_index/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/tool-use/core/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/tool-use/core/_index/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
@@ -342,14 +182,6 @@
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/tool-use/core/tool-use/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/tool-use/practice/</loc>
-         <lastmod>2026-04-16</lastmod>
-    </url>
-    <url>
-         <loc>https://wingo-wiki.netlify.app/concepts/tool-use/practice/_index/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
