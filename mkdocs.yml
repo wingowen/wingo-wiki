@@ -18,6 +18,7 @@ theme:
 plugins:
   - search
   - roamlinks
+  - glightbox
 
 markdown_extensions:
   - pymdownx.highlight
@@ -28,6 +29,14 @@ markdown_extensions:
   - pymdownx.details
   - attr_list
   - footnotes
+
+extra_javascript:
+  - https://fastly.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
+  - https://fastly.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js
+  - assets/javascripts/graph.js
+
+extra_css:
+  - assets/stylesheets/graph.css
 
 nav:
   - Home: index.md
