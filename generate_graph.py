@@ -13,6 +13,10 @@ def main():
     links = []
     
     for root, dirs, files in os.walk(docs_dir):
+        # 跳过 superpowers 目录
+        if 'superpowers' in root:
+            continue
+        
         for file in files:
             if file.endswith('.md'):
                 file_path = os.path.join(root, file)
