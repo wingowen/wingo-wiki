@@ -22,4 +22,4 @@ sources: []
 
 ## 相关链接
 
-[[agent-skills]] | [[anthropic]] | [[beyond-permission-prompts]] | [[claude-code-best-practices]] | [[claude-desktop-extensions]] | [[claude-postmortem]] | [[mcp]] | [[mcp-code-execution]] | [[slash-commands]] | [[think-tool]] | [[tool-use]]
+[agent-skills](../other/practice/agent-skills.md) | [anthropic](anthropic.md) | [beyond-permission-prompts](../other/practice/beyond-permission-prompts.md) | [claude-code-best-practices](../claude/practice/claude-code-best-practices.md) | [claude-desktop-extensions](../claude/practice/claude-desktop-extensions.md) | [claude-postmortem](../claude/practice/claude-postmortem.md) | [mcp](../mcp/core/mcp.md) | [mcp-code-execution](../mcp/practice/mcp-code-execution.md) | [slash-commands](../other/practice/slash-commands.md) | [think-tool](../tool-use/practice/think-tool.md) | [tool-use](../tool-use/core/tool-use.md)

@@ -57,4 +57,4 @@ contextualized_chunk = "This chunk is from an SEC filing on ACME corp's performa
 
 ## 相关链接
 
-[[rag]] | [[hyde]]
+[rag](rag.md) | [hyde](hyde.md)

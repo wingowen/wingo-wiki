@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Company on Wingo Wiki</title>
+    <link>https://wingo-wiki.netlify.app/tags/company/</link>
+    <description>Recent content in Company on Wingo Wiki</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wingo-wiki.netlify.app/tags/company/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anthropic</title>
+      <link>https://wingo-wiki.netlify.app/entities/anthropic/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/entities/anthropic/</guid>
+      <description>&lt;p&gt;公司，致力于构建可靠、可解释和可操控的 AI 系统。由前 OpenAI 研究人员于 2021 年创立。&lt;/p&gt;&#xA;&lt;h2 id=&#34;核心产品&#34;&gt;核心产品&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Claude&lt;/strong&gt;: AI 助手产品线&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Claude Agent SDK&lt;/strong&gt;: Agent 开发框架&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Model Context Protocol (MCP)&lt;/strong&gt;: 工具集成协议&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Claude Code&lt;/strong&gt;: 编程 Agent 工具&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;关键文档&#34;&gt;关键文档&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;[[building-effective-agents]]&lt;/li&gt;&#xA;&lt;li&gt;[[claude-agent-sdk]]&lt;/li&gt;&#xA;&lt;li&gt;[[mcp]]&lt;/li&gt;&#xA;&lt;li&gt;[[claude-code-best-practices]]&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;相关链接&#34;&gt;相关链接&lt;/h2&gt;&#xA;&lt;p&gt;[[claude-agent-sdk]] | [[claude-code]] | [[claude-postmortem]] | [[mcp]] | [[multi-agent-research]] | [[swe-bench]] | [[tool-use]]&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

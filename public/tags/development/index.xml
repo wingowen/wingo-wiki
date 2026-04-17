@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Wingo Wiki</title>
+    <link>https://wingo-wiki.netlify.app/tags/development/</link>
+    <description>Recent content in Development on Wingo Wiki</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wingo-wiki.netlify.app/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Claude Code</title>
+      <link>https://wingo-wiki.netlify.app/entities/claude-code/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/entities/claude-code/</guid>
+      <description>&lt;p&gt;laude Code 是 Anthropic 推出的命令行 Agent 工具，用于编程辅助。&lt;/p&gt;&#xA;&lt;h2 id=&#34;核心能力&#34;&gt;核心能力&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;代码生成与编辑&lt;/strong&gt;: 理解项目上下文，生成或修改代码&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Git 操作&lt;/strong&gt;: 自动提交、创建分支、代码审查&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;工具使用&lt;/strong&gt;: 搜索、文件操作、终端命令&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;安全执行&lt;/strong&gt;: 权限提示控制，保护系统安全&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;最佳实践&#34;&gt;最佳实践&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;使用 &lt;code&gt;/bug&lt;/code&gt; 命令提交反馈&lt;/li&gt;&#xA;&lt;li&gt;配置合适的 &lt;code&gt;.claude&lt;/code&gt; 项目文件&lt;/li&gt;&#xA;&lt;li&gt;利用 &lt;code&gt;@&lt;/code&gt; 符号引用项目文件&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;相关链接&#34;&gt;相关链接&lt;/h2&gt;&#xA;&lt;p&gt;[[agent-skills]] | [[anthropic]] | [[beyond-permission-prompts]] | [[claude-code-best-practices]] | [[claude-desktop-extensions]] | [[claude-postmortem]] | [[mcp]] | [[mcp-code-execution]] | [[slash-commands]] | [[think-tool]] | [[tool-use]]&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

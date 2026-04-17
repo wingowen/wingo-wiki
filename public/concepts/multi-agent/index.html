@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Agent - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>Multi-Agent</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2026-04-15
+    </div>
+    <h1 id="multi-agent">Multi-Agent</h1>
+<h2 id="overview">Overview</h2>
+<p>Multi-Agent 系统由多个独立的 Agent 组成，它们协作完成复杂任务。</p>
+<h2 id="协作模式">协作模式</h2>
+<table>
+  <thead>
+      <tr>
+          <th>模式</th>
+          <th>描述</th>
+          <th>适用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Sequential</strong></td>
+          <td>Agent 按顺序执行，一个完成后再下一个</td>
+          <td>有依赖的任务链</td>
+      </tr>
+      <tr>
+          <td><strong>Parallel</strong></td>
+          <td>多个 Agent 同时工作</td>
+          <td>独立子任务</td>
+      </tr>
+      <tr>
+          <td><strong>Hierarchical</strong></td>
+          <td>一个主 Agent 协调多个子 Agent</td>
+          <td>复杂项目管理</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="anthropic-多-agent-研究系统">Anthropic 多 Agent 研究系统</h2>
+<p>Anthropic 在其工程博客中分享了构建多 Agent 研究系统的经验，核心要点包括：</p>
+<ul>
+<li>明确 Agent 职责边界</li>
+<li>设计有效的通信协议</li>
+<li>处理 Agent 间的冲突</li>
+</ul>
+<h2 id="相关链接">相关链接</h2>
+<p>[[ai-agent]] | [[anthropic]] | [[langgraph]] | [[multi-agent-research]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

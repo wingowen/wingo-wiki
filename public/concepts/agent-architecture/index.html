@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent 架构设计：从传统开发到智能体 - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>Agent 架构设计：从传统开发到智能体</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2026-04-15
+    </div>
+    <blockquote>
+<p><strong>难度</strong>：⭐⭐⭐⭐ | <strong>面试频率</strong>：高 | <strong>关联</strong>：[[langgraph-vs-react]] [[context-management]]</p>
+</blockquote>
+<hr>
+<h1 id="agent-架构设计从传统开发到智能体">Agent 架构设计：从传统开发到智能体</h1>
+<h2 id="一智能体-vs-传统开发根本区别">一、智能体 vs 传统开发：根本区别</h2>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>传统开发</th>
+          <th>Agent 开发</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>决策主体</td>
+          <td>开发者预设规则</td>
+          <td>LLM 动态决策</td>
+      </tr>
+      <tr>
+          <td>执行路径</td>
+          <td>输入确定 → 输出确定</td>
+          <td>同样输入 → 不同路径</td>
+      </tr>
+      <tr>
+          <td>核心范式</td>
+          <td>if-else 分支</td>
+          <td>感知→规划→行动→观察→反思</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="核心要点">核心要点</h3>
+<p><strong>Agent 的思维模型</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">用户目标</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">Agent</span> <span style="color:#a6e22e">感知</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">理解意图</span><span style="color:#960050;background-color:#1e0010">）</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">Agent</span> <span style="color:#a6e22e">规划</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">分解任务</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#a6e22e">制定计划</span><span style="color:#960050;background-color:#1e0010">）</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">Agent</span> <span style="color:#a6e22e">行动</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">选择工具</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#a6e22e">执行操作</span><span style="color:#960050;background-color:#1e0010">）</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">Agent</span> <span style="color:#a6e22e">观察</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">获取反馈</span><span style="color:#960050;background-color:#1e0010">）</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">Agent</span> <span style="color:#a6e22e">反思</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">评估结果</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#a6e22e">调整策略</span><span style="color:#960050;background-color:#1e0010">）</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">循环直到目标达成</span>
+</span></span></code></pre></div><p><strong>核心组件</strong></p>
+<ul>
+<li><strong>Perception（感知层）</strong>：理解用户意图，提取关键信息</li>
+<li><strong>Decision（决策层）</strong>：基于当前状态规划任务和选择工具</li>
+<li><strong>Action（行动层）</strong>：执行具体的工具调用</li>
+</ul>
+<p><strong>C端用户偏好实现</strong></p>
+<ul>
+<li>用户画像构建：根据行为（click/favorite/book）更新兴趣权重</li>
+<li>向量化与推荐：使用 Embedding 计算用户-物品相似度</li>
+<li>冷启动问题：显式偏好收集、基于人口统计学、探索-利用策略</li>
+</ul>
+<p><strong>面试高频追问</strong></p>
+<p>Q: Agent 的&quot;不可预测性&quot;如何保证安全？
+A: 工具层白名单、参数校验、沙箱执行、Human-in-the-loop、日志审计。</p>
+<p>Q: 如何评估 Agent 的效果？
+A: 任务完成率、工具调用效率、用户满意度、延迟、成本。</p>
+<h2 id="相关链接">相关链接</h2>
+<p>[[langgraph-vs-react]] | [[context-management]] | [[agent-framework-practice]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

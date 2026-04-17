@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用 Agent 为 Agent 编写高效工具 | Writing effective tools for agents - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>用 Agent 为 Agent 编写高效工具 | Writing effective tools for agents</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2025-09-11
+    </div>
+    <h2 id="用-agent-为-agent-编写高效工具">用 Agent 为 Agent 编写高效工具</h2>
+<blockquote>
+<p>原文：Writing effective tools for agents — with agents
+作者：Ken Aizawa（Anthropic）
+发布日期：2025-09-11</p>
+</blockquote>
+<h3 id="什么是工具">什么是工具？</h3>
+<p>工具是确定性系统与非确定性 Agent 之间的契约。传统软件（确定性）和 Agent（非确定性）的核心区别：给定相同输入，确定性系统每次产生相同输出，而 Agent 可能产生不同响应。</p>
+<p>为 Agent 编写工具需要从根本上重新思考方法：不为其他开发者编写函数和 API，而是为 Agent 来设计工具。</p>
+<hr>
+<h3 id="核心要点">核心要点</h3>
+<p><strong>选择正确的工具</strong></p>
+<ul>
+<li>更多工具并不总是带来更好的结果</li>
+<li>避免只包装现有软件功能或 API 端点的工具</li>
+<li>LLM Agent 的&quot;上下文&quot;有限，而计算机内存充足且便宜</li>
+<li>构建少量精心设计的工具，针对特定高影响工作流</li>
+</ul>
+<p><strong>为工具添加命名空间（Namespace）</strong></p>
+<ul>
+<li>MCP 服务器可能暴露数百个工具</li>
+<li>按服务（asana_search、jira_search）或按资源（asana_projects_search、asana_users_search）添加命名空间</li>
+<li>帮助 Agent 在正确的时间选择正确的工具</li>
+</ul>
+<p><strong>从工具返回有意义的上下文</strong></p>
+<ul>
+<li>优先返回高信号信息，而非低级技术标识符（UUID、mime_type）</li>
+<li>使用 name、image_url、file_type 等语义字段</li>
+<li>可通过 response_format 枚举参数控制详细程度（concise/detailed）</li>
+<li>响应结构（XML、JSON、Markdown）会影响性能，需要根据评估选择</li>
+</ul>
+<p><strong>优化工具响应的 Token 效率</strong></p>
+<ul>
+<li>避免返回大量无关信息浪费上下文空间</li>
+<li>提供 search_* 工具而非 list_* 工具，直接返回最相关结果</li>
+<li>Agent 在处理自然语言名称时比处理晦涩标识符更成功</li>
+</ul>
+<hr>
+<h3 id="编写和评估工具的工作流">编写和评估工具的工作流</h3>
+<ol>
+<li><strong>快速构建原型</strong>：使用 Claude Code 编写工具，在本地 MCP 服务器或 DXT 中测试</li>
+<li><strong>运行全面评估</strong>：使用真实使用场景生成评估任务，让 Agent 分析结果并确定如何改进</li>
+<li><strong>与 Agent 协作改进工具</strong>：将评估记录拼接并让 Claude Code 分析和改进工具</li>
+</ol>
+<h2 id="相关链接">相关链接</h2>
+<p>[[tool-use]] | [[claude-code]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

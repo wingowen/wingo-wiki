@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reasoning on Wingo Wiki</title>
+    <link>https://wingo-wiki.netlify.app/tags/reasoning/</link>
+    <description>Recent content in Reasoning on Wingo Wiki</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wingo-wiki.netlify.app/tags/reasoning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ReAct</title>
+      <link>https://wingo-wiki.netlify.app/concepts/react/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/concepts/react/</guid>
+      <description>&lt;h1 id=&#34;react&#34;&gt;ReAct&lt;/h1&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;ReAct = Reasoning + Acting，是一种让 LLM 交替进行推理和行动的提示词框架。&lt;/p&gt;&#xA;&lt;h2 id=&#34;核心循环&#34;&gt;核心循环&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Thought → Action → Observation → Thought → ...&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Thought (思考)&lt;/strong&gt;: 分析当前状态，决定下一步&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Action (行动)&lt;/strong&gt;: 执行工具或 API 调用&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Observation (观察)&lt;/strong&gt;: 获取行动结果&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;与-langgraph-对比&#34;&gt;与 LangGraph 对比&lt;/h2&gt;&#xA;&lt;p&gt;[[langgraph]] 是 ReAct 的工程化实现，添加了状态管理和持久化能力。&lt;/p&gt;&#xA;&lt;h2 id=&#34;代码示例&#34;&gt;代码示例&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; llm&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;invoke(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;请按照以下步骤完成任务：&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;1. 思考：&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;user_input&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;2. 行动：使用搜索工具查找相关信息&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;3. 观察：分析搜索结果&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;4. 重复直到得到答案&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;相关链接&#34;&gt;相关链接&lt;/h2&gt;&#xA;&lt;p&gt;[[ai-agent]] | [[langgraph]] | Reasoning | Planning&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Think 工具：让 Claude 在复杂工具使用场景中停下来思考</title>
+      <link>https://wingo-wiki.netlify.app/concepts/think-tool/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/concepts/think-tool/</guid>
+      <description>&lt;h2 id=&#34;think-工具让-claude-在复杂工具使用场景中停下来思考&#34;&gt;Think 工具：让 Claude 在复杂工具使用场景中停下来思考&lt;/h2&gt;&#xA;&lt;p&gt;&amp;ldquo;Think&amp;rdquo; 工具是 Anthropic 发现的一种有效提升 Claude 复杂问题解决性能的方法，能在复杂任务中为结构化思考创建专属空间。它与 Extended Thinking 不同：Extended Thinking 是模型在生成响应前的深度推理，而 Think 工具是模型在收到工具结果后暂停反思是否已收集足够信息。&lt;/p&gt;&#xA;&lt;p&gt;在 τ-Bench 评估中，Think 工具配合优化提示词在航空领域达到 0.570 的 pass^1 分数（基线仅 0.370），相对提升 54%。零售领域仅 Think 工具就达到 0.812。Think 工具最适合的场景包括：工具输出分析（需要仔细处理先前调用结果）、策略繁重环境（需遵循详细指南）和顺序决策（每步建立在前一步之上）。&lt;/p&gt;&#xA;&lt;h2 id=&#34;核心要点&#34;&gt;核心要点&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;与 Extended Thinking 的区别&lt;/strong&gt;：Extended Thinking 在响应前深度推理，Think 工具在响应中反思工具结果&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;τ-Bench 基准&lt;/strong&gt;：测试模型在客户服务场景中使用工具的能力，pass^k 衡量 k 次尝试全部成功&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;最佳实践&lt;/strong&gt;：困难领域需要配合领域特定的提示词示例，提示词放系统提示比放工具描述更有效&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;适用场景&lt;/strong&gt;：长链工具调用、规则繁多环境、多步骤顺序决策&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;不适用场景&lt;/strong&gt;：单次或并行工具调用、简单指令遵循&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;相关链接&#34;&gt;相关链接&lt;/h2&gt;&#xA;&lt;p&gt;[[claude-code]] | [[tool-use]]&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>系统提示词注入分析 - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>系统提示词注入分析</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2026-04-15
+    </div>
+    <p>本文分析 nanobot 系统的提示词注入机制，采用<strong>混合方式</strong>：通过文件系统注入可定制模板（16+ 文件），代码中硬编码核心提示词（5+ 处）。</p>
+<p>文件注入的提示词分为三类：<strong>引导文件</strong>（AGENTS.md、SOUL.md、USER.md、TOOLS.md）、<strong>代理模板</strong>（identity.md、platform_policy.md 等）、<strong>内存心跳</strong>（MEMORY.md、HEARTBEAT.md）。</p>
+<p>注入流程：加载身份 → 加载引导文件 → 获取记忆上下文 → 加载技能信息 → 注入运行时元数据。这种设计使系统既灵活又稳定。</p>
+<h2 id="核心要点">核心要点</h2>
+<ul>
+<li><strong>文件注入提示词</strong>：16+ 个模板文件位于 nanobot/templates/，可编辑定制</li>
+<li><strong>硬编码提示词</strong>：5+ 处位于代码中（如 ContextBuilder._RUNTIME_CONTEXT_TAG）</li>
+<li><strong>引导文件</strong>：AGENTS.md（代理指令）、SOUL.md（人格价值观）、USER.md（用户偏好）、TOOLS.md（工具约束）</li>
+<li><strong>代理模板</strong>：包含 identity.md（核心身份）、skills_section.md（技能）、dream_phase1/2.md（梦想阶段）等</li>
+<li><strong>注入顺序</strong>：身份 → 引导 → 记忆 → 技能 → 运行时元数据</li>
+</ul>
+<h2 id="相关链接">相关链接</h2>
+<p>[[tool-use]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

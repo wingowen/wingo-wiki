@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>超越权限提示：让 Claude Code 更安全更自主 | Beyond permission prompts - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>超越权限提示：让 Claude Code 更安全更自主 | Beyond permission prompts</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2025-10-20
+    </div>
+    <p>Anthropic 为 Claude Code 推出的沙箱化（Sandboxing）技术，通过<strong>文件系统隔离</strong>和<strong>网络隔离</strong>两个边界，大幅减少权限提示（内部测试减少 84%），同时提升安全性。</p>
+<p>沙箱化基于 OS 级原语（Linux bubblewrap、MacOS seatbelt）实现：文件系统隔离限制 Agent 只读写工作目录；网络隔离通过 Unix Domain Socket 代理限制连接域名。两者缺一不可——缺少任一都会让提示注入攻击有逃逸路径。</p>
+<p>该沙箱运行时已开源，Claude Code on the web 也采用相同架构，通过代理服务处理 git 凭据，确保敏感信息永不存入沙箱。</p>
+<h2 id="核心要点">核心要点</h2>
+<ul>
+<li><strong>双重隔离</strong>：文件系统隔离 + 网络隔离必须同时启用，缺一不可</li>
+<li><strong>OS 级原语</strong>：使用 Linux bubblewrap 和 MacOS seatbelt 在内核层面强制执行</li>
+<li><strong>权限大幅减少</strong>：沙箱化技术安全地将权限提示减少 84%</li>
+<li><strong>Git 安全</strong>：Claude Code on the web 通过代理服务 + 范围限定凭据保护 git 访问</li>
+<li><strong>开源可用</strong>：sandbox-runtime 已开源，其他团队可复用此安全基础设施</li>
+</ul>
+<h2 id="相关链接">相关链接</h2>
+<p>[[claude-code]] | [[tool-use]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

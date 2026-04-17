@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LangGraph - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>LangGraph</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2026-04-15
+    </div>
+    <h1 id="langgraph">LangGraph</h1>
+<h2 id="overview">Overview</h2>
+<p>LangGraph 是由 LangChain 团队开发的一个用于构建有状态、多 actor 应用的框架，核心用于创建 Agent 和 Multi-Agent 系统。</p>
+<h2 id="核心概念">核心概念</h2>
+<ul>
+<li><strong>State</strong>: 在图节点间传递的共享状态</li>
+<li><strong>Node</strong>: 执行特定任务的函数</li>
+<li><strong>Edge</strong>: 定义状态如何从一个节点转移到下一个</li>
+<li><strong>Checkpoint</strong>: 状态持久化，支持恢复和回溯</li>
+</ul>
+<h2 id="langgraph-vs-react">LangGraph vs ReAct</h2>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>LangGraph</th>
+          <th>ReAct</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>状态管理</td>
+          <td>内置状态机</td>
+          <td>隐式状态</td>
+      </tr>
+      <tr>
+          <td>流程控制</td>
+          <td>显式图定义</td>
+          <td>自然语言推理</td>
+      </tr>
+      <tr>
+          <td>多轮对话</td>
+          <td>支持复杂状态</td>
+          <td>简单循环</td>
+      </tr>
+      <tr>
+          <td>可视化</td>
+          <td>流程图可视化</td>
+          <td>黑盒</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="代码示例">代码示例</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> langgraph.graph <span style="color:#f92672">import</span> StateGraph, END
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>workflow <span style="color:#f92672">=</span> StateGraph(AgentState)
+</span></span><span style="display:flex;"><span>workflow<span style="color:#f92672">.</span>add_node(<span style="color:#e6db74">&#34;agent&#34;</span>, agent_node)
+</span></span><span style="display:flex;"><span>workflow<span style="color:#f92672">.</span>add_edge(<span style="color:#e6db74">&#34;agent&#34;</span>, END)
+</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> workflow<span style="color:#f92672">.</span>compile()
+</span></span></code></pre></div><h2 id="相关链接">相关链接</h2>
+<p>[[agent-architecture]] | [[ai-agent]] | [[long-running-agents]] | [[mcp-deep-dive]] | [[multi-agent]] | [[react]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

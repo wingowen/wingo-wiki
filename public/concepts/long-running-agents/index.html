@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>构建长时间运行 Agent 的有效 Harness - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>构建长时间运行 Agent 的有效 Harness</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2026-04-14
+    </div>
+    <h2 id="构建长时间运行-agent-的有效-harness">构建长时间运行 Agent 的有效 Harness</h2>
+<blockquote>
+<p>原文: Effective Harnesses for Long-Running Agents
+作者: Justin Young（Anthropic 工程团队）
+发布日期: 2025-11-26</p>
+</blockquote>
+<h3 id="核心挑战">核心挑战</h3>
+<p>长时间运行 Agent 的核心挑战在于：它们必须在离散的会话中工作，而每个新会话开始时对之前发生的事情没有任何记忆。Context Window 是有限的，而大多数复杂项目无法在单个窗口内完成。</p>
+<h3 id="解决方案双重-agent-架构">解决方案：双重 Agent 架构</h3>
+<ol>
+<li><strong>Initializer Agent（初始化 Agent）</strong>：首次运行时设置环境（init.sh 脚本、进度日志文件、git commit）</li>
+<li><strong>Coding Agent（编码 Agent）</strong>：每个会话中逐步推进，会话结束时保持环境干净状态（Clean State）</li>
+</ol>
+<hr>
+<h3 id="核心要点">核心要点</h3>
+<p><strong>避免 Agent 一次性做太多事</strong></p>
+<ul>
+<li>Agent 倾向于&quot;一枪搞定&quot;整个应用，导致功能实现一半且没有文档记录</li>
+<li>解决：要求每次只处理一个功能（增量推进）</li>
+</ul>
+<p><strong>使用结构化文件（JSON &gt; Markdown）跟踪功能状态</strong></p>
+<ul>
+<li>Feature List 文件最初全部标记为&quot;passes: false&quot;</li>
+<li>Coding Agent 只能通过更改 passes 字段来编辑文件</li>
+</ul>
+<p><strong>每个会话结束时保持代码干净</strong></p>
+<ul>
+<li>要求将进展提交到 git（附带描述性 commit message）</li>
+<li>在进度文件（claude-progress.txt）中写入进展摘要</li>
+<li>使用 git 来回退错误的代码更改并恢复代码库状态</li>
+</ul>
+<p><strong>端到端测试不可或缺</strong></p>
+<ul>
+<li>仅靠单元测试不够，需要像真实用户一样测试</li>
+<li>使用 Browser Automation（Puppeteer）进行端到端验证</li>
+</ul>
+<hr>
+<h3 id="关键要点总结">关键要点总结</h3>
+<ol>
+<li><strong>不要让 Agent 一次性做太多事</strong> —— 增量推进是关键</li>
+<li><strong>使用结构化文件（JSON &gt; Markdown）</strong> 来跟踪功能状态</li>
+<li><strong>每个会话结束时保持代码干净</strong> —— 就像优秀的工程师每天下班前做的那样</li>
+<li><strong>使用 git 作为 Agent 的&quot;记忆&quot;</strong> —— commit message + 进度文件</li>
+<li><strong>端到端测试不可或缺</strong> —— 仅靠单元测试不够</li>
+<li><strong>Initializer Agent 和 Coding Agent 分工明确</strong> —— 一个搭台，一个唱戏</li>
+</ol>
+<h2 id="相关链接">相关链接</h2>
+<p>[[ai-agent]] | [[tool-use]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

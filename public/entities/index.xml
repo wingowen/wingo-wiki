@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Entities on Wingo Wiki</title>
+    <link>https://wingo-wiki.netlify.app/entities/</link>
+    <description>Recent content in Entities on Wingo Wiki</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wingo-wiki.netlify.app/entities/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Agent</title>
+      <link>https://wingo-wiki.netlify.app/entities/ai-agent/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/entities/ai-agent/</guid>
+      <description>&lt;p&gt;是一种能够自主理解目标、规划和执行多步骤任务的 AI 系统。与传统程序不同，Agent 通过 LLM 进行动态决策，而非预设固定流程。&lt;/p&gt;&#xA;&lt;h2 id=&#34;核心能力&#34;&gt;核心能力&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;能力&lt;/th&gt;&#xA;          &lt;th&gt;描述&lt;/th&gt;&#xA;          &lt;th&gt;相关技术&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;感知 (Perception)&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;理解用户意图，提取关键信息&lt;/td&gt;&#xA;          &lt;td&gt;Intent Detection&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;规划 (Planning)&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;分解任务，制定执行计划&lt;/td&gt;&#xA;          &lt;td&gt;ReAct, Chain-of-Thought&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;行动 (Action)&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;选择并执行工具&lt;/td&gt;&#xA;          &lt;td&gt;Tool Use, MCP&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;观察 (Observation)&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;获取工具执行结果&lt;/td&gt;&#xA;          &lt;td&gt;Feedback Loop&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;反思 (Reflection)&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;评估结果，调整策略&lt;/td&gt;&#xA;          &lt;td&gt;Self-Correction&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;agent-vs-传统开发&#34;&gt;Agent vs 传统开发&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;维度&lt;/th&gt;&#xA;          &lt;th&gt;传统开发&lt;/th&gt;&#xA;          &lt;th&gt;AI Agent&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;决策方式&lt;/td&gt;&#xA;          &lt;td&gt;预设逻辑&lt;/td&gt;&#xA;          &lt;td&gt;LLM 动态决策&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;执行路径&lt;/td&gt;&#xA;          &lt;td&gt;固定&lt;/td&gt;&#xA;          &lt;td&gt;可能多样&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;输入-输出&lt;/td&gt;&#xA;          &lt;td&gt;确定映射&lt;/td&gt;&#xA;          &lt;td&gt;概率性&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;错误处理&lt;/td&gt;&#xA;          &lt;td&gt;显式代码&lt;/td&gt;&#xA;          &lt;td&gt;自我反思&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;架构模式&#34;&gt;架构模式&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;ReAct&lt;/strong&gt;: 结合推理与行动的循环模式&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;LangGraph&lt;/strong&gt;: 基于状态机的多阶段 Agent 框架&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Agentic RAG&lt;/strong&gt;: 带记忆的检索增强生成&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;相关链接&#34;&gt;相关链接&lt;/h2&gt;&#xA;&lt;p&gt;[[advanced-tool-use]] | [[agent-framework-practice]] | [[agent-framework-theory]] | [[agent-skills]] | [[building-effective-agents]] | [[context-engineering]] | [[effective-context-engineering]] | [[langgraph]] | [[mcp]] | [[multi-agent]] | [[react]] | [[tool-use]]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Anthropic</title>
+      <link>https://wingo-wiki.netlify.app/entities/anthropic/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/entities/anthropic/</guid>
+      <description>&lt;p&gt;公司，致力于构建可靠、可解释和可操控的 AI 系统。由前 OpenAI 研究人员于 2021 年创立。&lt;/p&gt;&#xA;&lt;h2 id=&#34;核心产品&#34;&gt;核心产品&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Claude&lt;/strong&gt;: AI 助手产品线&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Claude Agent SDK&lt;/strong&gt;: Agent 开发框架&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Model Context Protocol (MCP)&lt;/strong&gt;: 工具集成协议&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Claude Code&lt;/strong&gt;: 编程 Agent 工具&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;关键文档&#34;&gt;关键文档&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;[[building-effective-agents]]&lt;/li&gt;&#xA;&lt;li&gt;[[claude-agent-sdk]]&lt;/li&gt;&#xA;&lt;li&gt;[[mcp]]&lt;/li&gt;&#xA;&lt;li&gt;[[claude-code-best-practices]]&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;相关链接&#34;&gt;相关链接&lt;/h2&gt;&#xA;&lt;p&gt;[[claude-agent-sdk]] | [[claude-code]] | [[claude-postmortem]] | [[mcp]] | [[multi-agent-research]] | [[swe-bench]] | [[tool-use]]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Claude Code</title>
+      <link>https://wingo-wiki.netlify.app/entities/claude-code/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/entities/claude-code/</guid>
+      <description>&lt;p&gt;laude Code 是 Anthropic 推出的命令行 Agent 工具，用于编程辅助。&lt;/p&gt;&#xA;&lt;h2 id=&#34;核心能力&#34;&gt;核心能力&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;代码生成与编辑&lt;/strong&gt;: 理解项目上下文，生成或修改代码&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Git 操作&lt;/strong&gt;: 自动提交、创建分支、代码审查&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;工具使用&lt;/strong&gt;: 搜索、文件操作、终端命令&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;安全执行&lt;/strong&gt;: 权限提示控制，保护系统安全&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;最佳实践&#34;&gt;最佳实践&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;使用 &lt;code&gt;/bug&lt;/code&gt; 命令提交反馈&lt;/li&gt;&#xA;&lt;li&gt;配置合适的 &lt;code&gt;.claude&lt;/code&gt; 项目文件&lt;/li&gt;&#xA;&lt;li&gt;利用 &lt;code&gt;@&lt;/code&gt; 符号引用项目文件&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;相关链接&#34;&gt;相关链接&lt;/h2&gt;&#xA;&lt;p&gt;[[agent-skills]] | [[anthropic]] | [[beyond-permission-prompts]] | [[claude-code-best-practices]] | [[claude-desktop-extensions]] | [[claude-postmortem]] | [[mcp]] | [[mcp-code-execution]] | [[slash-commands]] | [[think-tool]] | [[tool-use]]&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

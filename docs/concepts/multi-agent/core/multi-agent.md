@@ -30,4 +30,4 @@ Anthropic 在其工程博客中分享了构建多 Agent 研究系统的经验，
 
 ## 相关链接
 
-[[ai-agent]] | [[anthropic]] | [[langgraph]] | [[multi-agent-research]]
+[ai-agent](../../entities/ai-agent.md) | [anthropic](../../entities/anthropic.md) | [langgraph](../../other/core/langgraph.md) | [multi-agent-research](../practice/multi-agent-research.md)

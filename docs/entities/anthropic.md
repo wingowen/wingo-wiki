@@ -16,11 +16,11 @@ sources: []
 
 ## 关键文档
 
-- [[building-effective-agents]]
-- [[claude-agent-sdk]]
-- [[mcp]]
-- [[claude-code-best-practices]]
+- [building-effective-agents](../agent-architecture/practice/building-effective-agents.md)
+- [claude-agent-sdk](../claude/practice/claude-agent-sdk.md)
+- [mcp](../mcp/core/mcp.md)
+- [claude-code-best-practices](../claude/practice/claude-code-best-practices.md)
 
 ## 相关链接
 
-[[claude-agent-sdk]] | [[claude-code]] | [[claude-postmortem]] | [[mcp]] | [[multi-agent-research]] | [[swe-bench]] | [[tool-use]]
+[claude-agent-sdk](../claude/practice/claude-agent-sdk.md) | [claude-code](claude-code.md) | [claude-postmortem](../claude/practice/claude-postmortem.md) | [mcp](../mcp/core/mcp.md) | [multi-agent-research](../multi-agent/practice/multi-agent-research.md) | [swe-bench](../other/practice/swe-bench.md) | [tool-use](../tool-use/core/tool-use.md)

@@ -8,7 +8,7 @@ sources: ["raw/articles/agent-architecture.md"]
 notion_id: "34367b21-8207-8163-9cdf-c8c77b1efa54"
 ---
 
-> **难度**：⭐⭐⭐⭐ | **面试频率**：高 | **关联**：[[langgraph-vs-react]] [[context-management]]
+> **难度**：⭐⭐⭐⭐ | **面试频率**：高 | **关联**：[langgraph-vs-react](../../comparisons/langgraph-vs-react.md) [context-management](../../context-engineering/core/context-management.md)
 
 ---
 
@@ -57,4 +57,4 @@ A: 任务完成率、工具调用效率、用户满意度、延迟、成本。
 
 ## 相关链接
 
-[[langgraph-vs-react]] | [[context-management]] | [[agent-framework-practice]]
+[langgraph-vs-react](../../comparisons/langgraph-vs-react.md) | [context-management](../../context-engineering/core/context-management.md) | [agent-framework-practice](../practice/agent-framework-practice.md)

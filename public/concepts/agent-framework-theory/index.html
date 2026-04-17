@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent 框架理论篇 | Agent Framework Theory - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>AI Agent 框架理论篇 | Agent Framework Theory</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2026-04-15
+    </div>
+    <h1 id="ai-agent-框架理论篇">AI Agent 框架理论篇</h1>
+<blockquote>
+<p><strong>来源</strong>：腾讯技术工程</p>
+</blockquote>
+<hr>
+<h2 id="核心公式">核心公式</h2>
+<p><strong>Agent = Reasoning + Acting</strong></p>
+<h3 id="三种基础模式">三种基础模式</h3>
+<p><strong>1. ReAct 模式</strong>（2022年，Yao等）
+推理（Reasoning）+ 执行（Acting）+ 观察（Observation）循环。CoT 提升推理能力但缺少外部反馈，ReAct 弥补了这一缺陷。</p>
+<p><strong>2. Plan-and-Execute 模式</strong>（2023年，Langchain）
+先制定完整分步计划，再按步骤执行。适合复杂且任务关系明确的长期任务，缺点是缺乏动态调整能力。</p>
+<p><strong>3. Reflection 模式</strong>
+通过语言反馈强化 Agent。Reflexion（Shunyu Yao）维护反思文本；Self-Refine 通过迭代反馈改进；CRITIC 结合外部工具验证输出。</p>
+<h2 id="agent-框架三大部分">Agent 框架三大部分</h2>
+<ol>
+<li><strong>LLM Call</strong>：API 管理，兼容各大厂商 API</li>
+<li><strong>Tools Call</strong>：Function Call → MCP → 代码执行等外部工具</li>
+<li><strong>Context Engineering</strong>：提示词工程 + 工具与提示词结合（核心变量）</li>
+</ol>
+<h2 id="agent-loop">Agent Loop</h2>
+<p>本质是一个 While 循环：初始化上下文 → LLM 推理 → 解析响应 → 执行工具 → 更新上下文 → 循环直到任务完成。</p>
+<p><strong>核心结论</strong>：Agent 框架设计的核心就是在 Agent Loop 中设计如何管理上下文。</p>
+<h2 id="相关链接">相关链接</h2>
+<p>[[ai-agent]] | [[react]] | [[agent-architecture]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

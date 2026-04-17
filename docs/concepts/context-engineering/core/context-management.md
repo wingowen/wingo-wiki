@@ -24,4 +24,4 @@ notion_id: "34367b21-8207-81c6-8eed-f5368d5630dd"
 
 ## 相关链接
 
-[[langgraph]] | [[rag]]
+[langgraph](../../other/core/langgraph.md) | [rag](../../rag/core/rag.md)

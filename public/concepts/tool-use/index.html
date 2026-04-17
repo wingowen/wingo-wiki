@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tool Use - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>Tool Use</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2026-04-15
+    </div>
+    <h1 id="tool-use">Tool Use</h1>
+<h2 id="overview">Overview</h2>
+<p>Tool Use（工具使用）是 Agent 与外部世界交互的核心能力。通过调用外部工具，Agent 可以执行搜索、代码执行、文件操作等任务。</p>
+<h2 id="核心原则-anthropic">核心原则 (Anthropic)</h2>
+<p>来自 Anthropic 官方文档的最佳实践：</p>
+<ol>
+<li><strong>让模型控制工具调用</strong> - 模型决定何时以及如何调用工具</li>
+<li><strong>工具设计要清晰明确</strong> - 每个工具应有明确的输入输出定义</li>
+<li><strong>错误处理要完善</strong> - 工具应返回有意义的错误信息</li>
+<li><strong>考虑工具调用的成本</strong> - 每次 API 调用都有成本，需要优化</li>
+</ol>
+<h2 id="think-tool">Think Tool</h2>
+<p>Think Tool 是 Anthropic 引入的特殊工具，允许模型在复杂决策前进行静默推理。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Think Tool 示例</span>
+</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> llm<span style="color:#f92672">.</span>invoke(
+</span></span><span style="display:flex;"><span>    messages,
+</span></span><span style="display:flex;"><span>    tools<span style="color:#f92672">=</span>[search, calculator, think_tool]
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="工具设计模式">工具设计模式</h2>
+<ul>
+<li><strong>Parallel Tool Use</strong>: 模型可同时调用多个独立工具</li>
+<li><strong>Sequential Tool Use</strong>: 工具结果作为下一个工具的输入</li>
+<li><strong>Tool Error Recovery</strong>: 工具失败时模型自动重试或改用其他工具</li>
+</ul>
+<h2 id="相关链接">相关链接</h2>
+<p>[[advanced-tool-use]] | [[agent-skills]] | [[ai-agent]] | [[anthropic]] | [[beyond-permission-prompts]] | [[claude-code]] | [[mcp]] | [[prompt-injection]] | [[think-tool]] | [[writing-effective-tools]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

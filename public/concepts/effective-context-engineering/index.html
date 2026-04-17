@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent 的有效上下文工程 | Effective context engineering for AI agents - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>AI Agent 的有效上下文工程 | Effective context engineering for AI agents</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2025-09-29
+    </div>
+    <h2 id="ai-agent-的有效上下文工程">AI Agent 的有效上下文工程</h2>
+<blockquote>
+<p>原文：Anthropic Engineering | 发布日期：2025-09-29</p>
+</blockquote>
+<hr>
+<h3 id="核心概念">核心概念</h3>
+<p><strong>Context（上下文）</strong> = LLM 采样时包含的所有 Token 集合</p>
+<p><strong>Context Engineering</strong> = 在 LLM 固有约束下优化 Token 效用的策略，包括提示词、工具、示例、消息历史等。</p>
+<h3 id="context-rot上下文衰减">Context Rot（上下文衰减）</h3>
+<p>随着上下文窗口 Token 数量增加，模型准确回忆信息的能力下降。n² 的注意力关系意味着上下文越长，模型对单个信息的注意力越分散。</p>
+<p><strong>注意力预算</strong>：每个新 Token 都消耗一部分预算，需要精心策展。</p>
+<h3 id="上下文组件设计原则">上下文组件设计原则</h3>
+<p><strong>系统提示词</strong>：足够具体以引导行为，又足够灵活提供启发式指导。避免 if-else 硬编码，也避免过于模糊。</p>
+<p><strong>工具</strong>：功能重叠最小、自包含、对错误鲁棒。最小可行工具集，避免臃肿的工具集。</p>
+<p><strong>Few-shot 示例</strong>：多样化、规范的示例集，描绘期望行为，而非堆砌边缘情况。</p>
+<h3 id="长期任务策略">长期任务策略</h3>
+<ol>
+<li><strong>Compaction（压缩）</strong>：接近上下文限制时摘要内容，用摘要重启新上下文</li>
+<li><strong>结构化笔记</strong>：Agent 定期将笔记持久化到外部记忆</li>
+<li><strong>多 Agent 架构</strong>：子 Agent 在干净上下文中处理聚焦任务，主 Agent 综合精简摘要</li>
+</ol>
+<h3 id="核心原则">核心原则</h3>
+<p><strong>找到尽可能最小的、高信号 Token 集合，以最大化实现期望结果的可能性。</strong></p>
+<h2 id="相关链接">相关链接</h2>
+<p>[[context-engineering]] | [[ai-agent]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

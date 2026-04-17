@@ -31,35 +31,35 @@ notion_id: "34367b21-8207-81e2-bc9c-f119f7ae87f6"
 - State（全局状态）、Nodes（节点）、Edges（边）的设计思想
 - add_messages 注解与条件路由（conditional_edges）
 - 多智能体协作与中断恢复机制
-- **关联页面**：👉 [[langgraph-vs-react]]
+- **关联页面**：👉 [langgraph-vs-react](../comparisons/langgraph-vs-react.md)
 
 ### 2. 上下文管理（Context Management）
 
 - 短期记忆：State 传递、Checkpointer、线程隔离
 - 长期记忆：数据库存储、向量检索历史摘要
 - 消息裁剪策略与 Context Window 溢出防护
-- **关联页面**：👉 [[context-management]]
+- **关联页面**：👉 [context-management](../context-engineering/core/context-management.md)
 
 ### 3. RAG 检索增强生成
 
 - 文档分块（Chunking）策略：语义切分、重叠设置
 - 向量存储与 Top-K 检索
 - 超大文件处理方案
-- **关联页面**：👉 [[rag]]
+- **关联页面**：👉 [rag](../rag/core/rag.md)
 
 ### 4. HyDE 假设文档嵌入
 
 - HyDE 原理：用 LLM 生成的假答案来引导检索
 - 适用场景：查询简短、模糊时
 - 与 RAG Fusion、Query Rewriting 的对比
-- **关联页面**：👉 [[interview-hyde]]
+- **关联页面**：👉 [interview-hyde](../rag/interview/interview-hyde.md)
 
 ### 5. Agent 架构设计
 
 - 智能体 vs 传统开发的根本区别
 - 感知-决策-行动闭环（Perception-Decision-Action）
 - C端用户偏好实现：用户画像 + 向量检索
-- **关联页面**：👉 [[agent-architecture]]
+- **关联页面**：👉 [agent-architecture](../agent-architecture/core/agent-architecture.md)
 
 ---
 
@@ -76,12 +76,12 @@ notion_id: "34367b21-8207-81e2-bc9c-f119f7ae87f6"
 
 | 问题 | 考察点 | 关联 |
 |------|--------|------|
-| LangGraph 如何实现循环？ | 图流转机制 | [[langgraph]] |
-| Checkpointer 原理？ | 状态持久化 | [[context-management]] |
-| HyDE 幻觉问题？ | RAG 增强原理 | [[hyde]] |
-| Chunk_size 怎么选？ | RAG 分块策略 | [[rag]] |
-| Agent 安全怎么保证？ | Agent 架构 | [[agent-architecture]] |
+| LangGraph 如何实现循环？ | 图流转机制 | [langgraph](../other/core/langgraph.md) |
+| Checkpointer 原理？ | 状态持久化 | [context-management](../context-engineering/core/context-management.md) |
+| HyDE 幻觉问题？ | RAG 增强原理 | [hyde](../rag/core/hyde.md) |
+| Chunk_size 怎么选？ | RAG 分块策略 | [rag](../rag/core/rag.md) |
+| Agent 安全怎么保证？ | Agent 架构 | [agent-architecture](../agent-architecture/core/agent-architecture.md) |
 
 ## 相关链接
 
-[[ai-agent]] | [[interview-qa-overview]]
+[ai-agent](../entities/ai-agent.md) | [interview-qa-overview](interview-qa-overview.md)

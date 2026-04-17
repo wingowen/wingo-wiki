@@ -24,4 +24,4 @@ Anthropic 为 Claude Code 推出的沙箱化（Sandboxing）技术，通过**文
 
 ## 相关链接
 
-[[claude-code]] | [[tool-use]]
+[claude-code](../../entities/claude-code.md) | [tool-use](../../tool-use/core/tool-use.md)

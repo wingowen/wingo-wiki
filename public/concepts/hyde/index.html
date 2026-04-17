@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyDE 假设文档嵌入与高级检索策略 - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>HyDE 假设文档嵌入与高级检索策略</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2026-04-15
+    </div>
+    <blockquote>
+<p><strong>难度</strong>：⭐⭐⭐⭐ | <strong>面试频率</strong>：高 | <strong>关联</strong>：[[interview-rag]] [[context-management]]</p>
+</blockquote>
+<hr>
+<h1 id="hyde-假设文档嵌入与高级检索策略">HyDE 假设文档嵌入与高级检索策略</h1>
+<h2 id="核心概念">核心概念</h2>
+<p>HyDE（Hypothetical Document Embeddings）是 Luyu Gao 等人于 2022 年提出的查询优化技术。核心思想：<strong>不直接用用户的原始问题去检索，而是先让 LLM 生成一篇&quot;假设的答案文档&quot;，然后用这篇假答案的向量去检索真实知识库。</strong></p>
+<p>解决的是用户查询（简短、模糊、口语化）与知识库文档（正式、详细、书面化）之间的<strong>语义鸿沟</strong>问题。</p>
+<h2 id="工作流程">工作流程</h2>
+<p>用户查询 → LLM 生成假设答案 → 对假设答案向量化 → 向量数据库检索 → 注入真实文档到 Prompt → LLM 生成最终回答</p>
+<p><strong>注意</strong>：假答案只用于检索阶段，最终回答基于真实文档，不会被&quot;幻觉&quot;污染。</p>
+<h2 id="适用场景">适用场景</h2>
+<table>
+  <thead>
+      <tr>
+          <th>场景</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>查询简短模糊</td>
+          <td>&ldquo;好玩吗&rdquo;、&ldquo;怎么办&rdquo;</td>
+      </tr>
+      <tr>
+          <td>口语化表达</td>
+          <td>口语与书面语差异大</td>
+      </tr>
+      <tr>
+          <td>零样本检索</td>
+          <td>无明确关键词可匹配</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>不适用</strong>：查询已足够精确（如技术文档）、高度领域专用、实时性要求高（额外 LLM 调用）。</p>
+<h2 id="高级检索策略对比">高级检索策略对比</h2>
+<table>
+  <thead>
+      <tr>
+          <th>策略</th>
+          <th>原理</th>
+          <th>优势</th>
+          <th>劣势</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Query Rewriting</td>
+          <td>改写查询本身</td>
+          <td>成本低</td>
+          <td>效果有限</td>
+      </tr>
+      <tr>
+          <td><strong>HyDE</strong></td>
+          <td>生成假答案检索</td>
+          <td>效果最好</td>
+          <td>多一次 LLM 调用</td>
+      </tr>
+      <tr>
+          <td>RAG Fusion</td>
+          <td>多查询融合</td>
+          <td>覆盖全面</td>
+          <td>检索量大</td>
+      </tr>
+      <tr>
+          <td>Reranker</td>
+          <td>二次精排</td>
+          <td>精度高</td>
+          <td>需要额外模型</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="相关链接">相关链接</h2>
+<p>[[contextual-retrieval]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

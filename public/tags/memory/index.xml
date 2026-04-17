@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Memory on Wingo Wiki</title>
+    <link>https://wingo-wiki.netlify.app/tags/memory/</link>
+    <description>Recent content in Memory on Wingo Wiki</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wingo-wiki.netlify.app/tags/memory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【面试专题】上下文管理：短期记忆与长期记忆</title>
+      <link>https://wingo-wiki.netlify.app/concepts/interview-context-mgmt/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/concepts/interview-context-mgmt/</guid>
+      <description>&lt;h2 id=&#34;上下文管理短期记忆与长期记忆&#34;&gt;上下文管理：短期记忆与长期记忆&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;难度：⭐⭐⭐⭐ | 面试频率：极高 | 关联：👉 LangGraph 核心原理与 ReAct 对比 👉 RAG 检索增强生成：从分块到检索&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;为什么上下文管理是-agent-的核心&#34;&gt;为什么上下文管理是 Agent 的核心？&lt;/h3&gt;&#xA;&lt;p&gt;LLM 的 Context Window 是有限的（如 GPT-4o 为 128K tokens，Claude 为 200K tokens）。Agent 在运行过程中会不断累积消息，如果不加管理，很快就会超出窗口限制。&lt;/p&gt;&#xA;&lt;p&gt;上下文管理的核心目标：&lt;strong&gt;在有限的窗口内，让 Agent 拥有尽可能多的有效信息&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;核心要点&#34;&gt;核心要点&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;短期记忆（Short-term Memory）&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;当前会话/任务中的上下文信息，存储在 messages 列表中&lt;/li&gt;&#xA;&lt;li&gt;LangGraph 通过 Checkpointer（SQLite/PostgreSQL）实现状态持久化&lt;/li&gt;&#xA;&lt;li&gt;通过 thread_id 实现会话隔离，跨请求恢复状态&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;消息裁剪策略&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;按 Token 数量裁剪（保留 System Prompt）&lt;/li&gt;&#xA;&lt;li&gt;摘要化旧消息：用 LLM 将旧消息压缩为一条摘要&lt;/li&gt;&#xA;&lt;li&gt;保留最近 N 轮原文不摘要，避免关键信息丢失&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;长期记忆（Long-term Memory）&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;跨会话、跨任务持久化存储（用户偏好、历史行为、知识库）&lt;/li&gt;&#xA;&lt;li&gt;实现方案：向量数据库（语义检索）、关系数据库（结构化数据）、Redis（热数据缓存）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;应用模式&lt;/strong&gt;：检索 → 注入 System Prompt → Agent 推理 → 更新长期记忆&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>上下文管理：短期记忆与长期记忆</title>
+      <link>https://wingo-wiki.netlify.app/concepts/context-management/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/concepts/context-management/</guid>
+      <description>&lt;h2 id=&#34;上下文管理短期记忆与长期记忆&#34;&gt;上下文管理：短期记忆与长期记忆&lt;/h2&gt;&#xA;&lt;p&gt;上下文管理是 Agent 的核心能力。LLM 的 Context Window 有限（GPT-4o 128K，Claude 200K tokens），Agent 运行中会不断累积消息，必须通过管理策略在有限窗口内塞入最多有效信息。&lt;/p&gt;&#xA;&lt;p&gt;短期记忆管理当前会话/任务中的上下文，通常存储在 messages 列表中。LangGraph 通过 Checkpointer 实现状态持久化，thread_id 实现会话隔离。消息过多时需裁剪，策略包括滑动窗口（保留最近 N 轮）、Token 计数裁剪和摘要化（LLM 压缩历史）。&lt;/p&gt;&#xA;&lt;h2 id=&#34;核心要点&#34;&gt;核心要点&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;短期记忆&lt;/strong&gt;：当前会话上下文，messages 列表累积，需裁剪防止溢出&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Checkpointer&lt;/strong&gt;：LangGraph 状态快照机制，支持时间旅行，thread_id 实现会话隔离&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;裁剪策略&lt;/strong&gt;：滑动窗口（简单但可能丢失中间信息）、Token 计数（保留 System Prompt）、摘要化（LLM 压缩但可能丢失细节）&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;长期记忆&lt;/strong&gt;：跨会话持久化，存储用户偏好、历史行为、知识库&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;向量数据库&lt;/strong&gt;：推荐方案，存储历史交互的向量化表示，支持语义检索&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;相关链接&#34;&gt;相关链接&lt;/h2&gt;&#xA;&lt;p&gt;[[langgraph]] | [[rag]]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>双层记忆系统与 Dream 管理知识文件的具体实现分析</title>
+      <link>https://wingo-wiki.netlify.app/concepts/dual-memory-system/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/concepts/dual-memory-system/</guid>
+      <description>&lt;h2 id=&#34;双层记忆系统&#34;&gt;双层记忆系统&lt;/h2&gt;&#xA;&lt;h3 id=&#34;系统架构&#34;&gt;系统架构&lt;/h3&gt;&#xA;&lt;p&gt;nanobot 采用双层记忆系统，由&lt;strong&gt;短期记忆&lt;/strong&gt;（会话消息）和&lt;strong&gt;长期记忆&lt;/strong&gt;（知识文件）组成，通过 Consolidator 和 Dream 两个核心组件实现记忆的流动和管理。&lt;/p&gt;&#xA;&lt;h3 id=&#34;记忆文件结构&#34;&gt;记忆文件结构&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;MEMORY.md&lt;/strong&gt;：系统级记忆，存储核心指令、配置和系统信息&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;SOUL.md&lt;/strong&gt;：灵魂文件，存储核心身份、价值观和长期目标&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;USER.md&lt;/strong&gt;：用户档案，存储用户相关信息和偏好&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;history.jsonl&lt;/strong&gt;：追加式历史总结，由 Consolidator 生成&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;记忆流通过程&#34;&gt;记忆流通过程&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;会话消息产生&lt;/strong&gt; → 2. &lt;strong&gt;Consolidator 处理&lt;/strong&gt;：轻量级压缩，生成历史总结追加到 history.jsonl → 3. &lt;strong&gt;Dream 分析&lt;/strong&gt;：定期或手动触发，分析 history.jsonl 与长期记忆的差异 → 4. &lt;strong&gt;Dream 编辑&lt;/strong&gt;：手术式编辑长期记忆文件 → 5. &lt;strong&gt;GitStore 版本控制&lt;/strong&gt;：自动提交变更，记录记忆演化历史&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;dream-两阶段处理&#34;&gt;Dream 两阶段处理&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;第一阶段（分析）&lt;/strong&gt;：读取 history.jsonl 和长期记忆文件，识别需要更新的记忆内容。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;第二阶段（编辑）&lt;/strong&gt;：根据分析结果生成编辑指令，执行精确的文件编辑，保持记忆连贯性。&lt;/p&gt;&#xA;&lt;h3 id=&#34;技术特性&#34;&gt;技术特性&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;分层记忆：短期会话与长期知识分离&lt;/li&gt;&#xA;&lt;li&gt;智能分析：识别记忆差异和更新需求&lt;/li&gt;&#xA;&lt;li&gt;手术式编辑：精确修改记忆文件，保持结构完整&lt;/li&gt;&#xA;&lt;li&gt;版本控制：GitStore 记录记忆演化历史&lt;/li&gt;&#xA;&lt;li&gt;透明可控：用户可手动触发和查看记忆状态&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;相关链接&#34;&gt;相关链接&lt;/h2&gt;&#xA;&lt;p&gt;[[context-engineering]] | [[ai-agent]]&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

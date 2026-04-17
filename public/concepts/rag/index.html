@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG 检索增强生成：从分块到检索 - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>RAG 检索增强生成：从分块到检索</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2026-04-15
+    </div>
+    <blockquote>
+<p><strong>难度</strong>：⭐⭐⭐ | <strong>面试频率</strong>：高 | <strong>关联</strong>：[[interview-hyde]] [[context-management]]</p>
+</blockquote>
+<hr>
+<h1 id="rag-检索增强生成">RAG 检索增强生成</h1>
+<h2 id="核心流程">核心流程</h2>
+<p>用户查询 → 编码查询 → 向量检索 → 文档排序 → 注入 Prompt → LLM 生成回答</p>
+<h2 id="文档分块策略">文档分块策略</h2>
+<table>
+  <thead>
+      <tr>
+          <th>策略</th>
+          <th>描述</th>
+          <th>适用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>固定长度</td>
+          <td>按 token/字符数切分</td>
+          <td>通用场景</td>
+      </tr>
+      <tr>
+          <td>语义切分</td>
+          <td>按段落、句子边界切分</td>
+          <td>保留语义完整</td>
+      </tr>
+      <tr>
+          <td>递归切分</td>
+          <td>按层级递归切分</td>
+          <td>复杂文档结构</td>
+      </tr>
+      <tr>
+          <td>重叠切分</td>
+          <td>相邻块之间有重叠</td>
+          <td>减少上下文丢失</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>chunk_size 经验值</strong>：500 tokens（大多数场景），800-1000 tokens（复杂技术文档），200-300 tokens（代码）。</p>
+<h2 id="向量检索要点">向量检索要点</h2>
+<ul>
+<li><strong>Embedding 模型</strong>：OpenAI text-embedding-3-small 或本地 BGE</li>
+<li><strong>向量数据库</strong>：Chroma（开发）、Milvus/Pinecone（生产）</li>
+<li><strong>Top-K 检索</strong>：基础检索 + 分数阈值过滤 + MMR 多样性检索</li>
+</ul>
+<h2 id="面试要点">面试要点</h2>
+<p><strong>Q: 如何选择 chunk_size？</strong>
+A: 平衡完整性和相关性。过小导致碎片化，过大引入噪声。</p>
+<p><strong>Q: 向量检索分数的意义？</strong>
+A: 不同模型/维度/算法的分数不可比较。使用相对排序或实验确定阈值。</p>
+<p><strong>Q: 如何处理超大文档？</strong>
+A: 层级检索（粗粒度→细粒度）、摘要增强检索、HyDE 等方案。</p>
+<h2 id="相关链接">相关链接</h2>
+<p>[[contextual-retrieval]] | [[hyde]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

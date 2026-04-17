@@ -24,4 +24,4 @@ notion_id: 34367b21-8207-8140-9199-e7fefb5ffb3c
 
 ## 相关链接
 
-[[tool-use]]
+[tool-use](../../tool-use/core/tool-use.md)

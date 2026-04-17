@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP 核心原理 - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>MCP 核心原理</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2025-06-26
+    </div>
+    <h1 id="mcp-核心原理">MCP 核心原理</h1>
+<h2 id="overview">Overview</h2>
+<p>MCP（Model Context Protocol）是 Anthropic 提出的开放协议，用于标准化 AI 模型与外部工具、数据的连接。</p>
+<h2 id="架构">架构</h2>
+<p>┌─────────────┐     MCP      ┌─────────────┐
+│   Claude    │◄────────────►│  MCP Server │
+│   (Client)  │              │ (File, DB,  │
+└─────────────┘              │  Web, etc.) │
+└─────────────┘</p>
+<h2 id="核心优势">核心优势</h2>
+<ul>
+<li><strong>标准化</strong>: 一次开发，多处使用</li>
+<li><strong>安全</strong>: 数据不离开本地</li>
+<li><strong>简化安装</strong>: Desktop Extensions 实现一键安装</li>
+</ul>
+<p>MCP 核心原理涵盖了 Desktop Extensions（桌面扩展）和代码执行两大主题。Desktop Extensions 通过 .mcpb 打包格式简化了 MCP 服务器的安装，用户只需双击文件即可完成安装，无需配置命令行或依赖管理。代码执行则解决了工具定义过多导致的 token 消耗问题——Agent 可以通过编写代码按需加载工具，将工具从&quot;直接调用&quot;转变为&quot;代码 API&quot;模式，token 使用量可减少 85-98%。</p>
+<h2 id="核心要点">核心要点</h2>
+<ul>
+<li><strong>MCP 协议</strong>：开放标准，连接 AI 模型与外部工具/数据，支持文件系统、数据库、Web 等多种服务器</li>
+<li><strong>Desktop Extensions</strong>：.mcpb 打包格式，内置运行时、自动更新、安全密钥存储，一键安装 MCP 服务器</li>
+<li><strong>代码执行模式</strong>：将 MCP 工具生成为代码文件，Agent 按需加载而非预先加载，减少 85% token 消耗</li>
+<li><strong>渐进式披露</strong>：工具按需发现，只加载当前任务所需的工具定义</li>
+<li><strong>隐私保护</strong>：通过令牌化技术，PII 数据可在工具间流转而不进入模型上下文</li>
+</ul>
+<h2 id="相关链接">相关链接</h2>
+<p>[[claude-desktop-extensions]] | [[claude-code]] | [[tool-use]] | [[anthropic]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

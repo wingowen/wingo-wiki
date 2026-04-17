@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我们如何构建多 Agent 研究系统 | How we built our multi-agent research system - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>我们如何构建多 Agent 研究系统 | How we built our multi-agent research system</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2025-06-13
+    </div>
+    <h1 id="我们如何构建多-agent-研究系统--how-we-built-our-multi-agent-research-system">我们如何构建多 Agent 研究系统 | How we built our multi-agent research system</h1>
+<blockquote>
+<p>原文链接：<a href="https://www.anthropic.com/engineering/multi-agent-research-system">How we built our multi-agent research system</a></p>
+</blockquote>
+<blockquote>
+<p>作者：Jeremy Hadfield, Barry Zhang, Kenneth Lien, Florian Scholz, Jeremy Fox, Daniel Ford（Anthropic Engineering）</p>
+</blockquote>
+<blockquote>
+<p>发布日期：2025-06-13</p>
+</blockquote>
+<blockquote>
+<p>翻译日期：2026-04-14</p>
+</blockquote>
+<h2 id="我们如何构建多-agent-研究系统">我们如何构建多 Agent 研究系统</h2>
+<p><em>Claude 的 Research 功能使用多个 Claude Agent 来更有效地探索复杂主题。本文将分享我们在构建该系统过程中的工程挑战以及经验教训。</em></p>
+<h3 id="概述">概述</h3>
+<p>Claude 的 Research 功能允许它跨网络、Google Workspace（谷歌工作套件）以及各种集成进行搜索，以完成复杂任务。这个多 Agent 系统从原型到生产环境的旅程，教会了我们关于系统架构、工具设计和 Prompt 工程（提示词工程）的关键经验。</p>
+<p>多 Agent 系统（Multi-Agent System）由多个 Agent（LLM 在循环中自主使用工具）协同工作组成。Research 功能涉及一个 Agent，它根据用户查询规划研究流程，然后使用工具创建并行 Agent 同时搜索信息。包含多个 Agent 的系统在 Agent 协调、评估和可靠性方面引入了新的挑战。</p>
+<p>💡 <strong>术语解释：Multi-Agent System（多 Agent 系统）</strong>——由多个 AI Agent 协同工作的系统架构。每个 Agent 可以独立执行任务、使用工具并做出决策，多个 Agent 之间通过协调机制共同完成复杂目标。</p>
+<h3 id="多-agent-系统的优势">多 Agent 系统的优势</h3>
+<p>研究工作涉及开放式问题，很难提前预测所需步骤。你无法为探索复杂主题硬编码固定路径，因为该过程本质上是动态的且具有路径依赖性。这种不可预测性使得 AI Agent 特别适合研究任务。</p>
+<p><strong>搜索的本质是压缩</strong>：从海量语料库中提取洞察。Subagent（子 Agent）通过在自己的上下文窗口（Context Window）中并行操作来促进压缩——它们同时探索问题的不同方面，然后将最重要的 Token 压缩传递给 Lead Researcher（主导研究员）Agent。每个 Subagent 还提供了关注点分离（Separation of Concerns）——不同的工具、Prompt 和探索轨迹——这减少了路径依赖性，使得全面、独立的调查成为可能。</p>
+<p>💡 <strong>术语解释：压缩（Compression）</strong>——在信息检索语境中，&ldquo;压缩&quot;指的是从大量原始数据中提炼出关键洞察的过程。Subagent 各自搜索不同方向的信息，然后将精华部分汇总给主导 Agent，类似于多个研究员分别调研后向团队负责人汇报。</p>
+<h4 id="关键性能数据">关键性能数据</h4>
+<ul>
+<li>以 Claude Opus 4 作为 Lead Agent、Claude Sonnet 4 作为 Subagent 的多 Agent 系统，在内部研究评估中比单 Agent Claude Opus 4 性能提升 <strong>90.2%</strong></li>
+<li>三个因素解释了 BrowseComp 评估中 <strong>95%</strong> 的性能差异</li>
+<li>仅 Token 消耗量就解释了 <strong>80%</strong> 的差异，其余两个因素是工具调用次数和模型选择</li>
+<li>升级到 Claude Sonnet 4 的性能提升，比在 Claude Sonnet 3.7 上将 Token 预算翻倍还要大</li>
+</ul>
+<h4 id="多-agent-系统的适用场景">多 Agent 系统的适用场景</h4>
+<ul>
+<li>涉及大量并行化的任务</li>
+<li>信息量超出单个上下文窗口的任务</li>
+<li>需要与众多复杂工具交互的任务</li>
+</ul>
+<h4 id="权衡取舍">权衡取舍</h4>
+<ul>
+<li>Agent 通常比普通聊天交互多消耗约 <strong>4 倍</strong> Token</li>
+<li>多 Agent 系统比普通聊天多消耗约 <strong>15 倍</strong> Token</li>
+<li>不适合需要共享上下文或 Agent 之间有大量依赖关系的任务</li>
+<li>大多数编码任务中可并行化的子任务比研究任务少
+💡 <strong>举例说明：Token 消耗对比</strong>——一次普通聊天可能消耗 1,000 个 Token，而使用单个 Agent 完成任务大约需要 4,000 个 Token，使用多 Agent 系统则可能需要约 15,000 个 Token。虽然成本更高，但研究质量也显著提升。</li>
+</ul>
+<h3 id="架构概述">架构概述</h3>
+<p>Research 系统使用多 Agent 架构，采用 Orchestrator-Worker（编排者-工作者）模式，其中 Lead Agent 负责协调流程，将任务委派给并行操作的专业 Subagent。</p>
+<p>💡 <strong>术语解释：Orchestrator-Worker 模式</strong>——一种分布式系统设计模式，其中编排者（Orchestrator）负责任务分解和结果整合，工作者（Worker）负责执行具体子任务。在本文中，Lead Agent 扮演编排者角色，Subagent 扮演工作者角色。</p>
+<h4 id="系统组件">系统组件</h4>
+<ol>
+<li>用户通过 <a href="http://claude.ai/">Claude.ai</a> 聊天提交查询</li>
+<li>系统创建 LeadResearcher Agent</li>
+<li>LeadResearcher 进入迭代研究流程：</li>
+<li>CitationAgent（引用 Agent）处理文档和研究报告，识别引用的具体位置</li>
+<li>最终带有引用的研究结果返回给用户
+💡 <strong>术语解释：Interleaved Thinking（交错思考）</strong>——Claude 模型的一种能力，允许在工具调用结果返回后进行推理思考，评估结果质量、识别信息缺口并优化后续查询。</li>
+</ol>
+<h4 id="关键架构决策">关键架构决策</h4>
+<ul>
+<li><strong>动态多步搜索 vs 传统 RAG</strong>：采用动态多步搜索而非传统 RAG（Retrieval-Augmented Generation，检索增强生成）的静态检索方式。系统能够动态发现相关信息、适应新发现并分析结果以生成高质量答案</li>
+<li><strong>Memory 持久化</strong>：用于保存研究计划（超过 200,000 Token 的上下文窗口会被截断）</li>
+<li><strong>独立的 CitationAgent</strong>：用于确保正确的来源归属</li>
+</ul>
+<h3 id="研究-agent-的-prompt-工程与评估">研究 Agent 的 Prompt 工程与评估</h3>
+<p>多 Agent 系统与单 Agent 系统存在关键差异，其中最显著的是协调复杂度的快速增长。早期的 Agent 犯过以下错误：为简单查询生成 50 个 Subagent、无休止地搜索网络、以及通过过度更新互相干扰。</p>
+<p>💡 <strong>举例说明：早期多 Agent 系统的问题</strong>——想象一个研究团队，负责人为一个简单问题（如&quot;水的沸点是多少&rdquo;）派出了 50 个研究员，每个研究员都在搜索相同的信息，然后不断互相发送更新导致信息混乱。这就是早期系统面临的挑战。</p>
+<h4 id="编写-agent-prompt-的-8-条原则">编写 Agent Prompt 的 8 条原则</h4>
+<p><strong>1. 像你的 Agent 一样思考。</strong> 使用 Console 构建模拟环境，使用完全相同的 Prompt 和工具，逐步观察 Agent 的工作过程。这能立即揭示失败模式：Agent 在已有足够结果时继续工作、使用过于冗长的搜索查询、或选择错误的工具。有效的 Prompt 依赖于对 Agent 建立准确的心理模型。</p>
+<p><strong>2. 教会编排者如何委派。</strong> 每个 Subagent 需要一个目标、一个输出格式、关于使用哪些工具和来源的指导，以及清晰的任务边界。没有详细的任务描述，Agent 会重复工作、留下空白或找不到必要信息。模糊的指令如&quot;研究半导体短缺&quot;会导致 Subagent 误解任务或执行完全相同的搜索。</p>
+<p><strong>3. 根据查询复杂度调整投入。</strong> 在 Prompt 中嵌入扩展规则：</p>
+<p><strong>4. 工具设计和选择至关重要。</strong> Agent-工具接口与人类-计算机接口同样关键。为 Agent 提供明确的启发式规则：首先检查所有可用工具、将工具使用与用户意图匹配、使用网络搜索进行广泛的外部探索、优先使用专业工具而非通用工具。糟糕的工具描述可能将 Agent 引入完全错误的方向。</p>
+<p>💡 <strong>术语解释：Agent-工具接口</strong>——Agent 与外部工具之间的交互界面，包括工具描述、参数定义和返回格式。就像人类需要清晰的用户界面一样，Agent 也需要清晰、准确的工具接口才能正确使用工具。</p>
+<p><strong>5. 让 Agent 自我改进。</strong> Claude 4 模型可以成为出色的 Prompt 工程师。给定一个 Prompt 和一种失败模式，它们能诊断 Agent 失败的原因并建议改进方案。一个重写工具描述以避免失败的工具测试 Agent，使后续 Agent 的任务完成时间减少了 <strong>40%</strong>。</p>
+<p><strong>6. 先广后深。</strong> 模仿专家人类研究的方式：先探索全局再深入细节。引导 Agent 从简短、广泛的查询开始，评估可用信息，然后逐步缩小关注范围。</p>
+<p><strong>7. 引导思考过程。</strong> Extended Thinking（扩展思考）模式充当可控的草稿本。Lead Agent 使用思考来规划方法、评估工具、确定查询复杂度并定义每个 Subagent 的角色。Subagent 在工具结果返回后使用交错思考来评估质量、识别缺口并优化查询。</p>
+<p><strong>8. 并行工具调用改变速度和性能。</strong> 引入了两种并行化方式：</p>
+<ul>
+<li>Lead Agent 并行启动 3-5 个 Subagent，而非串行启动</li>
+<li>Subagent 并行使用 3 个以上工具
+这些改变将复杂查询的研究时间缩短了多达 <strong>90%</strong>。</li>
+</ul>
+<h4 id="prompt-策略">Prompt 策略</h4>
+<p>重点在于灌输良好的启发式规则，而非僵化的规则。编码在 Prompt 中的策略包括：</p>
+<ul>
+<li>将困难问题分解为更小的子任务</li>
+<li>仔细评估来源质量</li>
+<li>根据新信息调整搜索方法</li>
+<li>识别何时应关注深度 vs 广度</li>
+<li>设置明确的护栏以防止 Agent 失控</li>
+<li>通过可观测性和测试用例保持快速迭代循环</li>
+</ul>
+<h3 id="agent-的有效评估">Agent 的有效评估</h3>
+<p>评估多 Agent 系统面临独特挑战。传统评估假设确定性路径，但多 Agent 系统并非如此——Agent 可能采取完全不同但都有效的路径来达成目标。</p>
+<h4 id="使用小样本立即开始评估">使用小样本立即开始评估</h4>
+<p>在 Agent 早期开发阶段，变更往往产生巨大影响。一个 Prompt 调整可能将成功率从 30% 提升到 80%。从大约 20 个代表真实使用模式的查询开始。</p>
+<h4 id="llm-as-judge-评估">LLM-as-Judge 评估</h4>
+<p>使用 LLM 作为评判者，根据评分标准评估输出：</p>
+<p>💡 <strong>术语解释：LLM-as-Judge</strong>——使用大语言模型作为评估者来评判其他 AI 输出质量的方法。通过精心设计的评分标准（Rubric），LLM 可以在多个维度上给出 0.0-1.0 的评分和通过/不通过的等级，且与人类评判高度一致。</p>
+<p>研究发现，使用单个 LLM 调用配合单个 Prompt 输出 0.0-1.0 的评分和通过/不通过等级，是最一致且与人类评判最对齐的方式。</p>
+<h4 id="人工评估捕捉自动化遗漏的问题">人工评估捕捉自动化遗漏的问题</h4>
+<p>人类测试者发现，早期 Agent 始终选择经过 SEO 优化的内容农场，而非权威但排名较低的来源（如学术论文 PDF 或个人博客）。在 Prompt 中添加来源质量启发式规则帮助解决了这个问题。</p>
+<p>💡 <strong>举例说明：来源质量判断</strong>——假设搜索&quot;间歇性断食的健康效果&quot;，SEO 优化的内容农场可能排名靠前但内容浅薄，而真正的医学研究论文排名可能较低但内容更可靠。早期 Agent 容易被排名误导，需要通过 Prompt 引导其关注来源的权威性。</p>
+<h4 id="涌现行为">涌现行为</h4>
+<p>多 Agent 系统具有涌现行为（Emergent Behavior）——这些行为并非通过特定编程产生，而是在系统运行中自然出现。对 Lead Agent 的微小改动可能不可预测地改变 Subagent 的行为方式。最好的 Prompt 不仅仅是严格的指令，而是协作框架——定义分工、解决问题的方法和投入预算。</p>
+<p>💡 <strong>术语解释：涌现行为（Emergent Behavior）</strong>——在复杂系统中，整体表现出的行为无法通过单独分析其组成部分来预测。在多 Agent 系统中，即使每个 Agent 的行为规则是明确的，它们之间的交互也可能产生意想不到的集体行为。</p>
+<h3 id="生产可靠性与工程挑战">生产可靠性与工程挑战</h3>
+<p>在 Agentic 系统中，微小的变更会级联为巨大的行为变化，这使得为必须在长时间运行过程中维护状态的复杂 Agent 编写代码变得异常困难。</p>
+<h4 id="agent-是有状态的错误会累积">Agent 是有状态的，错误会累积</h4>
+<ul>
+<li>系统必须持久执行代码并处理沿途的错误</li>
+<li>构建能够从错误发生处恢复的系统</li>
+<li>将 AI Agent 的适应性与确定性保障措施（如重试逻辑和定期检查点）相结合</li>
+</ul>
+<h4 id="调试需要新方法">调试需要新方法</h4>
+<ul>
+<li>Agent 在不同运行之间是非确定性的，即使使用完全相同的 Prompt</li>
+<li>完整的生产追踪（Production Tracing）让团队能够诊断 Agent 失败的原因并系统性地修复问题</li>
+<li>监控 Agent 的决策模式和交互结构，而非监控单个对话内容</li>
+</ul>
+<h4 id="部署需要谨慎协调">部署需要谨慎协调</h4>
+<ul>
+<li>Agent 系统是高度有状态的 Prompt、工具和执行逻辑的网络</li>
+<li>使用彩虹部署（Rainbow Deployment）避免中断正在运行的 Agent，逐步将流量从旧版本转移到新版本
+💡 <strong>术语解释：彩虹部署（Rainbow Deployment）</strong>——一种渐进式部署策略，在过渡期间同时运行多个版本的服务，逐步将流量从旧版本迁移到新版本。在 Agent 系统中，这确保了正在运行的长任务不会被中断。</li>
+</ul>
+<h4 id="同步执行造成瓶颈">同步执行造成瓶颈</h4>
+<p>目前，Lead Agent 同步执行 Subagent，等待每组完成。异步执行将实现额外的并行性，但在结果协调、状态一致性和错误传播方面增加了挑战。</p>
+<h3 id="附录补充建议">附录：补充建议</h3>
+<h4 id="有状态-agent-的终态评估">有状态 Agent 的终态评估</h4>
+<p>专注于终态评估而非逐轮分析。评估 Agent 是否达到了正确的最终状态，而非是否遵循了特定过程。对于复杂工作流，将评估分解为离散的检查点。</p>
+<h4 id="长期对话管理">长期对话管理</h4>
+<p>实现 Agent 总结已完成工作阶段并将关键信息存储到外部 Memory 的模式，然后再继续推进。当上下文限制接近时，Agent 可以生成具有干净上下文的新 Subagent，同时通过精心设计的交接（Handoff）保持连续性。</p>
+<h4 id="subagent-输出到文件系统">Subagent 输出到文件系统</h4>
+<p>对于某些类型的结果，Subagent 的直接输出可以绕过主协调器。实现工件系统（Artifact System），使专业 Agent 能够创建独立持久化的输出。这防止了多阶段处理过程中的信息丢失，并减少了 Token 开销。</p>
+<h3 id="结论">结论</h3>
+<p>在构建 AI Agent 时，最后一英里往往成为大部分旅程。Agentic 系统中错误的复合性质意味着传统软件中的小问题可能完全使 Agent 偏离轨道。原型与生产之间的差距通常比预期的要大。</p>
+<p>尽管面临这些挑战，多 Agent 系统已被证明对开放式研究任务具有重要价值。通过精心工程、全面测试、细致的 Prompt 和工具设计、稳健的运营实践，以及研究、产品和工程团队之间的紧密协作，多 Agent 研究系统可以可靠地大规模运行。</p>
+<hr>
+<h3 id="译者注">译者注</h3>
+<ol>
+<li>本文是 Anthropic 工程博客中关于多 Agent 系统架构的重要技术文章，详细介绍了 Claude Research 功能的设计理念和工程实践。文章的核心观点是：<strong>多 Agent 系统通过并行化和关注点分离，能够显著提升开放式研究任务的质量</strong>。</li>
+<li>文中&quot;搜索的本质是压缩&quot;这一洞察尤为深刻——Subagent 各自独立搜索不同方向，然后将精华传递给 Lead Agent，这种信息压缩机制是多 Agent 系统性能提升的关键。</li>
+<li>值得关注的是 Token 消耗与性能的关系：升级模型版本（如 Sonnet 3.7 → Sonnet 4）比简单增加 Token 预算带来的性能提升更大。这对实际部署时的成本效益决策具有重要参考价值。</li>
+<li>文章提出的 8 条 Prompt 工程原则具有很强的通用性，不仅适用于研究类 Agent，对构建其他类型的多 Agent 系统同样有指导意义。特别是&quot;让 Agent 自我改进&quot;和&quot;先广后深&quot;的策略值得借鉴。</li>
+<li>关于评估方法，文章强调了 LLM-as-Judge 与人工评估的互补性。自动化评估可以快速迭代，但人工评估能发现自动化遗漏的质量问题（如来源权威性判断），这一经验对 AI 产品的质量保障体系设计很有启发。</li>
+</ol>
+
+  </article>
+</main>
+
+</body>
+</html>

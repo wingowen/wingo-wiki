@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Think 工具：让 Claude 在复杂工具使用场景中停下来思考 - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>Think 工具：让 Claude 在复杂工具使用场景中停下来思考</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2025-03-20
+    </div>
+    <h2 id="think-工具让-claude-在复杂工具使用场景中停下来思考">Think 工具：让 Claude 在复杂工具使用场景中停下来思考</h2>
+<p>&ldquo;Think&rdquo; 工具是 Anthropic 发现的一种有效提升 Claude 复杂问题解决性能的方法，能在复杂任务中为结构化思考创建专属空间。它与 Extended Thinking 不同：Extended Thinking 是模型在生成响应前的深度推理，而 Think 工具是模型在收到工具结果后暂停反思是否已收集足够信息。</p>
+<p>在 τ-Bench 评估中，Think 工具配合优化提示词在航空领域达到 0.570 的 pass^1 分数（基线仅 0.370），相对提升 54%。零售领域仅 Think 工具就达到 0.812。Think 工具最适合的场景包括：工具输出分析（需要仔细处理先前调用结果）、策略繁重环境（需遵循详细指南）和顺序决策（每步建立在前一步之上）。</p>
+<h2 id="核心要点">核心要点</h2>
+<ul>
+<li><strong>与 Extended Thinking 的区别</strong>：Extended Thinking 在响应前深度推理，Think 工具在响应中反思工具结果</li>
+<li><strong>τ-Bench 基准</strong>：测试模型在客户服务场景中使用工具的能力，pass^k 衡量 k 次尝试全部成功</li>
+<li><strong>最佳实践</strong>：困难领域需要配合领域特定的提示词示例，提示词放系统提示比放工具描述更有效</li>
+<li><strong>适用场景</strong>：长链工具调用、规则繁多环境、多步骤顺序决策</li>
+<li><strong>不适用场景</strong>：单次或并行工具调用、简单指令遵循</li>
+</ul>
+<h2 id="相关链接">相关链接</h2>
+<p>[[claude-code]] | [[tool-use]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

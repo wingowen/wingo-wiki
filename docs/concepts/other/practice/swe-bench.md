@@ -24,4 +24,4 @@ SWE-bench 评估的是整个 Agent 系统（AI 模型 + 脚手架代码），而
 
 ## 相关链接
 
-[[anthropic]] | [[claude-code]]
+[anthropic](../../entities/anthropic.md) | [claude-code](../../entities/claude-code.md)

@@ -37,4 +37,4 @@ A: 不会。假答案仅用于检索阶段（计算向量相似度），最终 P
 
 ## 相关链接
 
-[[hyde]] | [[interview-qa-overview]]
+[hyde](../core/hyde.md) | [interview-qa-overview](../../queries/interview-qa-overview.md)

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>AI Agent</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2026-04-15
+    </div>
+    <p>是一种能够自主理解目标、规划和执行多步骤任务的 AI 系统。与传统程序不同，Agent 通过 LLM 进行动态决策，而非预设固定流程。</p>
+<h2 id="核心能力">核心能力</h2>
+<table>
+  <thead>
+      <tr>
+          <th>能力</th>
+          <th>描述</th>
+          <th>相关技术</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>感知 (Perception)</strong></td>
+          <td>理解用户意图，提取关键信息</td>
+          <td>Intent Detection</td>
+      </tr>
+      <tr>
+          <td><strong>规划 (Planning)</strong></td>
+          <td>分解任务，制定执行计划</td>
+          <td>ReAct, Chain-of-Thought</td>
+      </tr>
+      <tr>
+          <td><strong>行动 (Action)</strong></td>
+          <td>选择并执行工具</td>
+          <td>Tool Use, MCP</td>
+      </tr>
+      <tr>
+          <td><strong>观察 (Observation)</strong></td>
+          <td>获取工具执行结果</td>
+          <td>Feedback Loop</td>
+      </tr>
+      <tr>
+          <td><strong>反思 (Reflection)</strong></td>
+          <td>评估结果，调整策略</td>
+          <td>Self-Correction</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="agent-vs-传统开发">Agent vs 传统开发</h2>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>传统开发</th>
+          <th>AI Agent</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>决策方式</td>
+          <td>预设逻辑</td>
+          <td>LLM 动态决策</td>
+      </tr>
+      <tr>
+          <td>执行路径</td>
+          <td>固定</td>
+          <td>可能多样</td>
+      </tr>
+      <tr>
+          <td>输入-输出</td>
+          <td>确定映射</td>
+          <td>概率性</td>
+      </tr>
+      <tr>
+          <td>错误处理</td>
+          <td>显式代码</td>
+          <td>自我反思</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="架构模式">架构模式</h2>
+<ul>
+<li><strong>ReAct</strong>: 结合推理与行动的循环模式</li>
+<li><strong>LangGraph</strong>: 基于状态机的多阶段 Agent 框架</li>
+<li><strong>Agentic RAG</strong>: 带记忆的检索增强生成</li>
+</ul>
+<h2 id="相关链接">相关链接</h2>
+<p>[[advanced-tool-use]] | [[agent-framework-practice]] | [[agent-framework-theory]] | [[agent-skills]] | [[building-effective-agents]] | [[context-engineering]] | [[effective-context-engineering]] | [[langgraph]] | [[mcp]] | [[multi-agent]] | [[react]] | [[tool-use]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

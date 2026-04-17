@@ -24,4 +24,4 @@ Tool Search Tool 通过 defer_loading 机制延迟加载工具定义，Claude �
 
 ## 相关链接
 
-[[tool-use]] | [[mcp]]
+[tool-use](tool-use.md) | [mcp](../../mcp/core/mcp.md)

@@ -8,7 +8,7 @@ sources: ["raw/articles/rag.md"]
 notion_id: "34367b21-8207-818e-a7de-d00cd93fab00"
 ---
 
-> **难度**：⭐⭐⭐ | **面试频率**：高 | **关联**：[[interview-hyde]] [[context-management]]
+> **难度**：⭐⭐⭐ | **面试频率**：高 | **关联**：[interview-hyde](../interview/interview-hyde.md) [context-management](../../context-engineering/core/context-management.md)
 
 ---
 
@@ -48,4 +48,4 @@ A: 层级检索（粗粒度→细粒度）、摘要增强检索、HyDE 等方案
 
 ## 相关链接
 
-[[contextual-retrieval]] | [[hyde]]
+[contextual-retrieval](contextual-retrieval.md) | [hyde](hyde.md)

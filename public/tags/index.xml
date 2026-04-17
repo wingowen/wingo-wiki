@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Wingo Wiki</title>
+    <link>https://wingo-wiki.netlify.app/tags/</link>
+    <description>Recent content in Tags on Wingo Wiki</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wingo-wiki.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Agent</title>
+      <link>https://wingo-wiki.netlify.app/tags/agent/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/agent/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Anthropic</title>
+      <link>https://wingo-wiki.netlify.app/tags/anthropic/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/anthropic/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Architecture</title>
+      <link>https://wingo-wiki.netlify.app/tags/architecture/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/architecture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Company</title>
+      <link>https://wingo-wiki.netlify.app/tags/company/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/company/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>https://wingo-wiki.netlify.app/tags/development/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hyde</title>
+      <link>https://wingo-wiki.netlify.app/tags/hyde/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/hyde/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interview</title>
+      <link>https://wingo-wiki.netlify.app/tags/interview/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/interview/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Langgraph</title>
+      <link>https://wingo-wiki.netlify.app/tags/langgraph/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/langgraph/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mcp</title>
+      <link>https://wingo-wiki.netlify.app/tags/mcp/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/mcp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Memory</title>
+      <link>https://wingo-wiki.netlify.app/tags/memory/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/memory/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Planning</title>
+      <link>https://wingo-wiki.netlify.app/tags/planning/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/planning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Query</title>
+      <link>https://wingo-wiki.netlify.app/tags/query/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/query/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rag</title>
+      <link>https://wingo-wiki.netlify.app/tags/rag/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/rag/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>React</title>
+      <link>https://wingo-wiki.netlify.app/tags/react/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/react/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reasoning</title>
+      <link>https://wingo-wiki.netlify.app/tags/reasoning/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/reasoning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tool-Use</title>
+      <link>https://wingo-wiki.netlify.app/tags/tool-use/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/tool-use/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multi-Agent</title>
+      <link>https://wingo-wiki.netlify.app/tags/Multi-Agent/</link>
+      <pubDate>Fri, 13 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/Multi-Agent/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Benchmark</title>
+      <link>https://wingo-wiki.netlify.app/tags/benchmark/</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/benchmark/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Evaluation</title>
+      <link>https://wingo-wiki.netlify.app/tags/evaluation/</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/tags/evaluation/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

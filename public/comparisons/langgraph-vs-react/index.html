@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LangGraph 核心原理与 ReAct 对比 - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>LangGraph 核心原理与 ReAct 对比</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2026-04-15
+    </div>
+    <blockquote>
+<p><strong>难度</strong>：⭐⭐⭐⭐ | <strong>面试频率</strong>：极高 | <strong>关联</strong>：[[context-management]] [[agent-architecture]]</p>
+</blockquote>
+<hr>
+<h1 id="langgraph-核心原理与-react-对比">LangGraph 核心原理与 ReAct 对比</h1>
+<h2 id="一react-范式">一、ReAct 范式</h2>
+<h3 id="11-react-循环">1.1 ReAct 循环</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># ReAct = Reasoning + Acting</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>    thought <span style="color:#f92672">=</span> llm<span style="color:#f92672">.</span>think(state[<span style="color:#e6db74">&#34;messages&#34;</span>])  <span style="color:#75715e"># 思考</span>
+</span></span><span style="display:flex;"><span>    action <span style="color:#f92672">=</span> llm<span style="color:#f92672">.</span>act(thought)               <span style="color:#75715e"># 决定行动</span>
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> execute_tool(action)           <span style="color:#75715e"># 执行工具</span>
+</span></span><span style="display:flex;"><span>    state[<span style="color:#e6db74">&#34;messages&#34;</span>]<span style="color:#f92672">.</span>append(result)       <span style="color:#75715e"># 添加结果</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> is_finished(result):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
+</span></span></code></pre></div><h3 id="12-react-的局限性">1.2 ReAct 的局限性</h3>
+<table>
+  <thead>
+      <tr>
+          <th>问题</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>线性循环</td>
+          <td>只能顺序执行，难以表达复杂流程</td>
+      </tr>
+      <tr>
+          <td>状态分散</td>
+          <td>状态分散在 messages 列表中</td>
+      </tr>
+      <tr>
+          <td>难以持久化</td>
+          <td>中断后难以恢复执行状态</td>
+      </tr>
+      <tr>
+          <td>分支困难</td>
+          <td>难以表达条件分支和并行</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="二langgraph-核心概念">二、LangGraph 核心概念</h2>
+<h3 id="21-三大核心组件">2.1 三大核心组件</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> langgraph.graph <span style="color:#f92672">import</span> StateGraph, END
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. State：全局状态</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AgentState</span>(TypedDict):
+</span></span><span style="display:flex;"><span>    messages: Annotated[list, add_messages]
+</span></span><span style="display:flex;"><span>    current_node: str
+</span></span><span style="display:flex;"><span>    intermediate_values: dict
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Nodes：节点（函数）</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">node_a</span>(state: AgentState) <span style="color:#f92672">-&gt;</span> AgentState:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 处理逻辑</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;current_node&#34;</span>: <span style="color:#e6db74">&#34;node_b&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">node_b</span>(state: AgentState) <span style="color:#f92672">-&gt;</span> AgentState:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;current_node&#34;</span>: END}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Edges：边（流转关系）</span>
+</span></span><span style="display:flex;"><span>graph <span style="color:#f92672">=</span> StateGraph(AgentState)
+</span></span><span style="display:flex;"><span>graph<span style="color:#f92672">.</span>add_node(<span style="color:#e6db74">&#34;node_a&#34;</span>, node_a)
+</span></span><span style="display:flex;"><span>graph<span style="color:#f92672">.</span>add_node(<span style="color:#e6db74">&#34;node_b&#34;</span>, node_b)
+</span></span><span style="display:flex;"><span>graph<span style="color:#f92672">.</span>add_edge(<span style="color:#e6db74">&#34;node_a&#34;</span>, <span style="color:#e6db74">&#34;node_b&#34;</span>)
+</span></span><span style="display:flex;"><span>graph<span style="color:#f92672">.</span>add_edge(<span style="color:#e6db74">&#34;node_b&#34;</span>, END)
+</span></span></code></pre></div><h3 id="22-add_messages-注解">2.2 add_messages 注解</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> operator <span style="color:#f92672">import</span> add
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> Annotated
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AgentState</span>(TypedDict):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 使用 add_messages 注解，自动合并消息列表</span>
+</span></span><span style="display:flex;"><span>    messages: Annotated[list, add_messages]
+</span></span></code></pre></div><p><strong>作用</strong>：保证消息列表的累积而非覆盖，每次返回时自动将新消息追加到列表。</p>
+<h3 id="23-条件路由">2.3 条件路由</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> langgraph.graph <span style="color:#f92672">import</span> ConditionalEdges
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 条件边：根据状态决定下一个节点</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">route_after_node_a</span>(state: AgentState) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>    last_msg <span style="color:#f92672">=</span> state[<span style="color:#e6db74">&#34;messages&#34;</span>][<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;error&#34;</span> <span style="color:#f92672">in</span> last_msg<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>lower():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;error_handler&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> <span style="color:#e6db74">&#34;complete&#34;</span> <span style="color:#f92672">in</span> last_msg<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>lower():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> END
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;node_b&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加条件边</span>
+</span></span><span style="display:flex;"><span>graph<span style="color:#f92672">.</span>add_conditional_edges(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;node_a&#34;</span>,
+</span></span><span style="display:flex;"><span>    route_after_node_a,
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;error_handler&#34;</span>: <span style="color:#e6db74">&#34;error_handler_node&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;node_b&#34;</span>: <span style="color:#e6db74">&#34;node_b&#34;</span>,
+</span></span><span style="display:flex;"><span>        END: END
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><hr>
+<h2 id="三langgraph-vs-react">三、LangGraph vs ReAct</h2>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>ReAct</th>
+          <th>LangGraph</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>执行模型</td>
+          <td>线性循环</td>
+          <td>有向图</td>
+      </tr>
+      <tr>
+          <td>状态管理</td>
+          <td>messages 列表</td>
+          <td>全局 State + 注解</td>
+      </tr>
+      <tr>
+          <td>流程控制</td>
+          <td>硬编码 if-else</td>
+          <td>边/条件边</td>
+      </tr>
+      <tr>
+          <td>多步分支</td>
+          <td>困难</td>
+          <td>天然支持</td>
+      </tr>
+      <tr>
+          <td>中断恢复</td>
+          <td>难</td>
+          <td>Checkpointer 原生支持</td>
+      </tr>
+      <tr>
+          <td>并行执行</td>
+          <td>不支持</td>
+          <td>支持分支并行</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="四面试高频追问">四、面试高频追问</h2>
+<h3 id="q-langgraph-怎么实现中断恢复">Q: LangGraph 怎么实现中断恢复？</h3>
+<p>A: 通过 Checkpointer。当 Agent 执行中断时，Checkpointer 会保存当前 State 到持久化存储（SQLite/PostgreSQL）。恢复时，通过 thread_id 加载状态，继续执行。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>app <span style="color:#f92672">=</span> graph<span style="color:#f92672">.</span>compile(checkpointer<span style="color:#f92672">=</span>PostgresSaver<span style="color:#f92672">.</span>from_conn_string(<span style="color:#e6db74">&#34;...&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 中断点</span>
+</span></span><span style="display:flex;"><span>interrupted_state <span style="color:#f92672">=</span> app<span style="color:#f92672">.</span>invoke(input, config<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;configurable&#34;</span>: {<span style="color:#e6db74">&#34;thread_id&#34;</span>: <span style="color:#e6db74">&#34;123&#34;</span>}})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 恢复执行</span>
+</span></span><span style="display:flex;"><span>resume_state <span style="color:#f92672">=</span> app<span style="color:#f92672">.</span>invoke(<span style="color:#66d9ef">None</span>, config<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;configurable&#34;</span>: {<span style="color:#e6db74">&#34;thread_id&#34;</span>: <span style="color:#e6db74">&#34;123&#34;</span>}})
+</span></span></code></pre></div><h3 id="q-add_messages-和普通列表有什么区别">Q: add_messages 和普通列表有什么区别？</h3>
+<p>A: add_messages 是一个<strong>累加注解</strong>。普通列表赋值会覆盖，而 add_messages 保证了节点返回的新消息会<strong>累积</strong>到现有列表，而不是替换。</p>
+<h3 id="q-为什么需要条件边">Q: 为什么需要条件边？</h3>
+<p>A: 真实场景中，Agent 的下一步不是固定的。需要根据中间结果动态决定：成功时进入下一节点，失败时进入错误处理，无事发生时结束。这种动态路由用 if-else 难以表达，但用条件边可以清晰建模。</p>
+
+  </article>
+</main>
+
+</body>
+</html>

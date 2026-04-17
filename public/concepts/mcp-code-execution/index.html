@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>通过 MCP 实现代码执行：构建更高效的 Agent - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>通过 MCP 实现代码执行：构建更高效的 Agent</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2025-06-26
+    </div>
+    <h1 id="通过-mcp-实现代码执行构建更高效的-agent">通过 MCP 实现代码执行：构建更高效的 Agent</h1>
+<blockquote>
+<p>原文：Code execution with MCP: Building more efficient agents
+作者：Adam Jones, Conor Kelly
+发布日期：2025-11-04</p>
+</blockquote>
+<h3 id="为什么工具消耗过多-token-会降低-agent-效率">为什么工具消耗过多 token 会降低 Agent 效率？</h3>
+<p>随着 MCP 工具数量的增长，两种模式会增加成本和延迟：</p>
+<ol>
+<li><strong>工具定义过载上下文窗口</strong>：预先加载所有工具定义到上下文，数千个工具可能消耗数十万 token</li>
+<li><strong>中间工具结果重复传递</strong>：每个中间结果（如大型文档）都需要经过模型，可能超出上下文限制</li>
+</ol>
+<h3 id="核心解决方案代码执行模式">核心解决方案：代码执行模式</h3>
+<p>将 MCP 服务器作为代码 API 而非直接工具调用。Agent 编写代码来与 MCP 服务器交互：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// 通过探索文件系统发现工具，只加载所需的工具定义
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">gdrive</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./servers/google-drive&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">salesforce</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./servers/salesforce&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">transcript</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">gdrive</span>.<span style="color:#a6e22e">getDocument</span>({ <span style="color:#a6e22e">documentId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;abc123&#39;</span> })).<span style="color:#a6e22e">content</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">salesforce</span>.<span style="color:#a6e22e">updateRecord</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">objectType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SalesMeeting&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">recordId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;00Q5f000001abcXYZ&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">Notes</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">transcript</span> }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>这种方法将 token 使用量从 150,000 个减少到 2,000 个（节省 98.7%）。</p>
+<hr>
+<h3 id="核心要点">核心要点</h3>
+<p><strong>渐进式披露（Progressive Disclosure）</strong></p>
+<ul>
+<li>模型通过探索文件系统按需读取工具定义，而非一次性全部加载</li>
+<li>可通过 search_tools 工具查找相关定义，控制详细程度</li>
+</ul>
+<p><strong>上下文高效的工具结果</strong></p>
+<ul>
+<li>Agent 可以在代码中过滤和转换数据再返回，只将高信号信息传给模型</li>
+<li>循环、条件判断和错误处理使用熟悉的代码模式</li>
+</ul>
+<p><strong>隐私保护操作</strong></p>
+<ul>
+<li>中间结果默认保留在执行环境中，不会进入模型上下文</li>
+<li>可对 PII（个人身份信息）进行令牌化处理，防止敏感数据泄露</li>
+</ul>
+<p><strong>状态持久化和 Skills</strong></p>
+<ul>
+<li>具有文件系统访问权限的代码执行允许 Agent 在操作之间维护状态</li>
+<li>Agent 可将代码保存为可重用函数，形成结构化的 Skills 供将来使用</li>
+</ul>
+<hr>
+<h3 id="总结">总结</h3>
+<p>MCP 为 Agent 连接许多工具和系统提供了基础协议。当工具数量过多时，通过代码执行方式（Code Mode）可以让 Agent 使用熟悉的编程构造来更高效地与 MCP 服务器交互，同时实现渐进式披露、隐私保护和状态持久化。</p>
+<h2 id="相关链接">相关链接</h2>
+<p>[[mcp]] | [[claude-code]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

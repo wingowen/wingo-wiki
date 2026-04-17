@@ -25,7 +25,7 @@ Thought → Action → Observation → Thought → ...
 
 ## 与 LangGraph 对比
 
-[[langgraph]] 是 ReAct 的工程化实现，添加了状态管理和持久化能力。
+[langgraph](langgraph.md) 是 ReAct 的工程化实现，添加了状态管理和持久化能力。
 
 ## 代码示例
 
@@ -41,4 +41,4 @@ response = llm.invoke(f"""
 
 ## 相关链接
 
-[[ai-agent]] | [[langgraph]] | Reasoning | Planning
+[ai-agent](../../entities/ai-agent.md) | [langgraph](langgraph.md) | Reasoning | Planning

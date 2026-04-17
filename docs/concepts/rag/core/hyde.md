@@ -8,7 +8,7 @@ sources: ["raw/articles/hyde.md"]
 notion_id: "34367b21-8207-818d-9eb8-fb9c821dbd20"
 ---
 
-> **难度**：⭐⭐⭐⭐ | **面试频率**：高 | **关联**：[[rag]] [[context-management]]
+> **难度**：⭐⭐⭐⭐ | **面试频率**：高 | **关联**：[rag](rag.md) [context-management](../../context-engineering/core/context-management.md)
 
 ---
 
@@ -47,4 +47,4 @@ HyDE（Hypothetical Document Embeddings）是 Luyu Gao 等人于 2022 年提出�
 
 ## 相关链接
 
-[[contextual-retrieval]]
+[contextual-retrieval](contextual-retrieval.md)

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三个近期问题的故障复盘 | A postmortem of three recent issues - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>三个近期问题的故障复盘 | A postmortem of three recent issues</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2025-09-17
+    </div>
+    <h2 id="三个近期问题的故障复盘">三个近期问题的故障复盘</h2>
+<blockquote>
+<p>原文：Anthropic Engineering | 发布日期：2025-09-17</p>
+</blockquote>
+<hr>
+<h3 id="事件概述">事件概述</h3>
+<p>2025年8月至9月初，三个基础设施 Bug 间歇性降低了 Claude 响应质量。问题根源：Context Window 路由错误、输出损坏、XLA:TPU 编译错误。</p>
+<p><strong>声明</strong>：Anthropic 绝不会因需求量、时段或服务器负载降低模型质量。</p>
+<h3 id="三个-bug-分析">三个 Bug 分析</h3>
+<p><strong>1. Context Window 路由错误</strong>
+8月5日引入，Sonnet 4 请求被错误路由到 1M Context Window 服务器。8月29日负载均衡变更后，影响扩大到 16%。</p>
+<p><strong>2. 输出损坏</strong>
+8月25日 TPU 服务器错误配置，导致 token 生成时分配概率出错（英文提示出现泰语/中文字符）。</p>
+<p><strong>3. Approximate top-k XLA:TPU 编译错误</strong>
+混合精度算术不匹配导致概率最高 token 有时从候选列表消失，行为随机不一致。</p>
+<h3 id="教训与改进">教训与改进</h3>
+<ul>
+<li>更敏感的评估方法，持续在生产系统运行评估</li>
+<li>开发更快调试工具，不牺牲用户隐私</li>
+<li>用户反馈至关重要（/bug 命令、&ldquo;踩&quot;按钮）</li>
+<li>评估有噪声，需要多种方式互补验证</li>
+</ul>
+<h2 id="相关链接">相关链接</h2>
+<p>[[anthropic]] | [[claude-code]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

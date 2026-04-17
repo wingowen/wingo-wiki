@@ -68,4 +68,4 @@ MCP 为 Agent 连接许多工具和系统提供了基础协议。当工具数量
 
 ## 相关链接
 
-[[mcp]] | [[claude-code]]
+[mcp](../core/mcp.md) | [claude-code](../../entities/claude-code.md)

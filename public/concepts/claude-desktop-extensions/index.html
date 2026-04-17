@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>桌面扩展：Claude Desktop 一键安装 MCP 服务器 - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>桌面扩展：Claude Desktop 一键安装 MCP 服务器</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2025-06-26
+    </div>
+    <h2 id="桌面扩展claude-desktop-一键安装-mcp-服务器">桌面扩展：Claude Desktop 一键安装 MCP 服务器</h2>
+<p>Desktop Extensions（.mcpb 文件）是 Anthropic 推出的 MCP 服务器打包格式，让安装变得像点击按钮一样简单。传统安装需要 Node.js、手动编辑 JSON 配置文件和处理依赖问题，而 Desktop Extensions 将整个 MCP 服务器（包括所有依赖）打包成一个可安装文件，双击即可完成安装。</p>
+<p>Desktop Extension 本质是一个 ZIP 压缩包，包含 manifest.json（扩展元数据和配置）、server/（MCP 服务器实现）和 dependencies/（所有必需包/库）。manifest.json 是唯一必需文件，其中定义了服务器类型（node/python/binary）、入口点、用户配置模板和平台特定设置。</p>
+<h2 id="核心要点">核心要点</h2>
+<ul>
+<li><strong>.mcpb 格式</strong>：ZIP 打包格式，包含服务器、依赖和 manifest.json</li>
+<li><strong>内置运行时</strong>：Claude Desktop 自带 Node.js，消除外部依赖</li>
+<li><strong>自动更新</strong>：有新版本时自动更新</li>
+<li><strong>安全密钥存储</strong>：API Key 等敏感信息存储在 OS Keychain 中</li>
+<li><strong>模板变量</strong>：${__dirname}、${user_config.key} 等支持运行时值替换</li>
+</ul>
+<h2 id="相关链接">相关链接</h2>
+<p>[[mcp]] | [[claude-code]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

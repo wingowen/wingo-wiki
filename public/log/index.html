@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1></h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      
+    </div>
+    <h1 id="wiki-log">Wiki Log</h1>
+<blockquote>
+<p>Chronological record of all wiki actions. Append-only.
+Format: <code>## [YYYY-MM-DD] action | subject</code>
+Actions: ingest, update, query, lint, create, archive, delete</p>
+</blockquote>
+<h2 id="2026-04-15-create--wiki-initialized">[2026-04-15] create | Wiki initialized</h2>
+<ul>
+<li>Domain: AI Agent 技术与工程实践</li>
+<li>Structure created with SCHEMA.md, index.md, log.md</li>
+<li>Source: Notion 总看板 (28 pages)</li>
+</ul>
+<h2 id="2026-04-15-ingest--notion-pages-imported">[2026-04-15] ingest | Notion pages imported</h2>
+<ul>
+<li>Imported 28 pages from Notion database &ldquo;总看板&rdquo;</li>
+<li>Created entity pages: AI Agent, Anthropic, Claude Code</li>
+<li>Created concept pages: LangGraph, RAG, MCP, ReAct, Multi-Agent, Context Engineering, Tool Use</li>
+<li>Created comparison pages: LangGraph vs ReAct</li>
+<li>Created index.md with full catalog</li>
+<li>All pages linked with [[wikilinks]]</li>
+</ul>
+<h2 id="2026-04-15-create--core-entity-pages">[2026-04-15] create | Core entity pages</h2>
+<ul>
+<li>ai-agent.md: AI Agent 核心概念和架构模式</li>
+<li>anthropic.md: Anthropic 公司介绍</li>
+<li>claude-code.md: Claude Code 工具介绍</li>
+<li>tool-use.md: Tool Use 最佳实践</li>
+<li>langgraph.md: LangGraph 框架介绍</li>
+<li>rag.md: RAG 技术概览</li>
+<li>mcp.md: MCP 协议介绍</li>
+<li>react.md: ReAct 框架介绍</li>
+<li>multi-agent.md: Multi-Agent 系统介绍</li>
+<li>context-engineering.md: Context Engineering 概念</li>
+</ul>
+<h2 id="2026-04-15-create--comparison-pages">[2026-04-15] create | Comparison pages</h2>
+<ul>
+<li>comparisons/langgraph-vs-react.md: LangGraph 与 ReAct 对比分析</li>
+</ul>
+<h2 id="2026-04-15-lint--wiki-审核修复">[2026-04-15] lint | Wiki 审核修复</h2>
+<ul>
+<li>审核发现：44页全部孤立 + 25条broken wikilinks + 18页超大 + 标签体系混乱</li>
+<li>执行修复：
+<ul>
+<li>重命名 29 个超长中文文件名为规范短名称（如 rag.md, mcp.md, langgraph.md）</li>
+<li>修正 frontmatter type 污染（6个页面）</li>
+<li>全文替换 71 条 wikilinks，全部指向正确文件名</li>
+<li>移除 3 条无目标页的失效链接（Planning/Reasoning/Security）</li>
+<li>补充交叉引用：39 个页面新增 wikilinks outbound</li>
+<li>归档 1 个重复文件（我们如何构建多agent研究系统）至 _archive/</li>
+<li>重建 index.md，43 页全部在索引中</li>
+</ul>
+</li>
+<li>最终状态：43页 | 155条 wikilinks | 0条broken | 0个orphan | 0条missing in index</li>
+</ul>
+<h2 id="2026-04-15-update--超大页面拆分--tag-体系规范化">[2026-04-15] update | 超大页面拆分 + Tag 体系规范化</h2>
+<ul>
+<li>18 个超大页面（&gt;200行）处理结果：
+<ul>
+<li><code>agent-framework-from-scratch</code>(647行) → 拆分为 <code>agent-framework-theory</code>(170行) + <code>agent-framework-practice</code>(488行)</li>
+<li><code>mcp-deep-dive</code>(581行) 保留，内容覆盖 MCP 核心协议+桌面扩展+代码执行三部分</li>
+<li>其余 16 个页面为内聚翻译/分析文章，维持现状不强行拆分</li>
+</ul>
+</li>
+<li>Tag 体系规范化：43 页全量标签修正
+<ul>
+<li>移除所有未定义标签（大小写错误如&quot;Anthropic&quot;→&ldquo;anthropic&rdquo;，中文标签如&quot;面试复盘&quot;→&ldquo;interview&rdquo;）</li>
+<li>统一为 SCHEMA.md taxonomy 中的标准标签</li>
+</ul>
+</li>
+<li>修复指向已归档页面的 wikilinks：<code>ai-agent</code>、<code>agent-framework-practice</code> → <code>agent-framework-theory</code></li>
+<li>重建 index.md：44 页全部在索引中</li>
+<li>当前状态：44页 | 0条broken | 0个orphan | Tag体系规范</li>
+</ul>
+<h2 id="2026-04-15-update--超大页面拆分--tag体系规范化--链接格式修复">[2026-04-15] update | 超大页面拆分 + Tag体系规范化 + 链接格式修复</h2>
+<ul>
+<li>18个超大页面处理：
+<ul>
+<li><code>agent-framework-from-scratch</code>(647行) → 拆为 <code>agent-framework-theory</code>(170行) + <code>agent-framework-practice</code>(488行)</li>
+<li><code>mcp-deep-dive</code>(581行) 等其余16页内容内聚，保留不拆分</li>
+</ul>
+</li>
+<li>批量修复 wikilink 格式：9个文件的多个重复 ## 相关链接 section 合并去重</li>
+<li>Tag体系全量规范化：所有43页标签映射到SCHEMA taxonomy（含react/langgraph/mcp/hyde等）</li>
+<li>SCHEMA.md taxonomy 去重补全：添加react/query标签</li>
+<li>修复指向已归档页面的wikilinks</li>
+<li>当前：44页 | 161条wikilinks | 0 broken | 0 orphan | Tag体系规范</li>
+</ul>
+<h2 id="2026-04-15-lint--wiki-审查--自动修复">[2026-04-15] lint | Wiki 审查 + 自动修复</h2>
+<ul>
+<li>审查项目：broken links, orphans, frontmatter, page size, tag taxonomy</li>
+<li>实际状态：0 broken links | 0 orphans | Tag体系规范 | log.md 健康</li>
+<li>发现问题：18 个 frontmatter type 污染（translation/analysis/framework → concept）</li>
+<li>自动修复：18 个文件 type 已全部修正为 <code>concept</code></li>
+<li>剩余问题：18 个超大页面（&gt;200行），建议手动拆分或接受现状（翻译/分析文章内聚）</li>
+</ul>
+<h2 id="2026-04-15-restructure--layer-12-重构---补全-raw--精简-layer-2">[2026-04-15] restructure | Layer 1/2 重构 - 补全 raw/ + 精简 Layer 2</h2>
+<h3 id="背景">背景</h3>
+<p>根据 LLM Wiki 正确架构：Layer 1 (raw/) 存放原始素材，Layer 2 (concepts/) 存放精简知识点。原 wiki 将完整翻译文章塞入 concepts/，raw/ 完全为空。</p>
+<h3 id="执行操作">执行操作</h3>
+<ul>
+<li><strong>Layer 1 补全</strong>：30 篇原始翻译/分析文章迁移到 <code>raw/articles/</code></li>
+<li><strong>Layer 2 精简</strong>：30 个 concepts/ 页面从 100-581 行压缩至 27-70 行</li>
+<li><strong>删除重复页面</strong>：<code>interview-rag.md</code>（与 <code>rag.md</code> 内容重叠）已删除</li>
+<li><strong>删除重复文件</strong>：<code>comparisons/interview-langgraph-react.md</code>（与 <code>langgraph-vs-react.md</code> 重复）</li>
+<li><strong>修复损坏 frontmatter</strong>：<code>queries/interview-overview.md</code>、<code>queries/interview-qa-overview.md</code> 损坏 frontmatter 已修复</li>
+<li><strong>修复残留引用</strong>：替换 <code>interview-langgraph-react</code> → <code>langgraph-vs-react</code> 引用</li>
+<li><strong>清理临时目录</strong>：<code>temp_raw/</code> 已删除</li>
+</ul>
+<h3 id="当前状态">当前状态</h3>
+<ul>
+<li><strong>raw/articles/</strong>: 30 个文件（原始不可变素材）</li>
+<li><strong>concepts/</strong>: 36 个精简知识点页（27-147 行）</li>
+<li><strong>entities/</strong>: 3 个实体页（AI Agent, Anthropic, Claude Code）</li>
+<li><strong>comparisons/</strong>: 1 个对比页（LangGraph vs ReAct）</li>
+<li><strong>queries/</strong>: 3 个查询/复盘页</li>
+<li><strong>Total wiki pages</strong>: 43 页</li>
+<li><strong>0 broken wikilinks | 0 orphan pages | Tag 体系规范</strong></li>
+</ul>
+
+  </article>
+</main>
+
+</body>
+</html>

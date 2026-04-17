@@ -5,8 +5,7 @@ updated: 2026-04-15
 type: entity
 tags: [agent, anthropic, architecture]
 sources: []
----
-是一种能够自主理解目标、规划和执行多步骤任务的 AI 系统。与传统程序不同，Agent 通过 LLM 进行动态决策，而非预设固定流程。
+---是一种能够自主理解目标、规划和执行多步骤任务的 AI 系统。与传统程序不同，Agent 通过 LLM 进行动态决策，而非预设固定流程。
 
 ## 核心能力
 
@@ -35,4 +34,4 @@ sources: []
 
 ## 相关链接
 
-[[advanced-tool-use]] | [[agent-framework-practice]] | [[agent-framework-theory]] | [[agent-skills]] | [[building-effective-agents]] | [[context-engineering]] | [[effective-context-engineering]] | [[langgraph]] | [[mcp]] | [[multi-agent]] | [[react]] | [[tool-use]]
+[advanced-tool-use](../tool-use/core/advanced-tool-use.md) | [agent-framework-practice](../agent-architecture/practice/agent-framework-practice.md) | [agent-framework-theory](../agent-architecture/core/agent-framework-theory.md) | [agent-skills](../other/practice/agent-skills.md) | [building-effective-agents](../agent-architecture/practice/building-effective-agents.md) | [context-engineering](../context-engineering/core/context-engineering.md) | [effective-context-engineering](../context-engineering/practice/effective-context-engineering.md) | [langgraph](../other/core/langgraph.md) | [mcp](../mcp/core/mcp.md) | [multi-agent](../multi-agent/core/multi-agent.md) | [react](../other/core/react.md) | [tool-use](../tool-use/core/tool-use.md)

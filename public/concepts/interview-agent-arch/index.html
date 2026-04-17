@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【面试专题】Agent 架构设计：从传统开发到智能体 - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>【面试专题】Agent 架构设计：从传统开发到智能体</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2026-04-15
+    </div>
+    <h2 id="agent-架构设计从传统开发到智能体">Agent 架构设计：从传统开发到智能体</h2>
+<blockquote>
+<p>难度：⭐⭐⭐⭐ | 面试频率：高 | 关联：👉 LangGraph 核心原理与 ReAct 对比 👉 上下文管理：短期记忆与长期记忆</p>
+</blockquote>
+<hr>
+<h3 id="什么是-agent">什么是 Agent？</h3>
+<p>Agent 是能够自主使用工具、规划步骤并执行任务以达成目标的 AI 系统。与传统开发的&quot;输入确定则输出确定&quot;不同，Agent 的每一步都是 LLM 动态决策的，同样的输入可能产生不同的执行路径。</p>
+<p>Agent 思维模型：用户目标 → 感知意图 → 规划分解 → 选择工具执行 → 观察反馈 → 反思调整 → 循环直到目标达成。</p>
+<h3 id="核心架构组件">核心架构组件</h3>
+<p><strong>感知层（Perception）</strong>：理解用户意图，提取关键信息，将非结构化输入转为结构化状态。</p>
+<p><strong>决策层（Decision）</strong>：基于当前状态（可用工具、历史消息）由 LLM 决定下一步行动。</p>
+<p><strong>行动层（Action）</strong>：执行具体工具调用，返回结果供下一轮推理使用。</p>
+<h3 id="c-端用户偏好实现">C 端用户偏好实现</h3>
+<p>用户画像通过行为数据（click/favorite/book）动态更新兴趣权重，向量化后进行相似度匹配推荐。冷启动时可采用：显式偏好收集、人口统计学推荐、探索-利用策略、迁移学习等方案。</p>
+<h3 id="面试要点">面试要点</h3>
+<ul>
+<li><strong>安全性</strong>：多层防护包括工具白名单、参数校验、沙箱执行、Human-in-the-loop、人工审核</li>
+<li><strong>成本控制</strong>：减少不必要 LLM 调用、大小模型路由、优化 Prompt 长度、设置 MAX_TURNS</li>
+<li><strong>效果评估</strong>：任务完成率、工具调用效率、用户满意度、延迟、成本</li>
+</ul>
+<h2 id="相关链接">相关链接</h2>
+<p>[[agent-architecture]] | [[interview-qa-overview]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

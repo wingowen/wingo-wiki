@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent 面试复盘总览 - Wingo Wiki</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 30px; }
+    pre { background: #f5f5f5; padding: 15px; overflow-x: auto; border-radius: 5px; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://wingo-wiki.netlify.app/">Home</a> | <a href="https://wingo-wiki.netlify.app/concepts/">Concepts</a> | <a href="https://wingo-wiki.netlify.app/comparisons/">Comparisons</a>
+  </nav>
+  
+<main>
+  <article>
+    <h1>AI Agent 面试复盘总览</h1>
+    <div style="color:#666;font-size:0.9em;margin-bottom:20px;">
+      2026-04-15
+    </div>
+    <blockquote>
+<p><strong>面试岗位</strong>：AI应用开发 / 智能体（Agent）开发实习生
+<strong>面试强度</strong>：⭐⭐⭐⭐⭐（极高，高压压力测试）
+<strong>项目方向</strong>：智能体旅游项目
+<strong>核心痛点</strong>：项目细节被深度拷问，底层原理掌握不足</p>
+</blockquote>
+<hr>
+<h1 id="ai-agent-面试复盘总览">AI Agent 面试复盘总览</h1>
+<h2 id="一面试核心分析">一、面试核心分析</h2>
+<p>本次面试官专业能力极强，直击项目底层实现逻辑，属于典型的高压技术面试。面试重点不在于&quot;你做了什么功能&quot;，而在于&quot;你为什么这么做&quot;以及&quot;底层原理是什么&quot;。</p>
+<hr>
+<h2 id="二技术考点索引">二、技术考点索引</h2>
+<h3 id="1-langgraph-核心原理">1. LangGraph 核心原理</h3>
+<ul>
+<li>LangGraph 如何替代 ReAct？图流转 vs 线性循环</li>
+<li>State（全局状态）、Nodes（节点）、Edges（边）的设计思想</li>
+<li>add_messages 注解与条件路由（conditional_edges）</li>
+<li>多智能体协作与中断恢复机制</li>
+<li><strong>关联页面</strong>：👉 [[langgraph-vs-react]]</li>
+</ul>
+<h3 id="2-上下文管理context-management">2. 上下文管理（Context Management）</h3>
+<ul>
+<li>短期记忆：State 传递、Checkpointer、线程隔离</li>
+<li>长期记忆：数据库存储、向量检索历史摘要</li>
+<li>消息裁剪策略与 Context Window 溢出防护</li>
+<li><strong>关联页面</strong>：👉 [[context-management]]</li>
+</ul>
+<h3 id="3-rag-检索增强生成">3. RAG 检索增强生成</h3>
+<ul>
+<li>文档分块（Chunking）策略：语义切分、重叠设置</li>
+<li>向量存储与 Top-K 检索</li>
+<li>超大文件处理方案</li>
+<li><strong>关联页面</strong>：👉 [[interview-rag]]</li>
+</ul>
+<h3 id="4-hyde-假设文档嵌入">4. HyDE 假设文档嵌入</h3>
+<ul>
+<li>HyDE 原理：用 LLM 生成的假答案来引导检索</li>
+<li>适用场景：查询简短、模糊时</li>
+<li>与 RAG Fusion、Query Rewriting 的对比</li>
+<li><strong>关联页面</strong>：👉 [[interview-hyde]]</li>
+</ul>
+<h3 id="5-agent-架构设计">5. Agent 架构设计</h3>
+<ul>
+<li>智能体 vs 传统开发的根本区别</li>
+<li>感知-决策-行动闭环（Perception-Decision-Action）</li>
+<li>C端用户偏好实现：用户画像 + 向量检索</li>
+<li><strong>关联页面</strong>：👉 [[agent-architecture]]</li>
+</ul>
+<hr>
+<h2 id="三改进建议">三、改进建议</h2>
+<ol>
+<li><strong>夯实底层</strong>：不仅要会用 LangChain/LangGraph，更要理解其底层的 State 管理机制和图流转逻辑</li>
+<li><strong>RAG 深化</strong>：重点掌握 HyDE、RAG Fusion、Query Rewriting 等高级检索优化策略</li>
+<li><strong>项目包装</strong>：复盘时不要只罗列&quot;做了什么功能&quot;，要突出技术难点和解决方案</li>
+<li><strong>心态建设</strong>：AI Agent 面试本身就偏向底层原理，被问住是正常的，关键是展现思考过程</li>
+</ol>
+<hr>
+<h2 id="四面试高频问题速查表">四、面试高频问题速查表</h2>
+<table>
+  <thead>
+      <tr>
+          <th>问题</th>
+          <th>考察点</th>
+          <th>关联</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>LangGraph 如何实现循环？</td>
+          <td>图流转机制</td>
+          <td>[[langgraph]]</td>
+      </tr>
+      <tr>
+          <td>Checkpointer 原理？</td>
+          <td>状态持久化</td>
+          <td>[[context-management]]</td>
+      </tr>
+      <tr>
+          <td>HyDE 幻觉问题？</td>
+          <td>RAG 增强原理</td>
+          <td>[[hyde]]</td>
+      </tr>
+      <tr>
+          <td>Chunk_size 怎么选？</td>
+          <td>RAG 分块策略</td>
+          <td>[[rag]]</td>
+      </tr>
+      <tr>
+          <td>Agent 安全怎么保证？</td>
+          <td>Agent 架构</td>
+          <td>[[agent-architecture]]</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="相关链接">相关链接</h2>
+<p>[[ai-agent]] | [[interview-qa-overview]]</p>
+
+  </article>
+</main>
+
+</body>
+</html>

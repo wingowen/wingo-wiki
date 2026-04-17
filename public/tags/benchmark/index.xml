@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Benchmark on Wingo Wiki</title>
+    <link>https://wingo-wiki.netlify.app/tags/benchmark/</link>
+    <description>Recent content in Benchmark on Wingo Wiki</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 06 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wingo-wiki.netlify.app/tags/benchmark/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用 Claude 3.5 Sonnet 提升 SWE-bench 成绩</title>
+      <link>https://wingo-wiki.netlify.app/concepts/swe-bench/</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/concepts/swe-bench/</guid>
+      <description>&lt;h2 id=&#34;用-claude-35-sonnet-提升-swe-bench-成绩&#34;&gt;用 Claude 3.5 Sonnet 提升 SWE-bench 成绩&lt;/h2&gt;&#xA;&lt;p&gt;SWE-bench 是评估 AI 模型完成真实软件工程任务能力的基准测试，通过 GitHub Issue 和单元测试验证模型能否像人类开发者一样修复代码。Claude 3.5 Sonnet 在 SWE-bench Verified 上达到 49%，超越之前的 SOTA 模型 45%。&lt;/p&gt;&#xA;&lt;p&gt;SWE-bench 评估的是整个 Agent 系统（AI 模型 + 脚手架代码），而非孤立模型。Agent 包含一个 Prompt、一个 Bash Tool 和一个 Edit Tool。工具设计的关键在于：要求绝对路径避免路径错误、使用字符串替换提高编辑可靠性、在工具描述中预判并防止常见错误。&lt;/p&gt;&#xA;&lt;h2 id=&#34;核心要点&#34;&gt;核心要点&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;SWE-bench Verified&lt;/strong&gt;：500 个经过人工验证可解决的 GitHub Issue 子集，是衡量编码 Agent 的主流标准&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Agent = 模型 + 工具 + 脚手架&lt;/strong&gt;：相同模型不同脚手架可产生显著不同的性能差异&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;工具设计原则&lt;/strong&gt;：绝对路径防路径错误、字符串替换可靠性最高、详细描述预判陷阱&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;THOUGHT/ACTION/OBSERVATION 模式&lt;/strong&gt;：清晰展示 Agent 的推理-行动-观察循环&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;性能瓶颈&lt;/strong&gt;：运行时长和高 Token 成本（成功运行可能需要数百轮、100k+ tokens）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;相关链接&#34;&gt;相关链接&lt;/h2&gt;&#xA;&lt;p&gt;[[anthropic]] | [[claude-code]]&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

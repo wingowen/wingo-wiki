@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mcp on Wingo Wiki</title>
+    <link>https://wingo-wiki.netlify.app/tags/mcp/</link>
+    <description>Recent content in Mcp on Wingo Wiki</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wingo-wiki.netlify.app/tags/mcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MCP</title>
+      <link>https://wingo-wiki.netlify.app/concepts/mcp/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/concepts/mcp/</guid>
+      <description>&lt;h1 id=&#34;mcp-model-context-protocol&#34;&gt;MCP (Model Context Protocol)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;MCP 是 Anthropic 提出的开放协议，用于标准化 AI 模型与外部工具、数据的连接。&lt;/p&gt;&#xA;&lt;h2 id=&#34;架构&#34;&gt;架构&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;┌─────────────┐     MCP      ┌─────────────┐&#xA;│   Claude    │◄────────────►│  MCP Server │&#xA;│   (Client)  │              │ (File, DB,  │&#xA;└─────────────┘              │  Web, etc.) │&#xA;                             └─────────────┘&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;核心优势&#34;&gt;核心优势&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;标准化&lt;/strong&gt;: 一次开发，多处使用&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;安全&lt;/strong&gt;: 数据不离开本地&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;简化安装&lt;/strong&gt;: Desktop Extensions 实现一键安装&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;desktop-extensions&#34;&gt;Desktop Extensions&lt;/h2&gt;&#xA;&lt;p&gt;.mcpb 文件格式允许一键安装 MCP 服务器，包含所有依赖。&lt;/p&gt;&#xA;&lt;h2 id=&#34;相关链接&#34;&gt;相关链接&lt;/h2&gt;&#xA;&lt;p&gt;[[anthropic]] | [[claude-code]] | [[claude-desktop-extensions]] | [[mcp-code-execution]] | [[mcp-deep-dive]] | [[tool-use]]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MCP 核心原理</title>
+      <link>https://wingo-wiki.netlify.app/concepts/mcp-deep-dive/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://wingo-wiki.netlify.app/concepts/mcp-deep-dive/</guid>
+      <description>&lt;h1 id=&#34;mcp-核心原理&#34;&gt;MCP 核心原理&lt;/h1&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;MCP（Model Context Protocol）是 Anthropic 提出的开放协议，用于标准化 AI 模型与外部工具、数据的连接。&lt;/p&gt;&#xA;&lt;h2 id=&#34;架构&#34;&gt;架构&lt;/h2&gt;&#xA;&lt;p&gt;┌─────────────┐     MCP      ┌─────────────┐&#xA;│   Claude    │◄────────────►│  MCP Server │&#xA;│   (Client)  │              │ (File, DB,  │&#xA;└─────────────┘              │  Web, etc.) │&#xA;└─────────────┘&lt;/p&gt;&#xA;&lt;h2 id=&#34;核心优势&#34;&gt;核心优势&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;标准化&lt;/strong&gt;: 一次开发，多处使用&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;安全&lt;/strong&gt;: 数据不离开本地&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;简化安装&lt;/strong&gt;: Desktop Extensions 实现一键安装&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;MCP 核心原理涵盖了 Desktop Extensions（桌面扩展）和代码执行两大主题。Desktop Extensions 通过 .mcpb 打包格式简化了 MCP 服务器的安装，用户只需双击文件即可完成安装，无需配置命令行或依赖管理。代码执行则解决了工具定义过多导致的 token 消耗问题——Agent 可以通过编写代码按需加载工具，将工具从&amp;quot;直接调用&amp;quot;转变为&amp;quot;代码 API&amp;quot;模式，token 使用量可减少 85-98%。&lt;/p&gt;&#xA;&lt;h2 id=&#34;核心要点&#34;&gt;核心要点&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;MCP 协议&lt;/strong&gt;：开放标准，连接 AI 模型与外部工具/数据，支持文件系统、数据库、Web 等多种服务器&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Desktop Extensions&lt;/strong&gt;：.mcpb 打包格式，内置运行时、自动更新、安全密钥存储，一键安装 MCP 服务器&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;代码执行模式&lt;/strong&gt;：将 MCP 工具生成为代码文件，Agent 按需加载而非预先加载，减少 85% token 消耗&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;渐进式披露&lt;/strong&gt;：工具按需发现，只加载当前任务所需的工具定义&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;隐私保护&lt;/strong&gt;：通过令牌化技术，PII 数据可在工具间流转而不进入模型上下文&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;相关链接&#34;&gt;相关链接&lt;/h2&gt;&#xA;&lt;p&gt;[[claude-desktop-extensions]] | [[claude-code]] | [[tool-use]] | [[anthropic]]&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

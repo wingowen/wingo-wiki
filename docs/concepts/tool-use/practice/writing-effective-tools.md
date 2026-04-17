@@ -56,4 +56,4 @@ notion_id: 34267b21-8207-813f-9e2a-fe299323ddce
 
 ## 相关链接
 
-[[tool-use]] | [[claude-code]]
+[tool-use](../core/tool-use.md) | [claude-code](../../entities/claude-code.md)
