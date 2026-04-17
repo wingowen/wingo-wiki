@@ -42,4 +42,4 @@ result = llm.invoke(
 
 ## 相关链接
 
-[[advanced-tool-use]] | [[agent-skills]] | [[ai-agent]] | [[anthropic]] | [[beyond-permission-prompts]] | [[claude-code]] | [[mcp]] | [[prompt-injection]] | [[think-tool]] | [[writing-effective-tools]]
+[[advanced-tool-use]] | [[agent-skills]] | [[beyond-permission-prompts]] | [[mcp]] | [[prompt-injection]] | [[think-tool]] | [[writing-effective-tools]]

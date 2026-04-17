@@ -8,7 +8,7 @@ sources: ["raw/articles/rag.md"]
 notion_id: "34367b21-8207-818e-a7de-d00cd93fab00"
 ---
 
-> **难度**：⭐⭐⭐ | **面试频率**：高 | **关联**：[interview-hyde](../interview/interview-hyde.md) [context-management](../../context-engineering/core/context-management.md)
+> **难度**：⭐⭐⭐ | **面试频率**：高 | **关联**：[hyde](hyde.md) [context-management](../../context-engineering/core/context-management.md)
 
 ---
 
@@ -46,6 +46,17 @@ A: 不同模型/维度/算法的分数不可比较。使用相对排序或实验
 **Q: 如何处理超大文档？**
 A: 层级检索（粗粒度→细粒度）、摘要增强检索、HyDE 等方案。
 
-## 相关链接
+## Interview Q&A
+
+**Q: 如何选择 chunk_size？**
+A: 平衡完整性和相关性。过小导致碎片化，过大引入噪声。经验值：500 tokens（通用）、800-1000（技术文档）、200-300（代码）。
+
+**Q: 向量检索分数的意义？**
+A: 不同模型/维度/算法的分数不可比较。使用相对排序或实验确定阈值。
+
+**Q: 如何处理超大文档？**
+A: 层级检索（粗粒度→细粒度）、摘要增强检索、HyDE 等方案。
+
+## Related
 
 [contextual-retrieval](contextual-retrieval.md) | [hyde](hyde.md)

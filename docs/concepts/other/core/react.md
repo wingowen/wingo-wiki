@@ -41,4 +41,4 @@ response = llm.invoke(f"""
 
 ## 相关链接
 
-[ai-agent](../../entities/ai-agent.md) | [langgraph](langgraph.md) | Reasoning | Planning
+[langgraph](langgraph.md) | Reasoning | Planning

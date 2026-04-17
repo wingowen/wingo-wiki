@@ -23,24 +23,9 @@ notion_id: 34267b21-8207-8138-b312-c3d319f17b5a
 
 ### 核心解决方案：代码执行模式
 
-将 MCP 服务器作为代码 API 而非直接工具调用。Agent 编写代码来与 MCP 服务器交互：
+将 MCP 服务器作为代码 API 而非直接工具调用。Agent 编写代码与 MCP 服务器交互，而非逐个调用工具。
 
-```javascript
-// 通过探索文件系统发现工具，只加载所需的工具定义
-import * as gdrive from './servers/google-drive';
-import * as salesforce from './servers/salesforce';
-
-const transcript = (await gdrive.getDocument({ documentId: 'abc123' })).content;
-await salesforce.updateRecord({
-  objectType: 'SalesMeeting',
-  recordId: '00Q5f000001abcXYZ',
-  data: { Notes: transcript }
-});
-```
-
-这种方法将 token 使用量从 150,000 个减少到 2,000 个（节省 98.7%）。
-
----
+**Token 节省效果**：从 150,000 → 2,000 tokens（节省 98.7%）。
 
 ### 核心要点
 
@@ -68,4 +53,4 @@ MCP 为 Agent 连接许多工具和系统提供了基础协议。当工具数量
 
 ## 相关链接
 
-[[mcp]] | [[claude-code]]
+[[mcp]]

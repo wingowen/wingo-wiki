@@ -46,7 +46,7 @@ nav:
         - "AI Agent 框架理论篇": concepts/agent-architecture/core/agent-framework-theory.md
         - "Agent 架构设计：从传统开发到智能体": concepts/agent-architecture/core/agent-architecture.md
       - 面试相关:
-        - "【面试专题】Agent 架构设计：从传统开发到智能体": concepts/agent-architecture/interview/interview-agent-arch.md
+        - "Interview Agent Arch": concepts/agent-architecture/interview/interview-agent-arch.md
       - 实践应用:
         - "AI Agent 框架实践篇": concepts/agent-architecture/practice/agent-framework-practice.md
         - "构建高效 Agent": concepts/agent-architecture/practice/building-effective-agents.md
@@ -61,7 +61,7 @@ nav:
         - "Context Engineering": concepts/context-engineering/core/context-engineering.md
         - "上下文管理：短期记忆与长期记忆": concepts/context-engineering/core/context-management.md
       - 面试相关:
-        - "【面试专题】上下文管理：短期记忆与长期记忆": concepts/context-engineering/interview/interview-context-mgmt.md
+        - "Interview Context Mgmt": concepts/context-engineering/interview/interview-context-mgmt.md
       - 实践应用:
         - "AI Agent 的有效上下文工程": concepts/context-engineering/practice/effective-context-engineering.md
     - MCP:
@@ -81,7 +81,7 @@ nav:
         - "RAG 检索增强生成：从分块到检索": concepts/rag/core/rag.md
         - "介绍上下文检索": concepts/rag/core/contextual-retrieval.md
       - 面试相关:
-        - "【面试专题】HyDE 假设文档嵌入与高级检索策略": concepts/rag/interview/interview-hyde.md
+        - "Interview Hyde": concepts/rag/interview/interview-hyde.md
     - Tool Use:
       - 核心概念:
         - "Tool Use": concepts/tool-use/core/tool-use.md

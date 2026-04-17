@@ -24,4 +24,4 @@ Claude Code 支持 MCP 协议连接扩展工具，通过自定义斜杠命令自
 
 ## 相关链接
 
-[[claude-code]] | [[tool-use]]
+[[tool-use]]

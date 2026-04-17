@@ -40,4 +40,4 @@ MCP 核心原理涵盖了 Desktop Extensions（桌面扩展）和代码执行两
 
 ## 相关链接
 
-[[claude-desktop-extensions]] | [[claude-code]] | [[tool-use]] | [[anthropic]]
+[[claude-desktop-extensions]] | [[tool-use]]

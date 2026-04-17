@@ -1,7 +1,7 @@
 # Wingo Wiki
 
 > AI Agent 技术与工程实践 Wiki | LLM Wiki 规范 + MkDocs 发布
-> Last updated: 2026-04-17 | Total pages: 42
+> Last updated: 2026-04-17 | Total pages: 39
 
 ## Entities
 
@@ -16,7 +16,7 @@
 - [[AI Agent 框架实践篇]]
 - [[AI Agent 框架理论篇]]
 - [[Agent 架构设计：从传统开发到智能体]]
-- [[【面试专题】Agent 架构设计：从传统开发到智能体]]
+- [[Interview Agent Arch]]
 - [[构建高效 Agent]]
 
 ### Claude
@@ -30,7 +30,7 @@
 
 - [[AI Agent 的有效上下文工程]]
 - [[Context Engineering]]
-- [[【面试专题】上下文管理：短期记忆与长期记忆]]
+- [[Interview Context Mgmt]]
 - [[上下文管理：短期记忆与长期记忆]]
 
 ### MCP
@@ -47,8 +47,8 @@
 ### RAG
 
 - [[HyDE 假设文档嵌入与高级检索策略]]
+- [[Interview Hyde]]
 - [[RAG 检索增强生成：从分块到检索]]
-- [[【面试专题】HyDE 假设文档嵌入与高级检索策略]]
 - [[介绍上下文检索]]
 
 ### Tool Use
@@ -82,6 +82,6 @@
 
 ---
 
-**Total**: 42 pages | **Source**: `src/concepts/` (flat, LLM Wiki standard)
+**Total**: 39 pages | **Source**: `src/concepts/` (flat, LLM Wiki standard)
 
 **Build**: `python build.py` → generates `docs/concepts/` for MkDocs publishing

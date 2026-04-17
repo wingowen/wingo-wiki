@@ -24,4 +24,4 @@ SDK 支持 Subagent（并行化和上下文隔离）、MCP 外部服务集成、
 
 ## 相关链接
 
-[claude-code](../../entities/claude-code.md) | [anthropic](../../entities/anthropic.md)
+

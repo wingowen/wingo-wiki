@@ -42,4 +42,4 @@ app = workflow.compile()
 
 ## 相关链接
 
-[agent-architecture](../../agent-architecture/core/agent-architecture.md) | [ai-agent](../../entities/ai-agent.md) | [long-running-agents](../practice/long-running-agents.md) | [mcp-deep-dive](../../mcp/practice/mcp-deep-dive.md) | [multi-agent](../../multi-agent/core/multi-agent.md) | [react](react.md)
+[agent-architecture](../../agent-architecture/core/agent-architecture.md) | [long-running-agents](../practice/long-running-agents.md) | [mcp-deep-dive](../../mcp/practice/mcp-deep-dive.md) | [multi-agent](../../multi-agent/core/multi-agent.md) | [react](react.md)

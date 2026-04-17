@@ -66,4 +66,4 @@ Multi-Agent System 由多个 Agent（LLM 在循环中自主使用工具）协同
 
 ## 相关链接
 
-[multi-agent](../core/multi-agent.md) | [anthropic](../../entities/anthropic.md)
+[multi-agent](../core/multi-agent.md)

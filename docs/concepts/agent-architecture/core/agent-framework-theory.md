@@ -43,4 +43,4 @@ notion_id: 34367b21-8207-8106-9972-f0d42cf861ef
 
 ## 相关链接
 
-[ai-agent](../../entities/ai-agent.md) | [react](../../other/core/react.md) | [agent-architecture](agent-architecture.md)
+[react](../../other/core/react.md) | [agent-architecture](agent-architecture.md)

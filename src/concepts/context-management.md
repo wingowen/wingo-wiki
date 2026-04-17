@@ -22,6 +22,17 @@ notion_id: "34367b21-8207-81c6-8eed-f5368d5630dd"
 - **长期记忆**：跨会话持久化，存储用户偏好、历史行为、知识库
 - **向量数据库**：推荐方案，存储历史交互的向量化表示，支持语义检索
 
-## 相关链接
+## Interview Q&A
+
+**Q: Checkpointer 和普通数据库存储的区别？**
+A: Checkpointer 保存图的完整状态（含所有节点中间结果），支持时间旅行；普通数据库存业务数据。两者互补。
+
+**Q: 高并发下如何实现上下文隔离？**
+A: 通过 thread_id 实现逻辑隔离，配合 PostgreSQL 作为 Checkpointer 后端。
+
+**Q: Context Window 溢出时 Agent 会怎样？**
+A: API 调用失败（HTTP 400）。预防：计算 token 数、设置安全阈值、触发裁剪策略。
+
+## Related
 
 [[langgraph]] | [[rag]]

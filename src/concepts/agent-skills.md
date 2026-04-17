@@ -24,4 +24,4 @@ Skills 还可包含预编写脚本供 Agent 执行，确保工作流的一致性
 
 ## 相关链接
 
-[[tool-use]] | [[ai-agent]]
+[[tool-use]]

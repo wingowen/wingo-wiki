@@ -23,4 +23,4 @@ AI Agent 框架的核心是在 Agent Loop（While 循环）中设计如何管理
 
 ## 相关链接
 
-[[ai-agent]] | [[agent-architecture]] | [[tool-use]]
+[[agent-architecture]] | [[tool-use]]

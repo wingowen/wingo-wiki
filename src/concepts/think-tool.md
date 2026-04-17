@@ -24,4 +24,4 @@ notion_id: 34267b21-8207-813d-bba1-e5e25ef455a2
 
 ## 相关链接
 
-[[claude-code]] | [[tool-use]]
+[[tool-use]]

@@ -41,4 +41,4 @@ nanobot 采用双层记忆系统，由**短期记忆**（会话消息）和**长
 
 ## 相关链接
 
-[[context-engineering]] | [[ai-agent]]
+[[context-engineering]]

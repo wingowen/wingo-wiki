@@ -40,4 +40,4 @@ notion_id: 34267b21-8207-819b-b24d-e80f17fa0201
 
 ## 相关链接
 
-[anthropic](../../entities/anthropic.md) | [claude-code](../../entities/claude-code.md)
+

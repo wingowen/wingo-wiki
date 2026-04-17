@@ -57,4 +57,4 @@ notion_id: 34267b21-8207-8131-929e-fb39d34023b5
 
 ## 相关链接
 
-[ai-agent](../../entities/ai-agent.md) | [tool-use](../../tool-use/core/tool-use.md)
+[tool-use](../../tool-use/core/tool-use.md)
