@@ -5,7 +5,11 @@ updated: 2026-04-15
 type: entity
 tags: [agent, anthropic, architecture]
 sources: []
----是一种能够自主理解目标、规划和执行多步骤任务的 AI 系统。与传统程序不同，Agent 通过 LLM 进行动态决策，而非预设固定流程。
+---
+
+# AI Agent
+
+AI Agent 是能够自主理解目标、规划和执行多步骤任务的 AI 系统。与传统程序不同，Agent 通过 LLM 进行动态决策，而非预设固定流程。
 
 ## 核心能力
 

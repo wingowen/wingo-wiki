@@ -5,7 +5,11 @@ updated: 2026-04-15
 type: entity
 tags: [anthropic, company]
 sources: []
----公司，致力于构建可靠、可解释和可操控的 AI 系统。由前 OpenAI 研究人员于 2021 年创立。
+---
+
+# Anthropic
+
+Anthropic 公司，致力于构建可靠、可解释和可操控的 AI 系统。
 
 ## 核心产品
 

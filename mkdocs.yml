@@ -43,64 +43,64 @@ nav:
   - Concepts:
     - Agent Architecture:
       - 核心概念:
-        - "AI Agent 框架理论篇": concepts/agent-architecture/core/agent-framework-theory.md
-        - "Agent 架构设计：从传统开发到智能体": concepts/agent-architecture/core/agent-architecture.md
+        - "AI Agent 框架理论篇": concepts/agent-architecture/core/agent-framework-theory
+        - "Agent 架构设计：从传统开发到智能体": concepts/agent-architecture/core/agent-architecture
       - 面试相关:
-        - "Interview Agent Arch": concepts/agent-architecture/interview/interview-agent-arch.md
+        - "Interview Agent Arch": concepts/agent-architecture/interview/interview-agent-arch
       - 实践应用:
-        - "AI Agent 框架实践篇": concepts/agent-architecture/practice/agent-framework-practice.md
-        - "构建高效 Agent": concepts/agent-architecture/practice/building-effective-agents.md
+        - "AI Agent 框架实践篇": concepts/agent-architecture/practice/agent-framework-practice
+        - "构建高效 Agent": concepts/agent-architecture/practice/building-effective-agents
     - Claude:
       - 实践应用:
-        - "Claude Code：Agent 编程最佳实践": concepts/claude/practice/claude-code-best-practices.md
-        - "三个近期问题的故障复盘": concepts/claude/practice/claude-postmortem.md
-        - "使用 Claude Agent SDK 构建 Agent": concepts/claude/practice/claude-agent-sdk.md
-        - "桌面扩展：Claude Desktop 一键安装 MCP 服务器": concepts/claude/practice/claude-desktop-extensions.md
+        - "Claude Code：Agent 编程最佳实践": concepts/claude/practice/claude-code-best-practices
+        - "三个近期问题的故障复盘": concepts/claude/practice/claude-postmortem
+        - "使用 Claude Agent SDK 构建 Agent": concepts/claude/practice/claude-agent-sdk
+        - "桌面扩展：Claude Desktop 一键安装 MCP 服务器": concepts/claude/practice/claude-desktop-extensions
     - Context Engineering:
       - 核心概念:
-        - "Context Engineering": concepts/context-engineering/core/context-engineering.md
-        - "上下文管理：短期记忆与长期记忆": concepts/context-engineering/core/context-management.md
+        - "Context Engineering": concepts/context-engineering/core/context-engineering
+        - "上下文管理：短期记忆与长期记忆": concepts/context-engineering/core/context-management
       - 面试相关:
-        - "Interview Context Mgmt": concepts/context-engineering/interview/interview-context-mgmt.md
+        - "Interview Context Mgmt": concepts/context-engineering/interview/interview-context-mgmt
       - 实践应用:
-        - "AI Agent 的有效上下文工程": concepts/context-engineering/practice/effective-context-engineering.md
+        - "AI Agent 的有效上下文工程": concepts/context-engineering/practice/effective-context-engineering
     - MCP:
       - 核心概念:
-        - "MCP": concepts/mcp/core/mcp.md
+        - "MCP": concepts/mcp/core/mcp
       - 实践应用:
-        - "MCP 核心原理": concepts/mcp/practice/mcp-deep-dive.md
-        - "通过 MCP 实现代码执行：构建更高效的 Agent": concepts/mcp/practice/mcp-code-execution.md
+        - "MCP 核心原理": concepts/mcp/practice/mcp-deep-dive
+        - "通过 MCP 实现代码执行：构建更高效的 Agent": concepts/mcp/practice/mcp-code-execution
     - Multi-Agent:
       - 核心概念:
-        - "Multi-Agent": concepts/multi-agent/core/multi-agent.md
+        - "Multi-Agent": concepts/multi-agent/core/multi-agent
       - 实践应用:
-        - "我们如何构建多 Agent 研究系统": concepts/multi-agent/practice/multi-agent-research.md
+        - "我们如何构建多 Agent 研究系统": concepts/multi-agent/practice/multi-agent-research
     - RAG:
       - 核心概念:
-        - "HyDE 假设文档嵌入与高级检索策略": concepts/rag/core/hyde.md
-        - "RAG 检索增强生成：从分块到检索": concepts/rag/core/rag.md
-        - "介绍上下文检索": concepts/rag/core/contextual-retrieval.md
+        - "HyDE 假设文档嵌入与高级检索策略": concepts/rag/core/hyde
+        - "RAG 检索增强生成：从分块到检索": concepts/rag/core/rag
+        - "介绍上下文检索": concepts/rag/core/contextual-retrieval
       - 面试相关:
-        - "Interview Hyde": concepts/rag/interview/interview-hyde.md
+        - "Interview Hyde": concepts/rag/interview/interview-hyde
     - Tool Use:
       - 核心概念:
-        - "Tool Use": concepts/tool-use/core/tool-use.md
-        - "在 Claude 开发者平台引入高级工具使用": concepts/tool-use/core/advanced-tool-use.md
+        - "Tool Use": concepts/tool-use/core/tool-use
+        - "在 Claude 开发者平台引入高级工具使用": concepts/tool-use/core/advanced-tool-use
       - 实践应用:
-        - "Think 工具：让 Claude 在复杂工具使用场景中停下来思考": concepts/tool-use/practice/think-tool.md
-        - "用 Agent 为 Agent 编写高效工具": concepts/tool-use/practice/writing-effective-tools.md
+        - "Think 工具：让 Claude 在复杂工具使用场景中停下来思考": concepts/tool-use/practice/think-tool
+        - "用 Agent 为 Agent 编写高效工具": concepts/tool-use/practice/writing-effective-tools
     - 其他:
       - 核心概念:
-        - "LangGraph": concepts/other/core/langgraph.md
-        - "ReAct": concepts/other/core/react.md
-        - "系统提示词注入分析": concepts/other/core/prompt-injection.md
+        - "LangGraph": concepts/other/core/langgraph
+        - "ReAct": concepts/other/core/react
+        - "系统提示词注入分析": concepts/other/core/prompt-injection
       - 实践应用:
-        - "双层记忆系统与 Dream 管理知识文件的具体实现分析": concepts/other/practice/dual-memory-system.md
-        - "构建长时间运行 Agent 的有效 Harness": concepts/other/practice/long-running-agents.md
-        - "用 Agent Skills 装备 Agent 应对真实世界": concepts/other/practice/agent-skills.md
-        - "用 Claude 3.5 Sonnet 提升 SWE-bench 成绩": concepts/other/practice/swe-bench.md
-        - "自定义 Slash 命令 Hook 设计方案": concepts/other/practice/slash-commands.md
-        - "超越权限提示：让 Claude Code 更安全更自主": concepts/other/practice/beyond-permission-prompts.md
+        - "双层记忆系统与 Dream 管理知识文件的具体实现分析": concepts/other/practice/dual-memory-system
+        - "构建长时间运行 Agent 的有效 Harness": concepts/other/practice/long-running-agents
+        - "用 Agent Skills 装备 Agent 应对真实世界": concepts/other/practice/agent-skills
+        - "用 Claude 3.5 Sonnet 提升 SWE-bench 成绩": concepts/other/practice/swe-bench
+        - "自定义 Slash 命令 Hook 设计方案": concepts/other/practice/slash-commands
+        - "超越权限提示：让 Claude Code 更安全更自主": concepts/other/practice/beyond-permission-prompts
   - Comparisons:
     - LangGraph vs React: comparisons/langgraph-vs-react.md
   - Entities:
