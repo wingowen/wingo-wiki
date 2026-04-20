@@ -20,11 +20,11 @@ Anthropic 公司，致力于构建可靠、可解释和可操控的 AI 系统。
 
 ## 关键文档
 
-- [building-effective-agents](../agent-architecture/practice/building-effective-agents.md)
-- [claude-agent-sdk](../claude/practice/claude-agent-sdk.md)
-- [mcp](../mcp/core/mcp.md)
-- [claude-code-best-practices](../claude/practice/claude-code-best-practices.md)
+- [building-effective-agents](../concepts/agent-architecture/practice/building-effective-agents.md)
+- [claude-agent-sdk](../concepts/claude/practice/claude-agent-sdk.md)
+- [mcp](../concepts/mcp/core/mcp.md)
+- [claude-code-best-practices](../concepts/claude/practice/claude-code-best-practices.md)
 
 ## 相关链接
 
-[claude-agent-sdk](../claude/practice/claude-agent-sdk.md) | [claude-code](claude-code.md) | [claude-postmortem](../claude/practice/claude-postmortem.md) | [mcp](../mcp/core/mcp.md) | [multi-agent-research](../multi-agent/practice/multi-agent-research.md) | [swe-bench](../other/practice/swe-bench.md) | [tool-use](../tool-use/core/tool-use.md)
+[claude-agent-sdk](../concepts/claude/practice/claude-agent-sdk.md) | [claude-code](claude-code.md) | [claude-postmortem](../concepts/claude/practice/claude-postmortem.md) | [mcp](../concepts/mcp/core/mcp.md) | [multi-agent-research](../concepts/multi-agent/practice/multi-agent-research.md) | [swe-bench](../concepts/other/practice/swe-bench.md) | [tool-use](../concepts/tool-use/core/tool-use.md)

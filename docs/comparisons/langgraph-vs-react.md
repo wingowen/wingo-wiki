@@ -8,7 +8,7 @@ sources: ["notion:34367b21-8207-81b2-9f8b-c1218f7b3104"]
 notion_id: "34367b21-8207-81b2-9f8b-c1218f7b3104"
 ---
 
-> **难度**：⭐⭐⭐⭐ | **面试频率**：极高 | **关联**：[context-management](../context-engineering/core/context-management.md) [agent-architecture](../agent-architecture/core/agent-architecture.md)
+> **难度**：⭐⭐⭐⭐ | **面试频率**：极高 | **关联**：[context-management](../concepts/context-engineering/core/context-management.md) [agent-architecture](../concepts/agent-architecture/core/agent-architecture.md)
 
 ---
 

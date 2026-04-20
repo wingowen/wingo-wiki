@@ -104,10 +104,10 @@ nav:
   - Comparisons:
     - LangGraph vs React: comparisons/langgraph-vs-react.md
   - Entities:
-    - "AI Agent": entities/ai-agent.md
-    - "Anthropic": entities/anthropic.md
-    - "Claude Code": entities/claude-code.md
+    - "AI Agent": entities/ai-agent
+    - "Anthropic": entities/anthropic
+    - "Claude Code": entities/claude-code
   - Queries:
-    - "AI Agent 面试复盘总览": queries/interview-overview.md
-    - "【面试复盘】AI Agent 面试突击问答清单（总览）": queries/interview-qa-overview.md
-    - "Session Context 影响技能选择的问题分析与解决方案": queries/session-context.md
+    - "AI Agent 面试复盘总览": queries/interview-overview
+    - "【面试复盘】AI Agent 面试突击问答清单（总览）": queries/interview-qa-overview
+    - "Session Context 影响技能选择的问题分析与解决方案": queries/session-context

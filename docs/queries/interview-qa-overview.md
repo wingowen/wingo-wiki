@@ -92,4 +92,4 @@ notion_id: 34367b21-8207-81e2-bc9c-f119f7ae87f6
 
 ## 相关链接
 
-[ai-agent](../entities/ai-agent.md) | [interview-agent-arch](../agent-architecture/interview/interview-agent-arch.md) | [interview-context-mgmt](../context-engineering/interview/interview-context-mgmt.md) | [langgraph-vs-react](../comparisons/langgraph-vs-react.md) | [interview-overview](interview-overview.md)
+[ai-agent](../entities/ai-agent.md) | [interview-agent-arch](../concepts/agent-architecture/interview/interview-agent-arch.md) | [interview-context-mgmt](../concepts/context-engineering/interview/interview-context-mgmt.md) | [langgraph-vs-react](../comparisons/langgraph-vs-react.md) | [interview-overview](interview-overview.md)
