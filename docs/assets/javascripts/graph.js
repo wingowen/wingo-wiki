@@ -168,22 +168,25 @@
             fontSize: 11
           },
           lineStyle: {
-            color: 'rgba(255, 255, 255, 0.3)',
+            color: 'rgba(255, 255, 255, 0.6)',
             curveness: 0.3,
-            width: 2
+            width: 1.5,
+            opacity: 0.8
           },
           emphasis: {
             focus: 'adjacency',
             lineStyle: {
-              width: 4,
-              color: 'rgba(255, 255, 255, 0.6)'
+              width: 3,
+              color: 'rgba(255, 255, 255, 0.9)',
+              opacity: 1
             }
           },
           force: {
-            repulsion: 600,
-            edgeLength: 80,
-            gravity: 0.1
-          }
+            repulsion: 300,
+            edgeLength: 150,
+            gravity: 0.2,
+            layoutAnimation: true
+          },
         }
       ]
     };
