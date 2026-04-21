@@ -4,9 +4,9 @@ import json
 import sys
 from pathlib import Path
 
-# 导入 build.py 中的映射
+# 导入映射
 sys.path.insert(0, str(Path(__file__).parent))
-from build import CATEGORY_MAP, WIKILINK_MAP
+from config.mappings import CATEGORY_MAP, WIKILINK_MAP
 
 def main():
     pages = {}
