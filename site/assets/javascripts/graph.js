@@ -56,7 +56,7 @@
       return;
     }
 
-    fetch('/assets/graph-data.json')
+    fetch('/assets/graph-data.json?t=' + Date.now())
       .then(function(response) { return response.json(); })
       .then(function(data) {
         graphData = data;
