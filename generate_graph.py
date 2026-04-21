@@ -3,7 +3,11 @@ import os
 import re
 import json
 import sys
+from pathlib import Path
 
+# 导入 build.py 中的映射
+sys.path.insert(0, str(Path(__file__).parent))
+from build import CATEGORY_MAP, WIKILINK_MAP
 
 def main():
     docs_dir = 'src'
@@ -23,7 +27,7 @@ def main():
                 rel_path = os.path.relpath(file_path, docs_dir)
                 
                 page_name = get_page_name(rel_path)
-                url_path = get_url_path(rel_path)
+                url_path = get_url_path_from_map(file)
                 
                 pages[page_name] = {
                     'path': rel_path,
@@ -38,8 +42,13 @@ def main():
                     for link in wikilinks:
                         link_parts = link.split('|')
                         target_raw = link_parts[0].strip()
-                        # 转换目标名称为与页面名称相同的格式
-                        target_name = target_raw.replace('-', ' ').title()
+                        # 使用 WIKILINK_MAP 转换为正确的文件名
+                        target_file = WIKILINK_MAP.get(target_raw)
+                        if not target_file:
+                            continue
+                        
+                        # 获取目标页面的名称（用于匹配节点）
+                        target_name = get_page_name(target_file)
                         
                         link_exists = any(
                             l['source'] == page_name and l['target'] == target_name
@@ -75,14 +84,27 @@ def main():
 
 
 def get_page_name(path):
-    base = os.path.basename(path)
-    name = os.path.splitext(base)[0]
+    """Get page display name from file path or filename."""
+    if path.endswith('.md'):
+        base = os.path.basename(path)
+        name = os.path.splitext(base)[0]
+    else:
+        name = os.path.basename(path)
     return name.replace('-', ' ').title()
 
 
-def get_url_path(path):
-    name = os.path.splitext(path)[0]
-    return name + '/'
+def get_url_path_from_map(filename):
+    """Get URL path using CATEGORY_MAP like build.py does."""
+    if filename in CATEGORY_MAP:
+        cat, subcat = CATEGORY_MAP[filename]
+        if cat == "entities" or cat == "comparisons" or cat == "queries":
+            return f"{cat}/{filename.replace('.md', '')}/"
+        elif subcat:
+            return f"concepts/{cat}/{subcat}/{filename.replace('.md', '')}/"
+        else:
+            return f"concepts/{cat}/{filename.replace('.md', '')}/"
+    # Fallback
+    return f"concepts/{filename.replace('.md', '')}/"
 
 
 def get_category(path):
