@@ -8,8 +8,6 @@ sources: [raw/articles/think-tool.md]
 notion_id: 34267b21-8207-813d-bba1-e5e25ef455a2
 ---
 
-## Think 工具：让 Claude 在复杂工具使用场景中停下来思考
-
 "Think" 工具是 Anthropic 发现的一种有效提升 Claude 复杂问题解决性能的方法，能在复杂任务中为结构化思考创建专属空间。它与 Extended Thinking 不同：Extended Thinking 是模型在生成响应前的深度推理，而 Think 工具是模型在收到工具结果后暂停反思是否已收集足够信息。
 
 在 τ-Bench 评估中，Think 工具配合优化提示词在航空领域达到 0.570 的 pass^1 分数（基线仅 0.370），相对提升 54%。零售领域仅 Think 工具就达到 0.812。Think 工具最适合的场景包括：工具输出分析（需要仔细处理先前调用结果）、策略繁重环境（需遵循详细指南）和顺序决策（每步建立在前一步之上）。
