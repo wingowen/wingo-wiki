@@ -367,7 +367,7 @@ for cat in ["agent-architecture", "claude", "context-engineering", "mcp", "multi
 
 # Comparisons
 nav_lines.append("  - Comparisons:")
-nav_lines.append("    - LangGraph vs React: comparisons/langgraph-vs-react.md")
+nav_lines.append("    - LangGraph vs React: comparisons/langgraph-vs-react")
 
 # Entities
 nav_lines.append("  - Entities:")

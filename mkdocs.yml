@@ -102,7 +102,7 @@ nav:
         - "自定义 Slash 命令 Hook 设计方案": concepts/other/practice/slash-commands
         - "超越权限提示：让 Claude Code 更安全更自主": concepts/other/practice/beyond-permission-prompts
   - Comparisons:
-    - LangGraph vs React: comparisons/langgraph-vs-react.md
+    - LangGraph vs React: comparisons/langgraph-vs-react
   - Entities:
     - "AI Agent": entities/ai-agent
     - "Anthropic": entities/anthropic

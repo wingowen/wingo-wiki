@@ -1,48 +1,48 @@
 {
   "nodes": [
     {
-      "name": "Agent Architecture",
-      "url": "concepts/agent-architecture/core/agent-architecture/",
-      "category": 0
+      "name": "AI Agent",
+      "url": "entities/ai-agent/",
+      "category": 1
     },
     {
-      "name": "Agent Framework Theory",
-      "url": "concepts/agent-architecture/core/agent-framework-theory/",
-      "category": 0
-    },
-    {
-      "name": "Interview Agent Arch",
-      "url": "concepts/agent-architecture/interview/interview-agent-arch/",
-      "category": 0
-    },
-    {
-      "name": "Agent Framework Practice",
+      "name": "AI Agent 框架实践篇",
       "url": "concepts/agent-architecture/practice/agent-framework-practice/",
       "category": 0
     },
     {
-      "name": "Building Effective Agents",
-      "url": "concepts/agent-architecture/practice/building-effective-agents/",
+      "name": "AI Agent 框架理论篇",
+      "url": "concepts/agent-architecture/core/agent-framework-theory/",
       "category": 0
     },
     {
-      "name": "Claude Agent Sdk",
-      "url": "concepts/claude/practice/claude-agent-sdk/",
+      "name": "AI Agent 的有效上下文工程",
+      "url": "concepts/context-engineering/practice/effective-context-engineering/",
       "category": 0
     },
     {
-      "name": "Claude Code Best Practices",
+      "name": "AI Agent 面试复盘总览",
+      "url": "queries/interview-overview/",
+      "category": 3
+    },
+    {
+      "name": "Agent 架构设计：从传统开发到智能体",
+      "url": "concepts/agent-architecture/core/agent-architecture/",
+      "category": 0
+    },
+    {
+      "name": "Anthropic",
+      "url": "entities/anthropic/",
+      "category": 1
+    },
+    {
+      "name": "Claude Code",
+      "url": "entities/claude-code/",
+      "category": 1
+    },
+    {
+      "name": "Claude Code：Agent 编程最佳实践",
       "url": "concepts/claude/practice/claude-code-best-practices/",
-      "category": 0
-    },
-    {
-      "name": "Claude Desktop Extensions",
-      "url": "concepts/claude/practice/claude-desktop-extensions/",
-      "category": 0
-    },
-    {
-      "name": "Claude Postmortem",
-      "url": "concepts/claude/practice/claude-postmortem/",
       "category": 0
     },
     {
@@ -51,113 +51,53 @@
       "category": 0
     },
     {
-      "name": "Context Management",
-      "url": "concepts/context-engineering/core/context-management/",
-      "category": 0
-    },
-    {
-      "name": "Interview Context Mgmt",
-      "url": "concepts/context-engineering/interview/interview-context-mgmt/",
-      "category": 0
-    },
-    {
-      "name": "Effective Context Engineering",
-      "url": "concepts/context-engineering/practice/effective-context-engineering/",
-      "category": 0
-    },
-    {
-      "name": "Mcp",
-      "url": "concepts/mcp/core/mcp/",
-      "category": 0
-    },
-    {
-      "name": "Mcp Code Execution",
-      "url": "concepts/mcp/practice/mcp-code-execution/",
-      "category": 0
-    },
-    {
-      "name": "Mcp Deep Dive",
-      "url": "concepts/mcp/practice/mcp-deep-dive/",
-      "category": 0
-    },
-    {
-      "name": "Multi Agent",
-      "url": "concepts/multi-agent/core/multi-agent/",
-      "category": 0
-    },
-    {
-      "name": "Multi Agent Research",
-      "url": "concepts/multi-agent/practice/multi-agent-research/",
-      "category": 0
-    },
-    {
-      "name": "Langgraph",
-      "url": "concepts/other/core/langgraph/",
-      "category": 0
-    },
-    {
-      "name": "Prompt Injection",
-      "url": "concepts/other/core/prompt-injection/",
-      "category": 0
-    },
-    {
-      "name": "React",
-      "url": "concepts/other/core/react/",
-      "category": 0
-    },
-    {
-      "name": "Agent Skills",
-      "url": "concepts/other/practice/agent-skills/",
-      "category": 0
-    },
-    {
-      "name": "Beyond Permission Prompts",
-      "url": "concepts/other/practice/beyond-permission-prompts/",
-      "category": 0
-    },
-    {
-      "name": "Dual Memory System",
-      "url": "concepts/other/practice/dual-memory-system/",
-      "category": 0
-    },
-    {
-      "name": "Long Running Agents",
-      "url": "concepts/other/practice/long-running-agents/",
-      "category": 0
-    },
-    {
-      "name": "Slash Commands",
-      "url": "concepts/other/practice/slash-commands/",
-      "category": 0
-    },
-    {
-      "name": "Swe Bench",
-      "url": "concepts/other/practice/swe-bench/",
-      "category": 0
-    },
-    {
-      "name": "Contextual Retrieval",
-      "url": "concepts/rag/core/contextual-retrieval/",
-      "category": 0
-    },
-    {
-      "name": "Hyde",
+      "name": "HyDE 假设文档嵌入与高级检索策略",
       "url": "concepts/rag/core/hyde/",
       "category": 0
     },
     {
-      "name": "Rag",
+      "name": "LangGraph",
+      "url": "concepts/other/core/langgraph/",
+      "category": 0
+    },
+    {
+      "name": "LangGraph 核心原理与 ReAct 对比",
+      "url": "comparisons/langgraph-vs-react/",
+      "category": 2
+    },
+    {
+      "name": "MCP",
+      "url": "concepts/mcp/core/mcp/",
+      "category": 0
+    },
+    {
+      "name": "MCP 核心原理",
+      "url": "concepts/mcp/practice/mcp-deep-dive/",
+      "category": 0
+    },
+    {
+      "name": "Multi-Agent",
+      "url": "concepts/multi-agent/core/multi-agent/",
+      "category": 0
+    },
+    {
+      "name": "RAG 检索增强生成：从分块到检索",
       "url": "concepts/rag/core/rag/",
       "category": 0
     },
     {
-      "name": "Interview Hyde",
-      "url": "concepts/rag/interview/interview-hyde/",
+      "name": "ReAct",
+      "url": "concepts/other/core/react/",
       "category": 0
     },
     {
-      "name": "Advanced Tool Use",
-      "url": "concepts/tool-use/core/advanced-tool-use/",
+      "name": "Session Context 影响技能选择的问题分析与解决方案",
+      "url": "queries/session-context/",
+      "category": 3
+    },
+    {
+      "name": "Think 工具：让 Claude 在复杂工具使用场景中停下来思考",
+      "url": "concepts/tool-use/practice/think-tool/",
       "category": 0
     },
     {
@@ -166,264 +106,559 @@
       "category": 0
     },
     {
-      "name": "Think Tool",
-      "url": "concepts/tool-use/practice/think-tool/",
+      "name": "【面试专题】Agent 架构设计：从传统开发到智能体",
+      "url": "concepts/agent-architecture/interview/interview-agent-arch/",
       "category": 0
     },
     {
-      "name": "Writing Effective Tools",
+      "name": "【面试专题】HyDE 假设文档嵌入与高级检索策略",
+      "url": "concepts/rag/interview/interview-hyde/",
+      "category": 0
+    },
+    {
+      "name": "【面试专题】上下文管理：短期记忆与长期记忆",
+      "url": "concepts/context-engineering/interview/interview-context-mgmt/",
+      "category": 0
+    },
+    {
+      "name": "【面试复盘】AI Agent 面试突击问答清单（总览）",
+      "url": "queries/interview-qa-overview/",
+      "category": 3
+    },
+    {
+      "name": "三个近期问题的故障复盘",
+      "url": "concepts/claude/practice/claude-postmortem/",
+      "category": 0
+    },
+    {
+      "name": "上下文管理：短期记忆与长期记忆",
+      "url": "concepts/context-engineering/core/context-management/",
+      "category": 0
+    },
+    {
+      "name": "介绍上下文检索",
+      "url": "concepts/rag/core/contextual-retrieval/",
+      "category": 0
+    },
+    {
+      "name": "使用 Claude Agent SDK 构建 Agent",
+      "url": "concepts/claude/practice/claude-agent-sdk/",
+      "category": 0
+    },
+    {
+      "name": "双层记忆系统与 Dream 管理知识文件的具体实现分析",
+      "url": "concepts/other/practice/dual-memory-system/",
+      "category": 0
+    },
+    {
+      "name": "在 Claude 开发者平台引入高级工具使用",
+      "url": "concepts/tool-use/core/advanced-tool-use/",
+      "category": 0
+    },
+    {
+      "name": "我们如何构建多 Agent 研究系统",
+      "url": "concepts/multi-agent/practice/multi-agent-research/",
+      "category": 0
+    },
+    {
+      "name": "构建长时间运行 Agent 的有效 Harness",
+      "url": "concepts/other/practice/long-running-agents/",
+      "category": 0
+    },
+    {
+      "name": "构建高效 Agent",
+      "url": "concepts/agent-architecture/practice/building-effective-agents/",
+      "category": 0
+    },
+    {
+      "name": "桌面扩展：Claude Desktop 一键安装 MCP 服务器",
+      "url": "concepts/claude/practice/claude-desktop-extensions/",
+      "category": 0
+    },
+    {
+      "name": "用 Agent Skills 装备 Agent 应对真实世界",
+      "url": "concepts/other/practice/agent-skills/",
+      "category": 0
+    },
+    {
+      "name": "用 Agent 为 Agent 编写高效工具",
       "url": "concepts/tool-use/practice/writing-effective-tools/",
+      "category": 0
+    },
+    {
+      "name": "用 Claude 3.5 Sonnet 提升 SWE-bench 成绩",
+      "url": "concepts/other/practice/swe-bench/",
+      "category": 0
+    },
+    {
+      "name": "系统提示词注入分析",
+      "url": "concepts/other/core/prompt-injection/",
+      "category": 0
+    },
+    {
+      "name": "自定义 Slash 命令 Hook 设计方案",
+      "url": "concepts/other/practice/slash-commands/",
+      "category": 0
+    },
+    {
+      "name": "超越权限提示：让 Claude Code 更安全更自主",
+      "url": "concepts/other/practice/beyond-permission-prompts/",
+      "category": 0
+    },
+    {
+      "name": "通过 MCP 实现代码执行：构建更高效的 Agent",
+      "url": "concepts/mcp/practice/mcp-code-execution/",
       "category": 0
     }
   ],
   "links": [
     {
-      "source": "Agent Architecture",
-      "target": "Langgraph"
+      "source": "AI Agent",
+      "target": "AI Agent 框架实践篇"
     },
     {
-      "source": "Agent Architecture",
-      "target": "Context Management"
+      "source": "AI Agent",
+      "target": "AI Agent 框架理论篇"
     },
     {
-      "source": "Agent Architecture",
-      "target": "Mcp"
+      "source": "AI Agent",
+      "target": "AI Agent 的有效上下文工程"
     },
     {
-      "source": "Agent Framework Theory",
-      "target": "React"
-    },
-    {
-      "source": "Agent Framework Theory",
-      "target": "Agent Architecture"
-    },
-    {
-      "source": "Interview Agent Arch",
-      "target": "Agent Architecture"
-    },
-    {
-      "source": "Interview Agent Arch",
-      "target": "Interview Qa Overview"
-    },
-    {
-      "source": "Agent Framework Practice",
-      "target": "Agent Architecture"
-    },
-    {
-      "source": "Agent Framework Practice",
-      "target": "Tool Use"
-    },
-    {
-      "source": "Claude Code Best Practices",
-      "target": "Tool Use"
-    },
-    {
-      "source": "Claude Desktop Extensions",
-      "target": "Mcp"
-    },
-    {
-      "source": "Context Engineering",
-      "target": "Dual Memory System"
-    },
-    {
-      "source": "Context Engineering",
-      "target": "Effective Context Engineering"
-    },
-    {
-      "source": "Context Engineering",
-      "target": "Rag"
-    },
-    {
-      "source": "Context Management",
-      "target": "Langgraph"
-    },
-    {
-      "source": "Context Management",
-      "target": "Rag"
-    },
-    {
-      "source": "Interview Context Mgmt",
-      "target": "Context Management"
-    },
-    {
-      "source": "Interview Context Mgmt",
-      "target": "Interview Qa Overview"
-    },
-    {
-      "source": "Effective Context Engineering",
+      "source": "AI Agent",
       "target": "Context Engineering"
     },
     {
-      "source": "Mcp",
-      "target": "Claude Desktop Extensions"
+      "source": "AI Agent",
+      "target": "LangGraph"
     },
     {
-      "source": "Mcp",
-      "target": "Mcp Code Execution"
+      "source": "AI Agent",
+      "target": "MCP"
     },
     {
-      "source": "Mcp",
-      "target": "Mcp Deep Dive"
+      "source": "AI Agent",
+      "target": "Multi-Agent"
     },
     {
-      "source": "Mcp",
+      "source": "AI Agent",
+      "target": "ReAct"
+    },
+    {
+      "source": "AI Agent",
       "target": "Tool Use"
     },
     {
-      "source": "Mcp Code Execution",
-      "target": "Mcp"
+      "source": "AI Agent",
+      "target": "在 Claude 开发者平台引入高级工具使用"
     },
     {
-      "source": "Mcp Deep Dive",
-      "target": "Claude Desktop Extensions"
+      "source": "AI Agent",
+      "target": "构建高效 Agent"
     },
     {
-      "source": "Mcp Deep Dive",
+      "source": "AI Agent",
+      "target": "用 Agent Skills 装备 Agent 应对真实世界"
+    },
+    {
+      "source": "AI Agent 框架实践篇",
+      "target": "Agent 架构设计：从传统开发到智能体"
+    },
+    {
+      "source": "AI Agent 框架实践篇",
       "target": "Tool Use"
     },
     {
-      "source": "Multi Agent",
-      "target": "Langgraph"
+      "source": "AI Agent 框架理论篇",
+      "target": "Agent 架构设计：从传统开发到智能体"
     },
     {
-      "source": "Multi Agent",
-      "target": "Multi Agent Research"
+      "source": "AI Agent 框架理论篇",
+      "target": "ReAct"
     },
     {
-      "source": "Multi Agent Research",
-      "target": "Multi Agent"
-    },
-    {
-      "source": "Langgraph",
-      "target": "Agent Architecture"
-    },
-    {
-      "source": "Langgraph",
-      "target": "Long Running Agents"
-    },
-    {
-      "source": "Langgraph",
-      "target": "Mcp Deep Dive"
-    },
-    {
-      "source": "Langgraph",
-      "target": "Multi Agent"
-    },
-    {
-      "source": "Langgraph",
-      "target": "React"
-    },
-    {
-      "source": "Prompt Injection",
-      "target": "Tool Use"
-    },
-    {
-      "source": "React",
-      "target": "Langgraph"
-    },
-    {
-      "source": "Agent Skills",
-      "target": "Tool Use"
-    },
-    {
-      "source": "Beyond Permission Prompts",
-      "target": "Tool Use"
-    },
-    {
-      "source": "Dual Memory System",
+      "source": "AI Agent 的有效上下文工程",
       "target": "Context Engineering"
     },
     {
-      "source": "Long Running Agents",
+      "source": "AI Agent 面试复盘总览",
+      "target": "AI Agent"
+    },
+    {
+      "source": "AI Agent 面试复盘总览",
+      "target": "Agent 架构设计：从传统开发到智能体"
+    },
+    {
+      "source": "AI Agent 面试复盘总览",
+      "target": "HyDE 假设文档嵌入与高级检索策略"
+    },
+    {
+      "source": "AI Agent 面试复盘总览",
+      "target": "LangGraph"
+    },
+    {
+      "source": "AI Agent 面试复盘总览",
+      "target": "LangGraph 核心原理与 ReAct 对比"
+    },
+    {
+      "source": "AI Agent 面试复盘总览",
+      "target": "RAG 检索增强生成：从分块到检索"
+    },
+    {
+      "source": "AI Agent 面试复盘总览",
+      "target": "【面试专题】HyDE 假设文档嵌入与高级检索策略"
+    },
+    {
+      "source": "AI Agent 面试复盘总览",
+      "target": "【面试复盘】AI Agent 面试突击问答清单（总览）"
+    },
+    {
+      "source": "AI Agent 面试复盘总览",
+      "target": "上下文管理：短期记忆与长期记忆"
+    },
+    {
+      "source": "Agent 架构设计：从传统开发到智能体",
+      "target": "LangGraph"
+    },
+    {
+      "source": "Agent 架构设计：从传统开发到智能体",
+      "target": "MCP"
+    },
+    {
+      "source": "Agent 架构设计：从传统开发到智能体",
+      "target": "上下文管理：短期记忆与长期记忆"
+    },
+    {
+      "source": "Anthropic",
+      "target": "Claude Code"
+    },
+    {
+      "source": "Anthropic",
+      "target": "Claude Code：Agent 编程最佳实践"
+    },
+    {
+      "source": "Anthropic",
+      "target": "MCP"
+    },
+    {
+      "source": "Anthropic",
       "target": "Tool Use"
     },
     {
-      "source": "Slash Commands",
+      "source": "Anthropic",
+      "target": "三个近期问题的故障复盘"
+    },
+    {
+      "source": "Anthropic",
+      "target": "使用 Claude Agent SDK 构建 Agent"
+    },
+    {
+      "source": "Anthropic",
+      "target": "我们如何构建多 Agent 研究系统"
+    },
+    {
+      "source": "Anthropic",
+      "target": "构建高效 Agent"
+    },
+    {
+      "source": "Anthropic",
+      "target": "用 Claude 3.5 Sonnet 提升 SWE-bench 成绩"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Anthropic"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Claude Code：Agent 编程最佳实践"
+    },
+    {
+      "source": "Claude Code",
+      "target": "MCP"
+    },
+    {
+      "source": "Claude Code",
+      "target": "Think 工具：让 Claude 在复杂工具使用场景中停下来思考"
+    },
+    {
+      "source": "Claude Code",
       "target": "Tool Use"
     },
     {
-      "source": "Contextual Retrieval",
-      "target": "Rag"
+      "source": "Claude Code",
+      "target": "三个近期问题的故障复盘"
     },
     {
-      "source": "Contextual Retrieval",
-      "target": "Hyde"
+      "source": "Claude Code",
+      "target": "桌面扩展：Claude Desktop 一键安装 MCP 服务器"
     },
     {
-      "source": "Hyde",
-      "target": "Rag"
+      "source": "Claude Code",
+      "target": "用 Agent Skills 装备 Agent 应对真实世界"
     },
     {
-      "source": "Hyde",
-      "target": "Context Management"
+      "source": "Claude Code",
+      "target": "自定义 Slash 命令 Hook 设计方案"
     },
     {
-      "source": "Hyde",
-      "target": "Contextual Retrieval"
+      "source": "Claude Code",
+      "target": "超越权限提示：让 Claude Code 更安全更自主"
     },
     {
-      "source": "Rag",
-      "target": "Hyde"
+      "source": "Claude Code",
+      "target": "通过 MCP 实现代码执行：构建更高效的 Agent"
     },
     {
-      "source": "Rag",
-      "target": "Context Management"
-    },
-    {
-      "source": "Rag",
-      "target": "Contextual Retrieval"
-    },
-    {
-      "source": "Interview Hyde",
-      "target": "Hyde"
-    },
-    {
-      "source": "Interview Hyde",
-      "target": "Interview Qa Overview"
-    },
-    {
-      "source": "Advanced Tool Use",
+      "source": "Claude Code：Agent 编程最佳实践",
       "target": "Tool Use"
     },
     {
-      "source": "Advanced Tool Use",
-      "target": "Mcp"
+      "source": "Context Engineering",
+      "target": "AI Agent 的有效上下文工程"
     },
     {
-      "source": "Tool Use",
-      "target": "Advanced Tool Use"
+      "source": "Context Engineering",
+      "target": "RAG 检索增强生成：从分块到检索"
     },
     {
-      "source": "Tool Use",
-      "target": "Agent Skills"
+      "source": "Context Engineering",
+      "target": "双层记忆系统与 Dream 管理知识文件的具体实现分析"
     },
     {
-      "source": "Tool Use",
-      "target": "Beyond Permission Prompts"
+      "source": "HyDE 假设文档嵌入与高级检索策略",
+      "target": "RAG 检索增强生成：从分块到检索"
     },
     {
-      "source": "Tool Use",
-      "target": "Mcp"
+      "source": "HyDE 假设文档嵌入与高级检索策略",
+      "target": "上下文管理：短期记忆与长期记忆"
     },
     {
-      "source": "Tool Use",
-      "target": "Prompt Injection"
+      "source": "HyDE 假设文档嵌入与高级检索策略",
+      "target": "介绍上下文检索"
     },
     {
-      "source": "Tool Use",
-      "target": "Think Tool"
+      "source": "LangGraph",
+      "target": "Agent 架构设计：从传统开发到智能体"
     },
     {
-      "source": "Tool Use",
-      "target": "Writing Effective Tools"
+      "source": "LangGraph",
+      "target": "MCP 核心原理"
     },
     {
-      "source": "Think Tool",
+      "source": "LangGraph",
+      "target": "Multi-Agent"
+    },
+    {
+      "source": "LangGraph",
+      "target": "ReAct"
+    },
+    {
+      "source": "LangGraph",
+      "target": "构建长时间运行 Agent 的有效 Harness"
+    },
+    {
+      "source": "LangGraph 核心原理与 ReAct 对比",
+      "target": "Agent 架构设计：从传统开发到智能体"
+    },
+    {
+      "source": "LangGraph 核心原理与 ReAct 对比",
+      "target": "上下文管理：短期记忆与长期记忆"
+    },
+    {
+      "source": "MCP",
+      "target": "MCP 核心原理"
+    },
+    {
+      "source": "MCP",
       "target": "Tool Use"
     },
     {
-      "source": "Writing Effective Tools",
+      "source": "MCP",
+      "target": "桌面扩展：Claude Desktop 一键安装 MCP 服务器"
+    },
+    {
+      "source": "MCP",
+      "target": "通过 MCP 实现代码执行：构建更高效的 Agent"
+    },
+    {
+      "source": "MCP 核心原理",
       "target": "Tool Use"
+    },
+    {
+      "source": "MCP 核心原理",
+      "target": "桌面扩展：Claude Desktop 一键安装 MCP 服务器"
+    },
+    {
+      "source": "Multi-Agent",
+      "target": "LangGraph"
+    },
+    {
+      "source": "Multi-Agent",
+      "target": "我们如何构建多 Agent 研究系统"
+    },
+    {
+      "source": "RAG 检索增强生成：从分块到检索",
+      "target": "HyDE 假设文档嵌入与高级检索策略"
+    },
+    {
+      "source": "RAG 检索增强生成：从分块到检索",
+      "target": "上下文管理：短期记忆与长期记忆"
+    },
+    {
+      "source": "RAG 检索增强生成：从分块到检索",
+      "target": "介绍上下文检索"
+    },
+    {
+      "source": "ReAct",
+      "target": "LangGraph"
+    },
+    {
+      "source": "Session Context 影响技能选择的问题分析与解决方案",
+      "target": "AI Agent"
+    },
+    {
+      "source": "Session Context 影响技能选择的问题分析与解决方案",
+      "target": "Context Engineering"
+    },
+    {
+      "source": "Think 工具：让 Claude 在复杂工具使用场景中停下来思考",
+      "target": "Tool Use"
+    },
+    {
+      "source": "Tool Use",
+      "target": "MCP"
+    },
+    {
+      "source": "Tool Use",
+      "target": "Think 工具：让 Claude 在复杂工具使用场景中停下来思考"
+    },
+    {
+      "source": "Tool Use",
+      "target": "在 Claude 开发者平台引入高级工具使用"
+    },
+    {
+      "source": "Tool Use",
+      "target": "用 Agent Skills 装备 Agent 应对真实世界"
+    },
+    {
+      "source": "Tool Use",
+      "target": "用 Agent 为 Agent 编写高效工具"
+    },
+    {
+      "source": "Tool Use",
+      "target": "系统提示词注入分析"
+    },
+    {
+      "source": "Tool Use",
+      "target": "超越权限提示：让 Claude Code 更安全更自主"
+    },
+    {
+      "source": "【面试专题】Agent 架构设计：从传统开发到智能体",
+      "target": "Agent 架构设计：从传统开发到智能体"
+    },
+    {
+      "source": "【面试专题】Agent 架构设计：从传统开发到智能体",
+      "target": "【面试复盘】AI Agent 面试突击问答清单（总览）"
+    },
+    {
+      "source": "【面试专题】HyDE 假设文档嵌入与高级检索策略",
+      "target": "HyDE 假设文档嵌入与高级检索策略"
+    },
+    {
+      "source": "【面试专题】HyDE 假设文档嵌入与高级检索策略",
+      "target": "【面试复盘】AI Agent 面试突击问答清单（总览）"
+    },
+    {
+      "source": "【面试专题】上下文管理：短期记忆与长期记忆",
+      "target": "【面试复盘】AI Agent 面试突击问答清单（总览）"
+    },
+    {
+      "source": "【面试专题】上下文管理：短期记忆与长期记忆",
+      "target": "上下文管理：短期记忆与长期记忆"
+    },
+    {
+      "source": "【面试复盘】AI Agent 面试突击问答清单（总览）",
+      "target": "AI Agent"
+    },
+    {
+      "source": "【面试复盘】AI Agent 面试突击问答清单（总览）",
+      "target": "AI Agent 面试复盘总览"
+    },
+    {
+      "source": "【面试复盘】AI Agent 面试突击问答清单（总览）",
+      "target": "LangGraph 核心原理与 ReAct 对比"
+    },
+    {
+      "source": "【面试复盘】AI Agent 面试突击问答清单（总览）",
+      "target": "【面试专题】Agent 架构设计：从传统开发到智能体"
+    },
+    {
+      "source": "【面试复盘】AI Agent 面试突击问答清单（总览）",
+      "target": "【面试专题】上下文管理：短期记忆与长期记忆"
+    },
+    {
+      "source": "上下文管理：短期记忆与长期记忆",
+      "target": "LangGraph"
+    },
+    {
+      "source": "上下文管理：短期记忆与长期记忆",
+      "target": "RAG 检索增强生成：从分块到检索"
+    },
+    {
+      "source": "介绍上下文检索",
+      "target": "HyDE 假设文档嵌入与高级检索策略"
+    },
+    {
+      "source": "介绍上下文检索",
+      "target": "RAG 检索增强生成：从分块到检索"
+    },
+    {
+      "source": "双层记忆系统与 Dream 管理知识文件的具体实现分析",
+      "target": "Context Engineering"
+    },
+    {
+      "source": "在 Claude 开发者平台引入高级工具使用",
+      "target": "MCP"
+    },
+    {
+      "source": "在 Claude 开发者平台引入高级工具使用",
+      "target": "Tool Use"
+    },
+    {
+      "source": "我们如何构建多 Agent 研究系统",
+      "target": "Multi-Agent"
+    },
+    {
+      "source": "构建长时间运行 Agent 的有效 Harness",
+      "target": "Tool Use"
+    },
+    {
+      "source": "桌面扩展：Claude Desktop 一键安装 MCP 服务器",
+      "target": "MCP"
+    },
+    {
+      "source": "用 Agent Skills 装备 Agent 应对真实世界",
+      "target": "Tool Use"
+    },
+    {
+      "source": "用 Agent 为 Agent 编写高效工具",
+      "target": "Tool Use"
+    },
+    {
+      "source": "系统提示词注入分析",
+      "target": "Tool Use"
+    },
+    {
+      "source": "自定义 Slash 命令 Hook 设计方案",
+      "target": "Tool Use"
+    },
+    {
+      "source": "超越权限提示：让 Claude Code 更安全更自主",
+      "target": "Tool Use"
+    },
+    {
+      "source": "通过 MCP 实现代码执行：构建更高效的 Agent",
+      "target": "MCP"
     }
   ]
 }
