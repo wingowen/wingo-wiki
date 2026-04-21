@@ -2,198 +2,210 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://wingo-wiki.netlify.app/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/comparisons/langgraph-vs-react/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/_index/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/core/agent-architecture/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/core/agent-framework-theory/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
+    </url>
+    <url>
+         <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/interview/interview-agent-arch/</loc>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/practice/agent-framework-practice/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/agent-architecture/practice/building-effective-agents/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/claude/_index/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/claude/practice/claude-agent-sdk/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/claude/practice/claude-code-best-practices/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/claude/practice/claude-desktop-extensions/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/claude/practice/claude-postmortem/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/_index/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/core/context-engineering/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/core/context-management/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
+    </url>
+    <url>
+         <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/interview/interview-context-mgmt/</loc>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/context-engineering/practice/effective-context-engineering/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/mcp/_index/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/mcp/core/mcp/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/mcp/practice/mcp-code-execution/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/mcp/practice/mcp-deep-dive/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/multi-agent/_index/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/multi-agent/core/multi-agent/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/multi-agent/practice/multi-agent-research/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/other/_index/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/other/core/langgraph/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/other/core/prompt-injection/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/other/core/react/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/other/practice/agent-skills/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/other/practice/beyond-permission-prompts/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/other/practice/dual-memory-system/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/other/practice/long-running-agents/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/other/practice/slash-commands/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/other/practice/swe-bench/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/rag/_index/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/rag/core/contextual-retrieval/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/rag/core/hyde/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/rag/core/rag/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
+    </url>
+    <url>
+         <loc>https://wingo-wiki.netlify.app/concepts/rag/interview/interview-hyde/</loc>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/tool-use/_index/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/tool-use/core/advanced-tool-use/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/tool-use/core/tool-use/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/tool-use/practice/think-tool/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/concepts/tool-use/practice/writing-effective-tools/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/entities/ai-agent/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/entities/anthropic/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/entities/claude-code/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/queries/interview-overview/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/queries/interview-qa-overview/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
     <url>
          <loc>https://wingo-wiki.netlify.app/queries/session-context/</loc>
-         <lastmod>2026-04-20</lastmod>
+         <lastmod>2026-04-21</lastmod>
     </url>
 </urlset>

@@ -1,7 +1,7 @@
 # Wingo Wiki
 
 > AI Agent 技术与工程实践 Wiki | LLM Wiki 规范 + MkDocs 发布
-> Last updated: 2026-04-17 | Total pages: 39
+> Last updated: 2026-04-17 | Total pages: 42
 
 ## Entities
 
@@ -16,7 +16,7 @@
 - [AI Agent 框架实践篇](concepts/agent-architecture/practice/agent-framework-practice/)
 - [AI Agent 框架理论篇](concepts/agent-architecture/core/agent-framework-theory/)
 - [Agent 架构设计：从传统开发到智能体](concepts/agent-architecture/core/agent-architecture/)
-- [Interview Agent Arch](concepts/agent-architecture/interview/interview-agent-arch/)
+- [[【面试专题】Agent 架构设计：从传统开发到智能体]]
 - [构建高效 Agent](concepts/agent-architecture/practice/building-effective-agents/)
 ### Claude
 
@@ -28,7 +28,7 @@
 
 - [AI Agent 的有效上下文工程](concepts/context-engineering/practice/effective-context-engineering/)
 - [Context Engineering](concepts/context-engineering/core/context-engineering/)
-- [Interview Context Mgmt](concepts/context-engineering/interview/interview-context-mgmt/)
+- [[【面试专题】上下文管理：短期记忆与长期记忆]]
 - [上下文管理：短期记忆与长期记忆](concepts/context-engineering/core/context-management/)
 ### MCP
 
@@ -42,8 +42,8 @@
 ### RAG
 
 - [HyDE 假设文档嵌入与高级检索策略](concepts/rag/core/hyde/)
-- [Interview Hyde](concepts/rag/interview/interview-hyde/)
 - [RAG 检索增强生成：从分块到检索](concepts/rag/core/rag/)
+- [[【面试专题】HyDE 假设文档嵌入与高级检索策略]]
 - [介绍上下文检索](concepts/rag/core/contextual-retrieval/)
 ### Tool Use
 

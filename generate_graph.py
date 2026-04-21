@@ -6,7 +6,7 @@ import sys
 
 
 def main():
-    docs_dir = 'docs'
+    docs_dir = 'src'
     site_dir = 'site'
     
     pages = {}
