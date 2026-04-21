@@ -22,7 +22,7 @@ theme:
     toc_depth: 3
     collapse:
       level: 2
-    position: left
+    position: right
 
 plugins:
   - search
