@@ -478,6 +478,9 @@ INDEX_WIKILINK_MAP = {
     "Interview Agent Arch": "concepts/agent-architecture/interview/interview-agent-arch/",
     "Interview Context Mgmt": "concepts/context-engineering/interview/interview-context-mgmt/",
     "Interview Hyde": "concepts/rag/interview/interview-hyde/",
+    "【面试专题】Agent 架构设计：从传统开发到智能体": "concepts/agent-architecture/interview/interview-agent-arch/",
+    "【面试专题】上下文管理：短期记忆与长期记忆": "concepts/context-engineering/interview/interview-context-mgmt/",
+    "【面试专题】HyDE 假设文档嵌入与高级检索策略": "concepts/rag/interview/interview-hyde/",
     "LangGraph 核心原理与 ReAct 对比": "comparisons/langgraph-vs-react/",
     "AI Agent 面试复盘总览": "queries/interview-overview/",
     "【面试复盘】AI Agent 面试突击问答清单（总览）": "queries/interview-qa-overview/",
@@ -496,6 +499,8 @@ def rewrite_index_wikilinks(content):
             display = link_part
         target = INDEX_WIKILINK_MAP.get(link_part)
         if target:
+            # Strip interview-category prefixes from display text
+            display = re.sub(r'^【[^】]+】\s*', '', display)
             return f"[{display}]({target})"
         return f"[[{link_part}]]"
     return re.sub(r'\[\[([^\]]+)\]\]', replacer, content)

@@ -16,7 +16,7 @@
 - [AI Agent 框架实践篇](concepts/agent-architecture/practice/agent-framework-practice/)
 - [AI Agent 框架理论篇](concepts/agent-architecture/core/agent-framework-theory/)
 - [Agent 架构设计：从传统开发到智能体](concepts/agent-architecture/core/agent-architecture/)
-- [[【面试专题】Agent 架构设计：从传统开发到智能体]]
+- [Agent 架构设计：从传统开发到智能体](concepts/agent-architecture/interview/interview-agent-arch/)
 - [构建高效 Agent](concepts/agent-architecture/practice/building-effective-agents/)
 ### Claude
 
@@ -28,7 +28,7 @@
 
 - [AI Agent 的有效上下文工程](concepts/context-engineering/practice/effective-context-engineering/)
 - [Context Engineering](concepts/context-engineering/core/context-engineering/)
-- [[【面试专题】上下文管理：短期记忆与长期记忆]]
+- [上下文管理：短期记忆与长期记忆](concepts/context-engineering/interview/interview-context-mgmt/)
 - [上下文管理：短期记忆与长期记忆](concepts/context-engineering/core/context-management/)
 ### MCP
 
@@ -43,7 +43,7 @@
 
 - [HyDE 假设文档嵌入与高级检索策略](concepts/rag/core/hyde/)
 - [RAG 检索增强生成：从分块到检索](concepts/rag/core/rag/)
-- [[【面试专题】HyDE 假设文档嵌入与高级检索策略]]
+- [HyDE 假设文档嵌入与高级检索策略](concepts/rag/interview/interview-hyde/)
 - [介绍上下文检索](concepts/rag/core/contextual-retrieval/)
 ### Tool Use
 
@@ -70,5 +70,5 @@
 ## Queries
 
 - [AI Agent 面试复盘总览](queries/interview-overview/)
-- [【面试复盘】AI Agent 面试突击问答清单（总览）](queries/interview-qa-overview/)
+- [AI Agent 面试突击问答清单（总览）](queries/interview-qa-overview/)
 - [Session Context 影响技能选择的问题分析与解决方案](queries/session-context/)
