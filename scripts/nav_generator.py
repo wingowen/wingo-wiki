@@ -15,13 +15,21 @@ def generate_mkdocs_nav(src_concepts, wiki_path):
     nav_lines.append("    - navigation.tabs")
     nav_lines.append("    - navigation.path")
     nav_lines.append("    - navigation.indexes")
-    nav_lines.append("    - toc.integrate")
+    nav_lines.append("    - navigation.side")
+    nav_lines.append("    - navigation.toc")
+    nav_lines.append("    - toc.follow")
     nav_lines.append("    - search.suggest")
     nav_lines.append("    - search.highlight")
     nav_lines.append("  palette:")
     nav_lines.append("    scheme: slate")
     nav_lines.append("    primary: indigo")
     nav_lines.append("    accent: indigo")
+    nav_lines.append("  toc:")
+    nav_lines.append("    permalink: true")
+    nav_lines.append("    toc_depth: 3")
+    nav_lines.append("    collapse:")
+    nav_lines.append("      level: 2")
+    nav_lines.append("    position: right")
     nav_lines.append("")
     nav_lines.append("plugins:")
     nav_lines.append("  - search")
@@ -37,6 +45,10 @@ def generate_mkdocs_nav(src_concepts, wiki_path):
     nav_lines.append("  - pymdownx.details")
     nav_lines.append("  - attr_list")
     nav_lines.append("  - footnotes")
+    nav_lines.append("  - toc:")
+    nav_lines.append("      permalink: true")
+    nav_lines.append("      toc_depth: 3")
+    nav_lines.append("      title: Table of Contents")
     nav_lines.append("")
     nav_lines.append("extra_javascript:")
     nav_lines.append("  - https://fastly.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js")
@@ -91,26 +103,23 @@ def generate_mkdocs_nav(src_concepts, wiki_path):
             nav_lines.append(f"      - {sc_label}:")
             for sn, title in sorted(by_subcat[sc], key=lambda x: x[1]):
                 cat_dir = CATEGORY_MAP[sn][1] if CATEGORY_MAP[sn][1] else ""
-                path_sn = sn[:-3] if sn.endswith(".md") else sn
-                path = f"concepts/{cat}/{cat_dir}/{path_sn}" if cat_dir else f"concepts/{cat}/{path_sn}"
+                path = f"concepts/{cat}/{cat_dir}/{sn}" if cat_dir else f"concepts/{cat}/{sn}"
                 nav_lines.append(f"        - \"{title}\": {path}")
 
     # Comparisons
     nav_lines.append("  - Comparisons:")
-    nav_lines.append("    - LangGraph vs React: comparisons/langgraph-vs-react")
+    nav_lines.append("    - LangGraph vs React: comparisons/langgraph-vs-react.md")
 
     # Entities
     nav_lines.append("  - Entities:")
     for sn in ["ai-agent.md", "anthropic.md", "claude-code.md"]:
         title = get_title(wiki_path / "entities" / sn)
-        path_sn = sn[:-3] if sn.endswith(".md") else sn
-        nav_lines.append(f"    - \"{title}\": entities/{path_sn}")
+        nav_lines.append(f"    - \"{title}\": entities/{sn}")
 
     # Queries
     nav_lines.append("  - Queries:")
     for sn in ["interview-overview.md", "interview-qa-overview.md", "session-context.md"]:
         title = get_title(wiki_path / "queries" / sn)
-        path_sn = sn[:-3] if sn.endswith(".md") else sn
-        nav_lines.append(f"    - \"{title}\": queries/{path_sn}")
+        nav_lines.append(f"    - \"{title}\": queries/{sn}")
 
     return "\n".join(nav_lines)
