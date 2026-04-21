@@ -10,8 +10,6 @@ notion_id: 34367b21-8207-81fe-b72e-d5cd215313a6
 
 # Session Context 影响技能选择的问题分析与解决方案
 
-## Session Context 影响技能选择的问题分析与解决方案
-
 ### 1. 问题描述
 
 当用户询问一个问题时，大模型返回的 reasoning_content 显示，模型尝试使用 web_search 工具来获取金蝶和用友最近一周的新动向，但由于之前的 web_search 调用失败，模型仍然继续尝试使用相同的工具，而没有考虑其他可用的技能。

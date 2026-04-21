@@ -13,7 +13,6 @@ notion_id: 34267b21-8207-8197-b8ca-d8f11d3ca649
 > 作者：Anthropic Engineering Team
 > 发布日期：2025-06-26
 > 翻译日期：2026-04-14
-## 桌面扩展：Claude Desktop 一键安装 MCP 服务器 | Desktop Extensions
 发布于 2025 年 6 月 26 日
 Desktop Extensions（桌面扩展）让安装 MCP 服务器变得像点击按钮一样简单。本文将分享其技术架构以及创建优秀扩展的实用建议。
 - 文件扩展名更新
